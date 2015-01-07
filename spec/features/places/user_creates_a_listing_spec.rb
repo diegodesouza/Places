@@ -5,7 +5,6 @@ As a user
 I want to be able to post a place for rent
 so that people know i have it available
 
-<<<<<<< HEAD
 [X] I must be able to post my rental
 [X] I must provide a title
 [X] I must provide a description
@@ -15,17 +14,6 @@ so that people know i have it available
 [ ] I must provide number of beds
 [X] I must provide property type
 [X] I must provide guest number
-=======
-[ ] I must be able to post my rental
-[ ] I must provide a title
-[ ] I must provide a description
-[ ] I must provide the address(st, city, state, zip, country)
-[ ] I must provide number of bedrooms
-[ ] i must provide bed type
-[ ] I must provide number of beds
-[ ] I must provide property type
-[ ] I must provide guest number
->>>>>>> 6ef515fa13c162288670d6908ea0e9133b2ce288
 [ ] I must provide number of bathrooms
 [ ] I must provide garage/driveway availability
 [ ] i must provide kitchen availability
@@ -37,11 +25,11 @@ so that people know i have it available
 [ ] i must provide pool availability
 [ ] i must provide whether smoking if permissible
 [ ] i must provide place rules
+[ ] i get an errors if filled incorrectly
 ) do
 
     scenario "user successfully creates a listing, meeting all acceptance criteria" do
 
-<<<<<<< HEAD
     user = create(:user)
     listing = create(:listing)
 
@@ -49,54 +37,48 @@ so that people know i have it available
 
     visit root_path
 
-
     click_on "Add a Place"
 
-
     fill_in "Title", with: listing.title
-    fill_in "Description", with: listing.description
-    fill_in "Street", with: listing.street
-    fill_in "City",  with: listing.city
+    fill_in "Description", with: "Some content here"
+    fill_in "Street", with: "1 Main Street"
+    fill_in "City",  with: "Bridgeport"
     select "Apartment", from: "Property Type"
     select "Connecticut", from: "State"
+    fill_in "Zipcode", with: "06606"
     select "3", from: "Number of Beds"
     select "6", from: "Accommodates"
 
     click_button "Create Listing"
 
-    expect(page).to have_content "You have successfully created a listing."
     expect(page).to have_content listing.title
-    expect(page).to have_content listing.description
-    expect(page).to have_content listing.street
-    expect(page).to have_content listing.city
+    expect(page).to have_content "Some content here"
     expect(page).to have_content "Apartment"
     expect(page).to have_content "3"
     expect(page).to have_content "6"
-=======
-      user = FactoryGirl.create(:user)
-      place = FactoryGirl.create(user_id: user.id)
+    expect(page).to have_content "1 Main Street"
+    expect(page).to have_content "Bridgeport"
+    expect(page).to have_content "06606"
+    expect(page).to have_content "You have successfully created a listing."
+  end
 
-      visit new_user_session_path
+  scenario "user unsuccessfully creates a listing" do
+
+    user = create(:user)
+
+    sign_in_as(user)
+
+    visit root_path
 
 
-      click_link "Add a place"
+    click_on "Add a Place"
+    click_button "Create Listing"
 
-      fill_in "Title", with: place.title
-      fill_in "Description", with: place.description
-      fill_in "Street", with: place.street
-      select "Boston",  from: "City"
-      select "MA", from:"State"
-      select "3", from: "Number of beds"
-      select "Apartment", from: "Property type"
-      select "6", from: "Accomodates"
-      
-      click_button "Submit Playlist"
-
-      expect(page).to have_content "Your place has been successfully created."
-      expect(page).to have_content place.title
-      expect(page).to have_content place.description
-      expect(page).to have_content playlist.user.name
-
->>>>>>> 6ef515fa13c162288670d6908ea0e9133b2ce288
+    expect(page).to have_content "Something went wrong try again"
+    expect(page).to have_content "Title can't be blank"
+    expect(page).to have_content "Description can't be blank"
+    expect(page).to have_content "Street can't be blank"
+    expect(page).to have_content "City can't be blank"
+    expect(page).to have_content "Zipcode can't be blank"
   end
 end

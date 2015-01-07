@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(version: 20150107003348) do
     t.string   "title",                                        null: false
     t.text     "description",                                  null: false
     t.string   "street",                                       null: false
-    t.string   "city",               default: "",              null: false
-    t.string   "state",              default: ""
+    t.string   "city",                                         null: false
+    t.string   "state",                                        null: false
+    t.string   "zipcode",                                      null: false
     t.string   "country",            default: "United States"
     t.string   "property_type",                                null: false
     t.integer  "number_bedroom",     default: 1,               null: false
