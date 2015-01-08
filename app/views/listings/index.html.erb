@@ -1,1 +1,8 @@
 <p> Listing </p>
+
+
+<div>
+  <% @listings.each do |listing| %>
+    <li><%= link_to listing.title, listing_path(listing) %></li>  
+  <% end %>
+</div>
