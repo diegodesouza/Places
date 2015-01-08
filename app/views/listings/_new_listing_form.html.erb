@@ -1,9 +1,7 @@
 <% if @listing.errors.any? %>
-<ul>
-  <% @listing.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
+  <div><% @listing.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
   <% end %>
-</ul>
 <% end %>
 
 <%= form_for @listing do |f| %>

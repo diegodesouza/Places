@@ -25,14 +25,13 @@ so that people know i have it available
 [ ] i must provide pool availability
 [ ] i must provide whether smoking if permissible
 [ ] i must provide place rules
-[ ] i get an errors if filled incorrectly
+[X] i get an errors if filled incorrectly
 ) do
 
     scenario "user successfully creates a listing, meeting all acceptance criteria" do
 
     user = create(:user)
-    listing = create(:listing)
-
+  
     sign_in_as(user)
 
     visit root_path
@@ -51,7 +50,6 @@ so that people know i have it available
 
     click_button "Create Listing"
 
-    expect(page).to have_content listing.title
     expect(page).to have_content "Some content here"
     expect(page).to have_content "Apartment"
     expect(page).to have_content "3"

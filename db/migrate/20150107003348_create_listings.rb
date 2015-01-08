@@ -11,6 +11,7 @@ class CreateListings < ActiveRecord::Migration
       t.string :property_type, null: false
       t.integer :number_bedroom, null: false, default: "1"
       t.integer :number_accommodate, null: false, default: "1"
+      t.integer :user_id
 
       t.timestamps
     end

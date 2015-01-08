@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150107003348) do
     t.string   "property_type",                                null: false
     t.integer  "number_bedroom",     default: 1,               null: false
     t.integer  "number_accommodate", default: 1,               null: false
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

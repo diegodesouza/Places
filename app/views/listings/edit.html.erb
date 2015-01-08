@@ -1,0 +1,7 @@
+<% if @listing.errors.any? %>
+  <div><% @listing.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+<% end %>
+
+<%= render "edit_listing_form" %>
