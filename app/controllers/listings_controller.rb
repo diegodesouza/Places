@@ -41,7 +41,14 @@ class ListingsController < ApplicationController
   end
 
   def destroy
-
+    @listing = Listing.find(params[:id])
+    if @listing.destroy
+      flash[:notice] = "Your listing has been successfully deleted"
+      redirect_to root_path
+    else
+      flash[:notice] = "Something went wront!"
+      redirect_to listing_path(@listing)
+    end
   end
 
   private

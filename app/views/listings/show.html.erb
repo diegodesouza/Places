@@ -14,3 +14,5 @@
 </div>
 
 <%= link_to "Edit Listing", edit_listing_path(@listing) %>
+<%= link_to "Delete Listing", listing_path(@listing), method: :delete,
+data: { confirm: "Are you sure?" } %>
