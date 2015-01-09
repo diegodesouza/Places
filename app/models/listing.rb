@@ -1,15 +1,26 @@
 class Listing < ActiveRecord::Base
   belongs_to :user
 
-  validates_presence_of :title
-  validates_presence_of :description
-  validates_presence_of :street
-  validates_presence_of :city
-  validates_presence_of :state
-  validates_presence_of :zipcode
-  validates_presence_of :property_type
-  validates_presence_of :number_bedroom
-  validates_presence_of :number_accommodate
+  validates :title,
+    presence: true,
+    length: { minimum: 5, maximum: 50 }
+  validates :description,
+    presence: true,
+    length: { minimum: 25, maximum: 400 }
+  validates :street,
+    presence: true
+  validates :city,
+    presence: true
+  validates :state,
+    presence: true
+  validates :zipcode,
+    presence: true
+  validates :property_type,
+    presence: true
+  validates :number_bedroom,
+    presence: true
+  validates :number_accommodate,
+    presence: true
 
 
   PROPERTY_TYPE = ["Apartment", "Loft", "Single Family", "Multi-Family",

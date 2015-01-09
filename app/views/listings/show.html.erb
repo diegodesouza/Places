@@ -9,10 +9,13 @@
   Street: <%= @listing.street %><br>
   City: <%= @listing.city %><br>
   State: <%= @listing.state %><br>
+  Zipcode: <%= @listing.zipcode %><br>
   Country: <%= @listing.country %><br>
   <ul>
 </div>
 
-<%= link_to "Edit Listing", edit_listing_path(@listing) %>
-<%= link_to "Delete Listing", listing_path(@listing), method: :delete,
-data: { confirm: "Are you sure?" } %>
+<% if @listing.user == current_user %>
+  <%= link_to "Edit Listing", edit_listing_path(@listing) %>
+  <%= link_to "Delete Listing", listing_path(@listing), method: :delete,
+  data: { confirm: "Are you sure?" } %>
+<% end %>

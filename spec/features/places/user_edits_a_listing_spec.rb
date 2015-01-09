@@ -10,15 +10,16 @@ so that I can update some features
 [ ] I must be presented with errors if I make a mistake with the form
 [ ] I must not be able to edit someone else's listing
 ) do
+  
+    before :each do
+      @listing = create (:listing)
+    end
 
   scenario "user edits own listing, meeting all acceptance criteria" do
 
-    user = create :user
-    listing = create :listing
+    sign_in_as(@listing.user)
 
-    sign_in_as(user)
-
-    visit listing_path(listing)
+    visit listing_path(@listing)
 
     click_on "Edit Listing"
     fill_in "Title", with: "Changed the title"

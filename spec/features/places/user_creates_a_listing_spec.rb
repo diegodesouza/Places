@@ -27,19 +27,21 @@ so that people know i have it available
 [ ] i must provide place rules
 [X] i get an errors if filled incorrectly
 ) do
+  
+    before :each do
+      @user = create(:user)
+    end
 
     scenario "user successfully creates a listing, meeting all acceptance criteria" do
 
-    user = create(:user)
-  
-    sign_in_as(user)
+    sign_in_as(@user)
 
     visit root_path
 
     click_on "Add a Place"
 
-    fill_in "Title", with: listing.title
-    fill_in "Description", with: "Some content here"
+    fill_in "Title", with: "Some title here"
+    fill_in "Description", with: "Some content here Some content here"
     fill_in "Street", with: "1 Main Street"
     fill_in "City",  with: "Bridgeport"
     select "Apartment", from: "Property Type"
@@ -50,7 +52,8 @@ so that people know i have it available
 
     click_button "Create Listing"
 
-    expect(page).to have_content "Some content here"
+    expect(page).to have_content "Some title here"
+    expect(page).to have_content "Some content here Some content here"
     expect(page).to have_content "Apartment"
     expect(page).to have_content "3"
     expect(page).to have_content "6"
@@ -62,12 +65,9 @@ so that people know i have it available
 
   scenario "user unsuccessfully creates a listing" do
 
-    user = create(:user)
-
-    sign_in_as(user)
+    sign_in_as(@user)
 
     visit root_path
-
 
     click_on "Add a Place"
     click_button "Create Listing"

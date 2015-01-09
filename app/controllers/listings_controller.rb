@@ -13,9 +13,9 @@ class ListingsController < ApplicationController
   end
 
   def create
-
     @listing = Listing.new(listing_params)
 
+    @listing.user = current_user
     if @listing.save
       flash[:notice] = "You have successfully created a listing."
       redirect_to listing_path(@listing)
@@ -26,11 +26,11 @@ class ListingsController < ApplicationController
   end
 
   def edit
-    @listing = Listing.find(params[:id])
+    @listing = current_user.listings.find(params[:id])
   end
 
   def update
-    @listing = Listing.find(params[:id])
+    @listing = current_user.listings.find(params[:id])
     if @listing.update(listing_params)
       flash[:notice] = "Your listing has been successfully updated."
       redirect_to listing_path(@listing)
@@ -41,9 +41,9 @@ class ListingsController < ApplicationController
   end
 
   def destroy
-    @listing = Listing.find(params[:id])
+    @listing = current_user.listings.find(params[:id])
     if @listing.destroy
-      flash[:notice] = "Your listing has been successfully deleted"
+      flash[:notice] = "Your listing has been successfully deleted."
       redirect_to root_path
     else
       flash[:notice] = "Something went wront!"

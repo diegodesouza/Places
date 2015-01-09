@@ -8,7 +8,7 @@ FactoryGirl.define do
   end
 
   factory :listing do
-    sequence(:title) {|n| "title#{n} must be at least 25 char"}
+    sequence(:title) {|n| "title#{n} must be at least 5 char"}
     description 'This is some description about the listing'
     property_type 'Apartment'
     sequence(:number_bedroom) {|n| "#{n}"}
@@ -18,5 +18,7 @@ FactoryGirl.define do
     state 'Connecticut'
     zipcode '06606'
     country 'United States'
+
+    user
   end
 end

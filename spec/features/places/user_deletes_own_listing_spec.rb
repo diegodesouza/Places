@@ -13,18 +13,18 @@ Acceptance Criteria
 ) do
 
   before :each do
-    @user = create(:user)
     @listing = create(:listing)
   end
 
   scenario "user deletes a listing" do
 
-    sign_in_as(@user)
+    sign_in_as(@listing.user)
 
     visit listing_path(@listing)
 
     click_on "Delete Listing"
 
     expect(page).to_not have_content @listing
+    expect(page).to have_content "Your listing has been successfully deleted."
   end
 end
