@@ -13,10 +13,13 @@
   Country: <%= @listing.country %><br>
   <ul>
 </div>
+<div>
+  <%= render "reservations/new_reservation_form" %>
+</div>
 
-  <% if current_user == nil %>
-  <% elsif @listing.user == current_user %>
-    <%= link_to "Edit Listing", edit_listing_path(@listing) %>
-    <%= link_to "Delete Listing", listing_path(@listing), method: :delete,
-    data: { confirm: "Are you sure?" } %>
-  <% end %>
+<% if current_user == nil %>
+<% elsif @listing.user == current_user %>
+  <%= link_to "Edit Listing", edit_listing_path(@listing) %>
+  <%= link_to "Delete Listing", listing_path(@listing), method: :delete,
+  data: { confirm: "Are you sure?" } %>
+<% end %>

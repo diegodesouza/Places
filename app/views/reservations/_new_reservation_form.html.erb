@@ -1,0 +1,9 @@
+<%= form_for [@listing, @reservation] do |f| %>
+  <%= f.label :check_in, "Check In" %>
+  <%= f.text_field :check_in, placeholder: "Check In" %>
+
+  <%= f.label :check_out, "Check Out" %>
+  <%= f.text_field :check_out, placeholder: "Check Out" %>
+
+  <%= f.submit "Submit", method: :post %>
+<% end %>

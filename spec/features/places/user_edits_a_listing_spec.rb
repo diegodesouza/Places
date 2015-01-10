@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "a registered user edits a playlist", %q(
+feature "a registered user edits a listing", %q(
 As a user
 I want to be able to edit my own listing
 so that I can update some features
@@ -10,7 +10,7 @@ so that I can update some features
 [ ] I must be presented with errors if I make a mistake with the form
 [ ] I must not be able to edit someone else's listing
 ) do
-  
+
     before :each do
       @listing = create (:listing)
     end

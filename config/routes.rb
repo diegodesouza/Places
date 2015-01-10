@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
 
-  resources :listings
+  resources :listings do
+    resources :reservations, only: [:create, :edit, :show, :update, :destroy]
+
+  end
 end
