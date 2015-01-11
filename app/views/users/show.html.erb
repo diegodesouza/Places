@@ -1,4 +1,5 @@
 <%= @user.email %>
+<img src="<%= @user.profile_photo %>" width="200" /><br><hr>
 
 <% @user.listings.each do |listing| %>
   <%= listing.title %><br>

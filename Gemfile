@@ -15,14 +15,19 @@ group :development, :test do
   gem 'spring'
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'factory_girl'
+  gem 'valid_attribute'
+  gem 'devise'
+  gem 'foundation-rails'
+  gem 'database_cleaner'
+  gem 'dotenv-rails'
+end
 
-gem 'rspec-rails', group: [:development, :test]
-gem 'capybara', group: [:development, :test]
-gem 'launchy', group: [:development, :test]
-gem 'factory_girl', group: [:development, :test]
-gem 'valid_attribute', group: [:development, :test]
-gem 'shoulda-matchers', group: [:development, :test], require: false
-gem 'devise'
-gem 'foundation-rails'
-gem 'database_cleaner', group: [:development, :test]
 gem 'foundation-datetimepicker-rails'
+gem 'carrierwave'
+gem 'fog'
+gem 'shoulda-matchers', group: [:development, :test], require: false
