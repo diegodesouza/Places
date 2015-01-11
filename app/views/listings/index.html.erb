@@ -1,6 +1,19 @@
-<p> Listing </p>
+<div id="parallax-world">
+  <section>
+    <div class="title">
+      <h3>You can call it</h3>
+      <h1>HOME</h1>
+    </div>
+  </section>
 
+  <section>
+    <div class="parallax-one">
+      <h2>IT ALL BEGINS HERE</h2>
+    </div>
+  </section>
+
+<div class="row">
   <% @listings.each do |listing| %>
-    <li><%= link_to listing.title, listing_path(listing) %></li>
+    <div class="large-3 small-6 columns"><li><%= link_to listing.title, listing_path(listing) %></li></div>
   <% end %>
 </div>

@@ -1,0 +1,13 @@
+<%= @user.email %>
+
+<% @user.listings.each do |listing| %>
+  <%= listing.title %><br>
+  <%= listing.description %><br>
+  <%= listing.street %><br>
+  <%= listing.city %><br>
+  <%= listing.state %><br>
+  <%= listing.zipcode %><br>
+  <%= listing.property_type %><br>
+  <%= listing.number_bedroom %><br>
+  <%= listing.number_accommodate %><br><br><hr>
+<% end %>
