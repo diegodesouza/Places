@@ -1,20 +1,18 @@
 <div>
   </ul>
-    Title: <%= @listing.reservation.title %><br>
-    Description: <%= @listing.reservation.description %><br>
-    Property Type: <%= @listing.reservation.property_type %><br>
-    Number of Bedrooms: <%= @listing.reservation.number_bedroom %><br>
-    Accommodates: <%= @listing.reservation.number_accommodate %><br><br>
+    Title: <%= @listing.title %><br>
+    Description: <%= @listing.description %><br>
+    Property Type: <%= @listing.property_type %><br>
+    Number of Bedrooms: <%= @listing.number_bedroom %><br>
+    Accommodates: <%= @listing.number_accommodate %><br><br>
     Address<br>
-    Street: <%= @listing.reservation.street %><br>
-    City: <%= @listing.reservation.city %><br>
-    State: <%= @listing.reservation.state %><br>
-    Zipcode: <%= @listing.reservation.zipcode %><br>
-    Country: <%= @listing.reservation.country %><br>
-  <ul>
-    <p>
-    Date/Time: <%= @reservation.datetime.strftime("%B %e, %Y at %l:%M %P" ) %>
-    </p>
-</div>
+    Street: <%= @listing.street %><br>
+    City: <%= @listing.city %><br>
+    State: <%= @listing.state %><br>
+    Zipcode: <%= @listing.zipcode %><br>
+    Country: <%= @listing.country %><br><br>
 
-<%= render "new_reservation_form" %>
+    Check In: <%= @reservation.check_in.strftime("%B %e, %Y at %l:%M %P" ) %><br>
+    Check Out: <%= @reservation.check_out.strftime("%B %e, %Y at %l:%M %P" ) %>
+  <ul>
+</div>

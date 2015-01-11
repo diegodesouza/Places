@@ -5,6 +5,5 @@ Rails.application.routes.draw do
 
   resources :listings do
     resources :reservations
-
   end
 end

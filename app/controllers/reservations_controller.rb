@@ -17,7 +17,7 @@ class ReservationsController < ApplicationController
     if user_signed_in?
       if @reservation.save
         flash[:notice] = "You have successfully booked this place"
-        redirect_to listing_path(@listing)
+        redirect_to listing_reservation_path(@listing, @reservation)
       else
         flahs[:alert] = "Something went wrong"
         render "listing/show"
