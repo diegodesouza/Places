@@ -29,5 +29,15 @@
 <%= f.label :country %>
 <%= f.text_field :country, default: "United States" %>
 
+<div>
+  <%= f.label :place_photo, "Change your Photo" %>
+  <%= f.file_field :place_photo %>
+</div>
+
+<div>
+  <%= f.label :remove_place_photo, "Remove your Photo" %>
+  <%= f.check_box :remove_place_photo %>
+</div>
+
 <%= f.submit "Update Listing", method: :post %>
 <% end %>

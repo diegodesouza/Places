@@ -2,6 +2,8 @@ class Listing < ActiveRecord::Base
   belongs_to :user
   has_many :reservations, dependent: :destroy
 
+  mount_uploader :place_photo, PlacePhotoUploader
+
   validates :title,
     presence: true,
     length: { minimum: 5, maximum: 50 }

@@ -66,7 +66,8 @@ class ListingsController < ApplicationController
       :property_type,
       :number_accommodate,
       :user_id,
-      :reservation_id
+      :reservation_id,
+      :place_photo
     )
   end
 end

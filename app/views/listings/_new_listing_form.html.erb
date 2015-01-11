@@ -14,7 +14,7 @@
   <%= f.label :property_type, "Property Type"%>
   <%= f.select :property_type, Listing::PROPERTY_TYPE %>
 
-  <%= f.label :number_bedroom, "Number of Beds"%>
+  <%= f.label :number_bedroom, "Number of Bedrooms"%>
   <%= f.select :number_bedroom, 1..25 %>
 
   <%= f.label :number_accommodate, "Accommodates"%>
@@ -34,6 +34,9 @@
 
   <%= f.label :country %>
   <%= f.text_field :country, default: "United States" %>
+
+  <%= f.label :place_photo, "Add a Photo" %>
+  <%= f.file_field :place_photo %>
 
   <%= f.submit "Create Listing", method: :post %>
 <% end %>

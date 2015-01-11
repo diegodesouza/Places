@@ -11,6 +11,8 @@
   State: <%= @listing.state %><br>
   Zipcode: <%= @listing.zipcode %><br>
   Country: <%= @listing.country %><br>
+  <%= image_tag @listing.place_photo, class: "place-photo", size: "400" %><br><hr>
+  <%= image_tag(@listing.place_photo.url, alt: @listing.title, class: "centered") %>
   <p>
     Check In: <%= @reservation.check_in %><br>
     Check Out: <%= @reservation.check_out %>

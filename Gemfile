@@ -29,5 +29,6 @@ end
 
 gem 'foundation-datetimepicker-rails'
 gem 'carrierwave'
+gem "mini_magick"
 gem 'fog'
 gem 'shoulda-matchers', group: [:development, :test], require: false
