@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   resources :listings do
-    resources :reservations, only: [:create, :edit, :show, :update, :destroy]
+    resources :reservations
 
   end
 end

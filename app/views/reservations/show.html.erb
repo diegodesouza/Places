@@ -12,4 +12,9 @@
     Zipcode: <%= @listing.reservation.zipcode %><br>
     Country: <%= @listing.reservation.country %><br>
   <ul>
+    <p>
+    Date/Time: <%= @reservation.datetime.strftime("%B %e, %Y at %l:%M %P" ) %>
+    </p>
 </div>
+
+<%= render "new_reservation_form" %>

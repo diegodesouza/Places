@@ -18,7 +18,7 @@ Acceptance Criteria
 
      sign_in_as(@listing.user)
 
-     visit 
+     visit listing_reservation_path
 
      select "Feb 01, 2015", from: "Check_in"
      select "Feb 02, 2015", from: "Check_out"

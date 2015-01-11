@@ -15,8 +15,8 @@ class ReservationsController < ApplicationController
     @reservation.user == current_user
 
     if user_signed_in?
-      if @listing.reservations.save
-        flash[:notice] = "You have successfully booked you're place"
+      if @reservation.save
+        flash[:notice] = "You have successfully booked this place"
         redirect_to listing_path(@listing)
       else
         flahs[:alert] = "Something went wrong"
@@ -58,6 +58,6 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:resvation).permit(:user_id, :listing_id, :check_in, :check_out)
+    params.require(:reservation).permit(:user_id, :listing_id, :check_in, :check_out)
   end
 end

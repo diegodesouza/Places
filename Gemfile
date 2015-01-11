@@ -25,3 +25,4 @@ gem 'shoulda-matchers', group: [:development, :test], require: false
 gem 'devise'
 gem 'foundation-rails'
 gem 'database_cleaner', group: [:development, :test]
+gem 'foundation-datetimepicker-rails'
