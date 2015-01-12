@@ -34,3 +34,4 @@ gem 'fog'
 gem 'shoulda-matchers', group: [:development, :test], require: false
 
 gem 'rails_12factor', group: :production
+gem 'unicorn', group: :production
