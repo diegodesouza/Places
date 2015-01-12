@@ -9,6 +9,7 @@
   <title>Inventory</title>
 </head>
 <body>
+
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name">
@@ -16,13 +17,13 @@
       </li>
     </ul>
 
-    <section class="top-bar-section", style="margin-left: 40%;">
+    <section class="top-bar-section">
       <ul class="right">
         <%- if current_user -%>
           <li> <%= link_to 'Profile', user_path(current_user) %></li>
           <li><%= link_to 'Account', edit_user_registration_path %></li>
           <li> <%= link_to 'Add a Place', new_listing_path %></li>
-          <li> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
           <li><%= link_to 'Sign Up', new_user_registration_path %></li>
           <li><%= link_to 'Sign In', new_user_session_path %></li>
@@ -32,17 +33,17 @@
   </nav>
 
   <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
+  <div class="flash flash-<%= key %>">
+    <%= value %>
+  </div>
   <%- end -%>
 
   <%= yield %>
 
   <%= javascript_tag do %>
-    $(function(){
-      $(document).foundation();
-    });
+  $(function(){
+    $(document).foundation();
+  });
   <% end %>
 
   <%= yield :extra_footer %>

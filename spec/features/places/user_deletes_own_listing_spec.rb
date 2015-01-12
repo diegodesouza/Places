@@ -12,19 +12,18 @@ Acceptance Criteria
 [X] I must be presented with a message after deleting it
 ) do
 
-  before :each do
-    @listing = create(:listing)
-  end
+  let(:listing) { FactoryGirl.create(:listing) }
 
   scenario "user deletes a listing" do
+    user = listing.user
 
-    sign_in_as(@listing.user)
+    sign_in_as(user)
 
-    visit listing_path(@listing)
+    visit listing_path(listing)
 
     click_on "Delete Listing"
 
-    expect(page).to_not have_content @listing
+    expect(page).to_not have_content listing.title
     expect(page).to have_content "Your listing has been successfully deleted."
   end
 end
