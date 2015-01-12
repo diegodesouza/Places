@@ -17,7 +17,3 @@
 //= require foundation-datetimepicker
 
 $(function(){ $(document).foundation(); });
-
-$(function (){
-  $('#product_purchased_on').datepicker();
-});

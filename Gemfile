@@ -21,8 +21,6 @@ group :development, :test do
   gem 'launchy'
   gem 'factory_girl'
   gem 'valid_attribute'
-  gem 'devise'
-  gem 'foundation-rails'
   gem 'database_cleaner'
   gem 'dotenv-rails'
 end
@@ -35,3 +33,5 @@ gem 'shoulda-matchers', group: [:development, :test], require: false
 
 gem 'rails_12factor', group: :production
 gem 'unicorn', group: :production
+gem 'devise'
+gem 'foundation-rails'
