@@ -1,9 +1,17 @@
-<%= form_for [@listing, @reservation] do |f| %>
-  <%= f.label :check_in, "Check In" %>
-  <%= f.text_field :check_in, placeholder: "MM/DD/YYYY" %>
+<div class="row">
+  <div class="large-12 columns">
+    <div class="row collapse postfix-radius">
+      <%= form_for [@listing, @reservation] do |f| %>
+        <div class="small-6 columns">
+          <%= f.label :check_in, "Check In" %>
+          <%= f.text_field :check_in, placeholder: "MM/DD/YYYY" %>
 
-  <%= f.label :check_out, "Check Out" %>
-  <%= f.text_field :check_out, placeholder: "MM/DD/YYYY" %>
+          <%= f.label :check_out, "Check Out" %>
+          <%= f.text_field :check_out, placeholder: "MM/DD/YYYY" %>
 
-  <%= f.submit "Submit", method: :post %>
-<% end %>
+          <%= f.submit "Submit", method: :post, class: "button secondary" %>
+        <% end %>
+        </div>
+    </div>
+  </div>
+</div>
