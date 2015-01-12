@@ -23,6 +23,7 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'database_cleaner'
   gem 'dotenv-rails'
+  gem 'pry-rails'
 end
 
 gem 'foundation-datetimepicker-rails'

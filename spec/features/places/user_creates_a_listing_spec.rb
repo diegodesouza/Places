@@ -27,17 +27,17 @@ so that people know i have it available
 [ ] i must provide place rules
 [X] i get an errors if filled incorrectly
 ) do
-  
+
     before :each do
       @user = create(:user)
     end
 
-    scenario "user successfully creates a listing, meeting all acceptance criteria" do
+    scenario "user successfully creates a listing, meeting all acceptance criteria", focus: true do
 
     sign_in_as(@user)
 
     visit root_path
-
+    save_and_open_page
     click_on "Add a Place"
 
     fill_in "Title", with: "Some title here"

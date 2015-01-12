@@ -41,12 +41,13 @@ class ListingsController < ApplicationController
   end
 
   def destroy
+    byebug
     @listing = current_user.listings.find(params[:id])
-    if @listing.destroy
+    if @listing.destroy(listing_params)
       flash[:notice] = "Your listing has been successfully deleted."
       redirect_to root_path
     else
-      flash[:notice] = "Something went wront!"
+      flash[:alert] = "Something went wrong!"
       redirect_to listing_path(@listing)
     end
   end
