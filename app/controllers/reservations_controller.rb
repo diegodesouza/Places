@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
-  
+
   def show
     @listing = Listing.find(params[:listing_id])
     @reservation = @listing.reservations.find(params[:id])
@@ -14,12 +14,13 @@ class ReservationsController < ApplicationController
   def create
     @listing = Listing.find(params[:listing_id])
     @reservation = @listing.reservations.new(reservation_params)
-    @reservation.user == current_user
+    @reservation.user_id = current_user.id
 
     if @reservation.save
       flash[:notice] = "You have successfully booked this place"
       redirect_to listing_reservation_path(@listing, @reservation)
     else
+      flash[:notice] = "Sorry, that didn't work!"
       redirect_to listing_path(@listing)
     end
   end

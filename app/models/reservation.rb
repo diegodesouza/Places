@@ -7,8 +7,7 @@ class Reservation < ActiveRecord::Base
   validates :check_out,
     presence: :true
 
-
-  # validate :available, on: :create
+  validate :available, on: :create
   #
   # def available
   #   current_check_ins = []
@@ -35,5 +34,9 @@ class Reservation < ActiveRecord::Base
     #   errors.add(:check_in, "is not available")
     # end
 
+  def available
+    there_is_a_booking = Reservation.where(listing_id: listing.id, check_in: check_in, check_out: check_out).exists?
+      errors.add(:listing, "Those dates are taken") if there_is_a_booking
+  end
   # end
 end
