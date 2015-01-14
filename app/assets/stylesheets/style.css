@@ -53,13 +53,8 @@
  background-color: #fd2900;
 } */
 
-.parallax-world #examples {
-  background-color: #A7DBAB;
-}
-
 .section-thumbnails {
-  background-color: #E6AC27;
-  margin:
+  font-family:'Oswald', sans-serif;
 }
 
 #gallery-2 {
@@ -129,6 +124,7 @@
   letter-spacing:8px;
   text-transform: uppercase;
   color:black;
+  text-align: center;
 }
 
 #parallax-world p {
