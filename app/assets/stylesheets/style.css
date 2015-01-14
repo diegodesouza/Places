@@ -39,6 +39,50 @@
 /* *******************new reservation form **************************/
 /******************************************************************************/
 
+
+
+/******************************************************************************/
+/*   Thumbnails section   */
+/******************************************************************************/
+/*  .column, .one-col {
+ width: 32%;
+ float: left;
+ margin-right: 2.5%;
+ display: inline;
+ font-size: 16px;
+ background-color: #fd2900;
+} */
+
+
+
+.row #orange{
+  background-color: #fd2900;
+}
+
+.parallax-world #examples {
+  background-color: #A7DBAB;
+}
+
+.section-thumbnails {
+  background-color: #E6AC27;
+  margin:
+}
+#gallery-2 {
+  margin: auto;
+}
+#gallery-2 .gallery-item {
+  float: left;
+  margin-top: 10px;
+  text-align: center;
+  width: 25%;
+}
+#gallery-2 img {
+  border: 2px solid #cfcfcf;
+}
+#gallery-2 .gallery-caption {
+  margin-left: 0;
+}
+
 /******************************************************************************/
 
 /* ************************************************************************* */
@@ -179,7 +223,7 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-  background-image: url(project3.jpg);
+  background-image: url(project6.jpeg);
   background-attachment: fixed;
   background-size: cover;
   -moz-background-size: cover;
@@ -187,6 +231,8 @@
   background-repeat: no-repeat;
   background-position: center center;
 }
+
+/******************************************************************************/
 
 /*************************** Extras ***************************/
 /******************************************************************************/
