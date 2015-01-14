@@ -14,7 +14,7 @@ class ReservationsController < ApplicationController
   def create
     @listing = Listing.find(params[:listing_id])
     @reservation = @listing.reservations.new(reservation_params)
-    @reservation.user == current_user
+    @reservation.user_id = current_user.id
 
     if @reservation.save
       flash[:notice] = "You have successfully booked this place"
