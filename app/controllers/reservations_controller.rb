@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
-  s
+  
   def show
     @listing = Listing.find(params[:listing_id])
     @reservation = @listing.reservations.find(params[:id])

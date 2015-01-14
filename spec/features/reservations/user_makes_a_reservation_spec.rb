@@ -10,22 +10,22 @@ Acceptance Criteria
 [ ] I must be able to specify a check_out date + time
 [ ] i must not be able to book a past date+time
 ) do
-  before :each do
-    @listing = create(:listing)
-  end
+  let(:listing) { FactoryGirl.create(:listing) }
 
-  scenario "user successfully makes a reservation with a date and time for check in/out" do
+  scenario "user successfully makes a reservation with a date and time for check in/out", focus: true do
+     user = listing.user
 
-     sign_in_as(@listing.user)
+     sign_in_as(user)
 
-     visit listing_reservation_path
+     visit listing_path(user)
 
-     select "Feb 01, 2015", from: "Check_in"
-     select "Feb 02, 2015", from: "Check_out"
+     fill_in "Check In", with: "12/12/2015, 01:00 AM"
+     fill_in "Check Out", with: "12/12/2015, 01:00 AM"
 
      click_on "Submit"
 
-     expect(page).to have_content "Feb 01, 2015"
+     expect(page).to have_content "12/12/2015, 01:00 AM"
+     expect(page).to have_content "12/12/2015, 01:00 AM"
      expect(page).to have_content "Your reservation was successfully created"
   end
 end
