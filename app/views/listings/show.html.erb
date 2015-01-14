@@ -1,3 +1,5 @@
+<%= image_tag @listing.place_photo, class: "place_photo"%><br>
+
 <div>
 </ul>
 Title: <%= @listing.title %><br>
@@ -27,3 +29,9 @@ Country: <%= @listing.country %><br>
 <%= link_to "Delete Listing", listing_path(@listing), method: :delete,
 data: { confirm: "Are you sure?" } %>
 <% end %>
+
+  <% javascript_tag do %>
+  $(function(){
+    datePicker();
+  });
+  <% end %>

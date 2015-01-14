@@ -6,4 +6,27 @@ class Reservation < ActiveRecord::Base
     presence: :true
   validates :check_out,
     presence: :true
+
+  validate :available, on: :create
+
+  def available
+    current_check_ins = []
+    current_check_outs = []
+
+    Reservation.all.each do |r|
+      current_check_ins << r.check_in
+    end
+
+    Reservation.all.each do |r|
+      current_check_outs << r.check_out
+    end
+
+    # if current_check_ins.include?(:check_in)
+    #   errors.add(:check_in, "is not available") unless check_in.present?
+    # end
+
+    if check_in.present? && check_in < check_out
+      errors.add(:check_in, "is not available")
+    end
+  end
 end
