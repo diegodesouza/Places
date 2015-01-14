@@ -27,17 +27,17 @@ ActiveRecord::Schema.define(version: 20150114201058) do
     t.string   "property_type",                                null: false
     t.integer  "number_bedroom",     default: 1,               null: false
     t.integer  "number_accommodate", default: 1,               null: false
-    t.integer  "user_id"
+    t.integer  "user_id",                                      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "place_photo"
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.datetime "check_in"
-    t.datetime "check_out"
-    t.integer  "user_id"
-    t.integer  "listing_id"
+    t.datetime "check_in",   null: false
+    t.datetime "check_out",  null: false
+    t.integer  "user_id",    null: false
+    t.integer  "listing_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

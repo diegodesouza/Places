@@ -1,10 +1,10 @@
 class CreateReservations < ActiveRecord::Migration
   def change
     create_table :reservations do |t|
-      t.datetime :check_in
-      t.datetime :check_out
-      t.integer :user_id
-      t.integer :listing_id
+      t.datetime :check_in, null: false
+      t.datetime :check_out, null: false
+      t.integer :user_id, null: false
+      t.integer :listing_id, null: false
 
       t.timestamps
     end
