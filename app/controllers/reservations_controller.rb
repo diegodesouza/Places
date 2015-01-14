@@ -19,8 +19,7 @@ class ReservationsController < ApplicationController
         flash[:notice] = "You have successfully booked this place"
         redirect_to listing_reservation_path(@listing, @reservation)
       else
-        flahs[:alert] = "Something went wrong"
-        render "listing/show"
+        redirect_to listing_path(@listing)
       end
     else
       flash[:alert] =  "You must be signed in to book this place"

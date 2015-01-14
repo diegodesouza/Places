@@ -1,15 +1,17 @@
 <%= form_for [@listing, @reservation] do |f| %>
   <%= f.label :check_in, "Check In" %>
-  <%= f.date_select :check_in,
+  <%= f.datetime_local_field :check_in,
                     placeholder: "Check In",
                     :order => [:month, :day, :year],
-                    start_year: Date.today.year %>
+                    min: Time.zone.today.beginning_of_year,
+                    max: Time.zone.today.end_of_year  %>
 
   <%= f.label :check_out, "Check Out" %>
-  <%= f.date_select :check_out,
+  <%= f.datetime_local_field :check_out,
                     placeholder: "Check Out",
                     :order => [:month, :day, :year],
-                    start_year: Date.today.year %>
+                    min: Time.zone.today.beginning_of_year,
+                    max: Time.zone.today.end_of_year  %>
 
   <%= f.submit "Submit", method: :post %>
 <% end %>
