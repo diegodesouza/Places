@@ -8,25 +8,35 @@ class Reservation < ActiveRecord::Base
     presence: :true
 
   validate :available, on: :create
-
-  def available
-    current_check_ins = []
-    current_check_outs = []
-
-    Reservation.all.each do |r|
-      current_check_ins << r.check_in
-    end
-
-    Reservation.all.each do |r|
-      current_check_outs << r.check_out
-    end
+  #
+  # def available
+  #   current_check_ins = []
+  #   current_check_outs = []
+  #
+  #   Reservation.all.each do |r|
+  #     current_check_ins << r.check_in
+  #   end
+  #
+  #   Reservation.all.each do |r|
+  #     current_check_outs << r.check_out
+  #   end
 
     # if current_check_ins.include?(:check_in)
     #   errors.add(:check_in, "is not available") unless check_in.present?
     # end
+    # named_scope :in_range, lambda { |range|
+    #   {:conditions => [
+    #     '(check_in BETWEEN ? AND ? OR check_out BETWEEN ? AND ?) OR (check_in <= ? AND check_out >= ?)',
+    #     range.first, range.last, range.first, range.last, range.first, range.last
+    #     ]}
+    #   }
+    # if check_in.present? && check_in < check_out
+    #   errors.add(:check_in, "is not available")
+    # end
 
-    if check_in.present? && check_in < check_out
-      errors.add(:check_in, "is not available")
-    end
+  def available
+    there_is_a_booking = Reservation.where(listing_id: listing.id, check_in: check_in, check_out: check_out).exists?
+      errors.add(:listing, "Those dates are taken") if there_is_a_booking
   end
+  # end
 end

@@ -1,6 +1,7 @@
 class Listing < ActiveRecord::Base
   belongs_to :user
   has_many :reservations, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   mount_uploader :place_photo, PlacePhotoUploader
 
