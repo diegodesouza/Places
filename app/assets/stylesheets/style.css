@@ -53,12 +53,6 @@
  background-color: #fd2900;
 } */
 
-
-
-.row #orange{
-  background-color: #fd2900;
-}
-
 .parallax-world #examples {
   background-color: #A7DBAB;
 }
@@ -67,18 +61,22 @@
   background-color: #E6AC27;
   margin:
 }
+
 #gallery-2 {
   margin: auto;
 }
+
 #gallery-2 .gallery-item {
   float: left;
   margin-top: 10px;
   text-align: center;
   width: 25%;
 }
+
 #gallery-2 img {
   border: 2px solid #cfcfcf;
 }
+
 #gallery-2 .gallery-caption {
   margin-left: 0;
 }
@@ -110,6 +108,7 @@
   padding:0;
   margin:0;
 }
+
 #parallax-world h2 {
   font-family:'Oswald', sans-serif;
   font-size:70px;
@@ -121,6 +120,7 @@
   z-index:10;
   opacity:.8;
 }
+
 #parallax-world h3 {
   font-family:'Oswald', sans-serif;
   font-size:14px;
@@ -130,12 +130,14 @@
   text-transform: uppercase;
   color:black;
 }
+
 #parallax-world p {
   font-family:'Source Sans Pro', sans-serif;
   font-weight:400;
   font-size:14px;
   line-height:24px;
 }
+
 .first-character {
   font-weight:400;
   float: left;
@@ -173,10 +175,12 @@
   margin:0 auto;
   text-align:justify;
 }
+
 #parallax-world .block-gray {
   background: #f2f2f2;
   padding: 60px;
 }
+
 #parallax-world .section-overlay-mask {
   position: absolute;
   top: 0;
@@ -203,6 +207,7 @@
   background-repeat: no-repeat;
   background-position: top center;
 }
+
 #parallax-world .parallax-two {
   padding-top: 200px;
   padding-bottom: 200px;
@@ -217,6 +222,7 @@
   background-repeat: no-repeat;
   background-position: center center;
 }
+
 #parallax-world .parallax-three {
   padding-top: 200px;
   padding-bottom: 200px;
