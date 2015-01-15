@@ -10,12 +10,16 @@ class Reservation < ActiveRecord::Base
   validate :available, on: :create
 
   def available
-    if
+
     there_is_a_booking = Reservation.where(listing_id: listing.id, check_in: check_in, check_out: check_out).exists?
-      errors.add(:listing, "Those dates are taken") if there_is_a_booking
-    elsif
-      check_in < check_out
-      flash[:alert] = "Check out date cannot be less than Check in date"
+    if there_is_a_booking
+        errors.add(:listing, "Those dates are taken")
+    # elsif
+    #   check_in < check_out
+    #     errors.add(:listing, "Check out date can't be lower than Check in date")
+    # else
+    #   return true
     end
+
   end
 end

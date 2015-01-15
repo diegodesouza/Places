@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20150114201058) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.datetime "check_in",   null: false
-    t.datetime "check_out",  null: false
+    t.date     "check_in",   null: false
+    t.date     "check_out",  null: false
     t.integer  "user_id",    null: false
     t.integer  "listing_id", null: false
     t.datetime "created_at"
@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(version: 20150114201058) do
     t.string   "description", null: false
     t.integer  "listing_id",  null: false
     t.integer  "user_id",     null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|

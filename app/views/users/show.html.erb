@@ -19,9 +19,9 @@
         <%= @user.email %><hr>
       </div>
     <% @user.reservations.each do |reservation| %>
+    
       Check In: <%= reservation.check_in  %><br>
-      Check Out: <%= reservation.check_out  %>
-      <%= reservation.listing_id %>
+      Check Out: <%= reservation.check_out  %><br><hr>
     <% end %>
     </div>
   </div>

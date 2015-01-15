@@ -57,7 +57,7 @@ so that people know i have it available
     click_on "Add a Place"
     click_button "Create Listing"
 
-    expect(page).to have_content "Something went wrong try again"
+    expect(page).to have_content "Listing wasn't created, try again!"
     expect(page).to have_content "Title can't be blank"
     expect(page).to have_content "Description can't be blank"
     expect(page).to have_content "Street can't be blank"

@@ -4,20 +4,21 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @reviews = Review.new
+    @review = Review.new
   end
 
   def create
+    @reservation = Reservation.find_by(listing_id: params[:listing_id])
     @listing = Listing.find(params[:listing_id])
-    @reservation = Reservation.find(params[:reservation_id])
-    @listing.user = current_user
     @review = Review.new(review_params)
+    @review.user_id = current_user.id
+    @review.listing_id = @listing.id
 
     if @review.save
       flash[:notice] = "You have successfully created a review"
       redirect_to listing_path(@listing)
     else
-      flash[:alert] = "Something went wrong"
+      flash[:alert] = "Review wasn't created, try again!"
       render 'listings/show'
     end
   end
@@ -34,16 +35,16 @@ class ReviewsController < ApplicationController
       flash[:notice] = "You have successfully updated your review"
       redirect_to listing_path(params[:listing_id])
     else
-      flash[:notice] = "Something went wrong"
+      flash[:notice] = "Review wasn't updated, try again!"
       render :edit
     end
   end
 
   def destroy
-    @listing = current_user.listings.find(params[:listing_id])
-    @review = Review.find(parmas[:id])
+    @listing = Listing.find(params[:listing_id])
+    @review = Review.find(params[:id])
     @review.destroy
-    redirect_to listing_path(@lisitng)
+    redirect_to listing_path(@listing)
   end
 
   private

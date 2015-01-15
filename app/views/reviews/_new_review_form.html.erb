@@ -1,8 +1,12 @@
 <% if current_user != @listing.user %>
 
-  <%= @review.errors.full_messages if @review.errors.any? %>
+<% if @review.errors.any? %>
+  <%  @review.errors.full_messages.each do |msg| %>
+    <li>  <%= msg %>  </li>
+  <% end %>
+<% end %>
 
-  <%= form_for [@listing, @review] do |f| %>
+<%= form_for [@listing, @review] do |f| %>
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>

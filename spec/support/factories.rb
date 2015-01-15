@@ -23,10 +23,15 @@ FactoryGirl.define do
   end
 
   factory :reservation do
-    check_in "01/01/2015, 01:00 AM"
-    check_out "01/10/2015, 01:00 AM"
+    check_in "10/01/2015"
+    check_out "10/05/2015"
 
     user
     listing
+  end
+
+  factory :review do
+    title "This is a review title"
+    description "This is a description for a review"
   end
 end

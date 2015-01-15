@@ -1,17 +1,17 @@
 <%= form_for [@listing, @reservation] do |f| %>
   <%= f.label :check_in, "Check In" %>
-  <%= f.datetime_local_field :check_in,
+  <%= f.date_field :check_in,
+                    discard_time: true,
                     placeholder: "Check In",
                     :order => [:month, :day, :year],
-                    min: Time.zone.today.beginning_of_day,
-                    max: Time.zone.today.end_of_year  %>
+                    min: Time.zone.today %>
 
   <%= f.label :check_out, "Check Out" %>
-  <%= f.datetime_local_field :check_out,
+  <%= f.date_field :check_out,
+                    discard_time: true,
                     placeholder: "Check Out",
                     :order => [:month, :day, :year],
-                    min: Time.zone.today.beginning_of_day,
-                    max: Time.zone.today.end_of_year  %>
+                    min: Time.zone.today %>
 
   <%= f.submit "Submit", method: :post %>
 <% end %>
