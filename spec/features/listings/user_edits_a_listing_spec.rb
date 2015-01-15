@@ -40,7 +40,6 @@ so that I can update some features
   #
   #   fill_in "Title", with: listing.title
   #
-  #   save_and_open_page
   #
   #   click_on "Update Listing"
   #

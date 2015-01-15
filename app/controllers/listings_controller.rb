@@ -6,8 +6,7 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @reservation = Reservation.new
-    @reviews = @listing.reviews
-    @review = Review.new
+    @reviews = Review.where(listing_id: @listing.id)
   end
 
   def new
@@ -15,6 +14,7 @@ class ListingsController < ApplicationController
   end
 
   def create
+    @reservation = Reservation.new
     @listing = Listing.new(listing_params)
     @listing.user_id = current_user.id
 
@@ -22,7 +22,7 @@ class ListingsController < ApplicationController
       flash[:notice] = "You have successfully created a listing."
       redirect_to listing_path(@listing)
     else
-      flash[:alert] = "Something went wrong try again"
+      flash[:alert] = "Listing wasn't created, try again!"
       render :new
     end
   end

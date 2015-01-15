@@ -3,8 +3,9 @@ class Review < ActiveRecord::Base
   belongs_to :listing
 
   validates :title,
-    presence: true
-  validates :description,
     presence: true,
     length: { maximum: 25}
+  validates :description,
+    presence: true,
+    length: { minimum: 25}
 end
