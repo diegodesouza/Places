@@ -3,14 +3,14 @@
   <%= f.datetime_local_field :check_in,
                     placeholder: "Check In",
                     :order => [:month, :day, :year],
-                    min: Time.zone.today.beginning_of_year,
+                    min: Time.zone.today.beginning_of_day,
                     max: Time.zone.today.end_of_year  %>
 
   <%= f.label :check_out, "Check Out" %>
   <%= f.datetime_local_field :check_out,
                     placeholder: "Check Out",
                     :order => [:month, :day, :year],
-                    min: Time.zone.today.beginning_of_year,
+                    min: Time.zone.today.beginning_of_day,
                     max: Time.zone.today.end_of_year  %>
 
   <%= f.submit "Submit", method: :post %>

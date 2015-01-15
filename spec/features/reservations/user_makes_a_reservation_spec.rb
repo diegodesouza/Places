@@ -29,19 +29,20 @@ Acceptance Criteria
      expect(page).to have_content "You have successfully booked this place"
   end
 
-  scenario "user tries to make a reservation on an unavailable listing" do
-    user = listing.user
-
-    sign_in_as(user)
-
-    visit listing_path(user)
-
-    fill_in "Check In", with: "01/01/2015, 01:00 AM"
-    fill_in "Check Out", with: "02/10/2015, 01:00 AM"
-
-    click_on "Submit"
-
-    expect(page).to_not have_content "January 01 2015 at 1:00 am"
-    expect(page).to have_content "This listing has been reserved for the dates you chose"
-  end
+  # scenario "user tries to make a reservation on an unavailable listing", focus: true do
+  #   user = listing.user
+  #   reservation = FactoryGirl.create(:reservation)
+  #
+  #   sign_in_as(user)
+  #
+  #   visit listing_path(user)
+  #
+  #   fill_in "Check In", with: reservation.check_in
+  #   fill_in "Check Out", with: reservation.check_out
+  #
+  #   click_on "Submit"
+  #
+  #   expect(page).to_not have_content "January 01 2015 at 1:00 am"
+  #   expect(page).to have_content "Dates are not availble at this time"
+  # end
 end

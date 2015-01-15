@@ -1,0 +1,19 @@
+<% if current_user != @listing.user %>
+
+  <%= @review.errors.full_messages if @review.errors.any? %>
+
+  <%= form_for [@listing, @review] do |f| %>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit Review", method: :post %>
+  </div>
+  <% end %>
+
+<% end %>

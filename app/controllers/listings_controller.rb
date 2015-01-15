@@ -6,6 +6,8 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @reservation = Reservation.new
+    @reviews = @listing.reviews
+    @review = Review.new
   end
 
   def new
@@ -14,8 +16,8 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
-
     @listing.user_id = current_user.id
+
     if @listing.save
       flash[:notice] = "You have successfully created a listing."
       redirect_to listing_path(@listing)
@@ -67,7 +69,8 @@ class ListingsController < ApplicationController
       :number_accommodate,
       :user_id,
       :reservation_id,
-      :place_photo
+      :place_photo,
+      :review_id
     )
   end
 end

@@ -18,6 +18,11 @@
       <div id="username">
         <%= @user.email %><hr>
       </div>
+    <% @user.reservations.each do |reservation| %>
+      Check In: <%= reservation.check_in  %><br>
+      Check Out: <%= reservation.check_out  %>
+      <%= reservation.listing_id %>
+    <% end %>
     </div>
   </div>
 </div>

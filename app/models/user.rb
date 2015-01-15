@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :listings, dependent: :destroy
   has_many :reservations
+  has_many :reviews
 
   mount_uploader :profile_photo, ProfilePhotoUploader
   # Include default devise modules. Others available are:
