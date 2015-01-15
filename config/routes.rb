@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   resources :listings do
     resources :reservations
   end
+  resources :listings, only: [:show] do
+    resources :reviews, only: [:new, :create, :edit, :destroy, :update]
+  end
 end
