@@ -18,6 +18,7 @@ class ReservationsController < ApplicationController
     @reservation.user_id = current_user.id
 
     if @reservation.save
+      binding.pry
       flash[:notice] = "You have successfully booked this place"
       redirect_to listing_reservation_path(@listing, @reservation)
     else

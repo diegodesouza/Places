@@ -20,15 +20,15 @@ Acceptance Criteria
 
      visit listing_path(user1)
 
-     fill_in "Check In", with: reservation.check_in
-     fill_in "Check Out", with: reservation.check_out
+     fill_in "Check In", with: "01/30/2015"
+     fill_in "Check Out", with: "05/30/2015"
 
      click_on "Submit"
+     redirect_to listing_path(reservation)
 
-     redirect_to listing_path(reservation.user)
-
-     expect(page).to have_content "January 10, 2015"
-     expect(page).to have_content "May 10, 2015"
+save_and_open_page
+     expect(page).to have_content "January 30, 2015"
+     expect(page).to have_content "May 30, 2015"
      expect(page).to have_content "You have successfully booked this place"
 # user = FactoryGirl.create(:user)
 # listing = FactoryGirl.create(:listing)

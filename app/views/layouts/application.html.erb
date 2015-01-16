@@ -38,15 +38,17 @@
     <%= value %>
   </div>
   <%- end -%>
+  <div id="parallax-world">
 
-  <%= yield %>
+    <%= yield %>
 
-  <%= javascript_tag do %>
-  $(function(){
-    $(document).foundation();
-  });
-  <% end %>
+    <%= javascript_tag do %>
+    $(function(){
+      $(document).foundation();
+    });
+    <% end %>
 
-  <%= yield :extra_footer %>
+    <%= yield :extra_footer %>
+</div>
 </body>
 </html>

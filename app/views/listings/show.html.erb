@@ -1,36 +1,52 @@
-<%= image_tag @listing.place_photo, class: "place_photo"%><br>
+  <%= image_tag @listing.place_photo.url, style: 'margin-left: auto;
+                                               margin-right: auto;
+                                               width: 100%;'%>
 
-<div>
-  </ul>
-    Title: <%= @listing.title %><br>
-    Description: <%= @listing.description %><br>
+ <section>
+   <div class="title">
+     <h3>TITLE</h3>
+     <h1><%= @listing.title %></h1>
+   </div>
+ </section>
+
+  <section>
+    <div class="block">
+      <p>Description: <%= @listing.description %><br>
     Property Type: <%= @listing.property_type %><br>
     Number of Bedrooms: <%= @listing.number_bedroom %><br>
     Accommodates: <%= @listing.number_accommodate %><br><br><hr>
-    Address<br>
+    <p>Address<br>
     Street: <%= @listing.street %><br>
     City: <%= @listing.city %><br>
     State: <%= @listing.state %><br>
     Zipcode: <%= @listing.zipcode %><br>
     Country: <%= @listing.country %><br><hr>
- <ul>
-</div>
-<div>
-  <% if current_user == nil %>
-  <% elsif @listing.user == current_user %>
-  <% else %>
-    <%= render "reservations/new_reservation_form" %>
-  <% end %><hr>
-</div>
-
-<% if current_user == nil %>
-<% elsif @listing.user == current_user %>
-  <%= link_to "Edit Listing", edit_listing_path(@listing) %>
-  <%= link_to "Delete Listing", listing_path(@listing), method: :delete,
-  data: { confirm: "Are you sure?" } %><br><hr>
-<% end %>
+     </p>
+    </div>
+  </section>
 
 
-<% if @listing.reviews.any? %>
-  Reviews:  <%= render '/reviews/show_review' %><br><hr>
-<% end %>
+      <% if current_user == nil %>
+      <% elsif @listing.user == current_user %>
+      <% else %>
+        <%= render "reservations/new_reservation_form" %>
+      <% end %><hr>
+
+  <section>
+    <div class="block">
+      <% if current_user == nil %>
+      <% elsif @listing.user == current_user %>
+        <%= link_to "Edit Listing", edit_listing_path(@listing) %>
+        <%= link_to "Delete Listing", listing_path(@listing), method: :delete,
+        data: { confirm: "Are you sure?" } %><br><hr>
+      <% end %>
+    </div>
+  </section>
+
+   <section>
+     <div class="block">
+       <% if @listing.reviews.any? %>
+         Reviews:  <%= render '/reviews/show_review' %><br><hr>
+       <% end %>
+     </div>
+   </section>
