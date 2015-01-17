@@ -1,6 +1,10 @@
 class ListingsController < ApplicationController
   def index
-    @listings = Listing.all
+    if params[:search]
+      @listings = Listing.search(params[:search]).order("created_at DESC")
+    else
+      @listings = Listing.all
+    end
   end
 
   def show
@@ -23,7 +27,7 @@ class ListingsController < ApplicationController
       flash[:notice] = "Listing successfully created."
       redirect_to listing_path(@listing)
     else
-       
+
       render :new
     end
   end
