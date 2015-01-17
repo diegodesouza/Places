@@ -6,29 +6,32 @@ I want to be able to make a reservation on a listing
 So that i have dates set
 
 Acceptance Criteria
-[X] I must be able to specify a check_in date
-[X] I must be able to specify a check_out date
-[X] i must not be able to book a past date+time
+[] I must be able to specify a check_in date
+[] I must be able to specify a check_out date
+[] i must not be able to book a past date+time
 ) do
 
-  scenario "user successfully makes a reservation with a date and time for check in/out" do
-     user = create :user
-     user1 = create :listing
-     reservation = create :reservation
+  scenario "user successfully makes a reservation with a date for check in/out", focus: true do
+    user = FactoryGirl.create(:user)
+    user1 = FactoryGirl.create(:user)
+    listing = FactoryGirl.create(:listing, user_id: user.id)
 
-     sign_in_as(user)
+    user = listing.user
 
-     visit listing_path(user1)
+     sign_in_as(user1)
 
-     fill_in "Check In", with: reservation.check_in
-     fill_in "Check Out", with: reservation.check_out
+     visit listing_path(user)
+
+     fill_in "Check In", with: "01/30/2015"
+     fill_in "Check Out", with: "05/30/2015"
 
      click_on "Submit"
+     visit listing_reservation_path(user1)
 
-     redirect_to listing_path(reservation.user)
 
-     expect(page).to have_content "January 10, 2015"
-     expect(page).to have_content "May 10, 2015"
+     expect(page).to have_content "January 30, 2015"
+
+     expect(page).to have_content "May 30, 2015"
      expect(page).to have_content "You have successfully booked this place"
 # user = FactoryGirl.create(:user)
 # listing = FactoryGirl.create(:listing)

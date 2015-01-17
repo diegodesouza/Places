@@ -11,6 +11,7 @@ class ListingsController < ApplicationController
 
   def new
     @listing = Listing.new
+    @reservation = Reservation.new
   end
 
   def create
@@ -22,7 +23,7 @@ class ListingsController < ApplicationController
       flash[:notice] = "You have successfully created a listing."
       redirect_to listing_path(@listing)
     else
-      flash[:alert] = "Listing wasn't created, try again!"
+      # flash[:alert] = "Listing wasn't created, try again!"
       render :new
     end
   end

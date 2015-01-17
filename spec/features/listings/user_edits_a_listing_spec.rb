@@ -11,9 +11,7 @@ so that I can update some features
 [ ] I must not be able to edit someone else's listing
 ) do
 
-    before :each do
-      @listing = create (:listing)
-    end
+  let(:listing) { FactoryGirl.create(:listing) }
 
   scenario "user edits own listing, meeting all acceptance criteria" do
 

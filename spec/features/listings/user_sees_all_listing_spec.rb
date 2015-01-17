@@ -11,6 +11,7 @@ Acceptance Criteria
 [X] I must be able to see all listings from index page
 [X] I must be able to navigate to a single listing
 ) do
+  
   before :each do
     @user = create(:user)
     @listing = create(:listing)

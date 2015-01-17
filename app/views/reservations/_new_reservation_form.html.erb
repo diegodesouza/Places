@@ -1,17 +1,41 @@
-<%= form_for [@listing, @reservation] do |f| %>
-  <%= f.label :check_in, "Check In" %>
-  <%= f.date_field :check_in,
-                    discard_time: true,
-                    placeholder: "Check In",
-                    :order => [:month, :day, :year],
-                    min: Time.zone.today %>
-
-  <%= f.label :check_out, "Check Out" %>
-  <%= f.date_field :check_out,
-                    discard_time: true,
-                    placeholder: "Check Out",
-                    :order => [:month, :day, :year],
-                    min: Time.zone.today %>
-
-  <%= f.submit "Submit", method: :post %>
+<% if @reservation.errors.any? %>
+  <div><% @reservation.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
 <% end %>
+
+  <div class="block">
+    <div class="row">
+      <div class="large-6 columns">
+        <div class="row collapse postfix-round">
+            <%= form_for [@listing, @reservation] do |f| %>
+            <%= f.label :check_in, "Check In" %>
+            <%= f.date_field :check_in,
+                              discard_time: true,
+                              placeholder: "Check In",
+                              :order => [:month, :day, :year],
+                              min: Time.zone.today %>
+
+          </div>
+      </div>
+      <div class="large-6 columns">
+        <div class="row collapse prefix-round">
+            <%= f.label :check_out, "Check Out" %>
+            <%= f.date_field :check_out,
+                              discard_time: true,
+                              placeholder: "Check Out",
+                              :order => [:month, :day, :year],
+                              min: Time.zone.today %>
+        </div>
+      </div>
+      <div class="panel clearfix">
+          <%= f.submit "Submit", method: :post, class: "button round",
+          style:"margin-left: auto;
+                margin-right: auto;
+                width: 100%;" %>
+        <% end %>
+      </div>
+    </div>
+    </div>
+  </div>
+</form>

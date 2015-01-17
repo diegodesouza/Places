@@ -23,8 +23,8 @@ FactoryGirl.define do
   end
 
   factory :reservation do
-    check_in "10/01/2015"
-    check_out "10/05/2015"
+    check_in "30/01/2015"
+    check_out "30/05/2015"
 
     user
     listing

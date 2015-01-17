@@ -16,7 +16,7 @@ password = Faker::Internet.password
   password_confirmation: password
 )
   Listing.create(
-  title: Faker::Lorem.words,
+  title: Faker::Lorem.words.join(" "),
   description: Faker::Lorem.sentence,
   property_type: "Apartment",
   number_bedroom: Faker::Number.digit,
