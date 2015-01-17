@@ -1,14 +1,22 @@
 <section>
-  <div class="block">
-    <% @reviews.each do |review| %>
-      <%= review.title %>
-      <%= review.description %>
+  <div id="parallax-world">
+    <div class="title">
+      <h1>Reviews</h1>
+      <div class="block">
+        <% @reviews.each do |review| %>
+          <p>
+            Title: <%= review.title %><br>
+            Description: <%= review.description %><br>
+          </p>
 
-      <% if review.user == current_user %>
-        <div> <%= link_to "Edit Review", edit_listing_review_path(@listing, review)  %> </div>
-        <div> <%= link_to "Delete Review", listing_review_path(@listing, review), method: :delete,
-        data: { confirm: "Are you sure?" } %> </div>
-      <% end %>
-    <% end %>
+            <% if review.user == current_user %>
+              <%= link_to "Edit Review", edit_listing_review_path(@listing, review)  %>
+              <%= link_to "Delete Review", listing_review_path(@listing, review), method: :delete,
+              data: { confirm: "Are you sure?" } %><br><hr>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
