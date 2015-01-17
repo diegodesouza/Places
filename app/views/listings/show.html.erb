@@ -20,7 +20,8 @@
       <p>Description: <%= @listing.description %><br>
     Property Type: <%= @listing.property_type %><br>
     Number of Bedrooms: <%= @listing.number_bedroom %><br>
-    Accommodates: <%= @listing.number_accommodate %><br><br><hr>
+    Accommodates: <%= @listing.number_accommodate %><br><hr>
+      </p>
     <p>Address<br>
     Street: <%= @listing.street %><br>
     City: <%= @listing.city %><br>
@@ -49,10 +50,7 @@
     </div>
   </section>
 
-   <section>
-     <div class="block">
-       <% if @listing.reviews.any? %>
-         Reviews:  <%= render '/reviews/show_review' %><br><hr>
-       <% end %>
-     </div>
-   </section>
+
+   <% if @listing.reviews.any? %>
+   <p><%= render '/reviews/show_review' %><br><hr></p>
+   <% end %>
