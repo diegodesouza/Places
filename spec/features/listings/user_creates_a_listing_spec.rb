@@ -45,7 +45,7 @@ so that people know i have it available
       expect(page).to have_content "1 Main Street"
       expect(page).to have_content "Bridgeport"
       expect(page).to have_content "06606"
-      expect(page).to have_content "You have successfully created a listing."
+      expect(page).to have_content "Listing successfully created."
     end
 
   scenario "user unsuccessfully creates a listing" do
@@ -57,7 +57,6 @@ so that people know i have it available
     click_on "Add a Place"
     click_button "Create Listing"
 
-    expect(page).to have_content "Listing wasn't created, try again!"
     expect(page).to have_content "Title can't be blank"
     expect(page).to have_content "Description can't be blank"
     expect(page).to have_content "Street can't be blank"

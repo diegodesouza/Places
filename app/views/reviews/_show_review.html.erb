@@ -1,13 +1,13 @@
 <section>
   <div class="block">
-
     <% @reviews.each do |review| %>
       <%= review.title %>
       <%= review.description %>
 
       <% if review.user == current_user %>
         <div> <%= link_to "Edit Review", edit_listing_review_path(@listing, review)  %> </div>
-        <div> <%= link_to "Delete Review", listing_review_path(@listing, review), method: :delete %> </div>
+        <div> <%= link_to "Delete Review", listing_review_path(@listing, review), method: :delete,
+        data: { confirm: "Are you sure?" } %> </div>
       <% end %>
     <% end %>
   </div>
