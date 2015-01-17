@@ -1,3 +1,9 @@
+<% if @listing.errors.any? %>
+  <div><% @listing.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+<% end %>
+
   <%= image_tag @listing.place_photo.url, style: 'margin-left: auto;
                                                margin-right: auto;
                                                width: 100%;'%>

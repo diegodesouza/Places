@@ -1,28 +1,30 @@
 class ReservationsController < ApplicationController
   def show
     @listing = Listing.find(params[:listing_id])
-    @reservation = @listing.reservations.find(params[:id])
+    @reservation = Reservation.find(params[:id])
+    @reservation.listing_id = @listing.id
     @review = Review.new
   end
 
   def new
-    @listing = Listing.new
-    @reservation = Reservation.new
+    @listing = Listing.find(params[:id])
+    @reservation = Reservation.find_by(listing_id: @listing.id)
+    @reservation.listing_id = @listing
     @review = Review.new
     @review.listing = @listing
   end
 
   def create
     @listing = Listing.find(params[:listing_id])
-    @reservation = @listing.reservations.new(reservation_params)
+    @reservation = Reservation.new(reservation_params)
     @reservation.user_id = current_user.id
+    @reservation.listing_id = @listing.id
 
     if @reservation.save
-      binding.pry
       flash[:notice] = "You have successfully booked this place"
       redirect_to listing_reservation_path(@listing, @reservation)
     else
-      flash[:alert] = "Listing has not been created, try again!"
+      # flash[:alert] = "Listing has not been created, try again!"
       redirect_to listing_path(@listing)
     end
   end

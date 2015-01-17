@@ -1,9 +1,9 @@
-<form>
-  <% if @reservation.errors.any? %>
-    <%  @reservation.errors.full_messages.each do |msg| %>
-      <li>  <%= msg %>  </li>
-    <% end %>
+<% if @reservation.errors.any? %>
+  <div><% @reservation.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
   <% end %>
+<% end %>
+
   <div class="block">
     <div class="row">
       <div class="large-6 columns">
