@@ -24,6 +24,6 @@ Acceptance Criteria
     click_on "Delete Listing"
 
     expect(page).to_not have_content listing.title
-    expect(page).to have_content "Your listing has been successfully deleted."
+    expect(page).to have_content "Listing has been successfully deleted."
   end
 end

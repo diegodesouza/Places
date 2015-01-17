@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
     @review.listing_id = @listing.id
 
     if @review.save
-      flash[:notice] = "You have successfully created a review"
+      flash[:notice] = "Review successfully created"
       redirect_to listing_path(@listing)
     else
       flash[:alert] = "Review wasn't created, try again!"
@@ -25,15 +25,15 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @listing = current_user.listings.find(params[:listing_id])
-    @review = current_user.reviews.find(params[:id])
+    @listing = Listing.find(params[:listing_id])
+    @review = @listing.reviews.find(params[:id])
   end
 
   def update
     @review = current_user.reviews.find(params[:id])
 
     if @review.update_attributes(review_params)
-      flash[:notice] = "You have successfully updated your review"
+      flash[:notice] = "Review successfully updated"
       redirect_to listing_path(params[:listing_id])
     else
       flash[:notice] = "Review wasn't updated, try again!"
@@ -45,6 +45,7 @@ class ReviewsController < ApplicationController
     @listing = Listing.find(params[:listing_id])
     @review = Review.find(params[:id])
     @review.destroy
+    flash[:notice] = "Review successfully deleted"
     redirect_to listing_path(@listing)
   end
 
