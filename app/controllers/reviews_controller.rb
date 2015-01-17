@@ -1,13 +1,4 @@
 class ReviewsController < ApplicationController
-  def index
-    @reviews = Review.All
-  end
-
-  def new
-    @review = Review.new
-    @reservation = Reservation.new
-  end
-
   def create
     @reservation = Reservation.find_by(listing_id: params[:listing_id])
     @listing = Listing.find(params[:listing_id])
@@ -20,7 +11,7 @@ class ReviewsController < ApplicationController
       redirect_to listing_path(@listing)
     else
       flash[:alert] = "Review wasn't created, try again!"
-      render 'listings/show'
+      redirect_to listing_reservation_path(@listing, @reservation)
     end
   end
 

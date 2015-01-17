@@ -24,7 +24,6 @@ class ReservationsController < ApplicationController
       flash[:notice] = "You have successfully booked this place"
       redirect_to listing_reservation_path(@listing, @reservation)
     else
-      # flash[:alert] = "Listing has not been created, try again!"
       redirect_to listing_path(@listing)
     end
   end

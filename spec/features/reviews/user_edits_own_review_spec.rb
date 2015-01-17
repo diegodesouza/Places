@@ -9,7 +9,6 @@ Acceptance Criteria
 
 [X] I must be able to edit my own review
 [X] I am presented with messages review successfully updated
-[ ] I must not be able to edit other users' reviews
 ) do
 
   scenario "user edit own review" do
@@ -22,7 +21,6 @@ Acceptance Criteria
     sign_in_as(user)
 
     visit listing_path(listing, reservation)
-save_and_open_page
     click_on "Edit Review"
 
     fill_in "Title", with: review.title
