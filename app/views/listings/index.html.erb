@@ -55,20 +55,11 @@
 
 <p>&nbsp;</p>
 
-  <div class="section-thumbnails">
-    <% @listings.each do |listing| %>
-    <div id="gallery-2" class="gallery galleryid-2033 gallery-columns-4 gallery-size-thumbnail">
-      <dl class="gallery-item">
-        <dt class="gallery-icon landscape">
-          <%= image_tag listing.place_photo, class: "place_photo", size:"220x220", class:"attachment-thumbnail"%>
-        </dt>
-        <dd class="wp-caption-text gallery-caption">
-          <%= link_to listing.title, listing_path(listing) %>
-        </dd>
-      </dl>
-        <% end %>
-    </div>
-  </div>
+<div id="listings"><%= render 'listings' %></div>
+
+<div class="pagination center">
+  <%= paginate @listings, :left => 1, :right => 3 %>
+</div>
 
   <section>
     <div class="parallax-index-two">
