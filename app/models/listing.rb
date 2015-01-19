@@ -4,7 +4,6 @@ class Listing < ActiveRecord::Base
   has_many :reservations, dependent: :destroy
   has_many :reviews, dependent: :destroy
 
-
   mount_uploader :place_photo, PlacePhotoUploader
 
   validates :title,
