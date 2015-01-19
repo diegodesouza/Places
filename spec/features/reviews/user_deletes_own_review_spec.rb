@@ -25,7 +25,7 @@ In case i don't want to share what I wrote anymore
     visit listing_path(listing, reservation)
 
     click_on "Delete Review"
-save_and_open_page
+    
     expect(page).to_not have_content review.title
     expect(page).to_not have_content review.description
     expect(page).to have_content "Review successfully deleted"

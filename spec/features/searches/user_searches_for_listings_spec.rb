@@ -22,9 +22,9 @@ Acceptance Criteria
 
     visit root_path
 
-    fill_in "Search Listings", with: "Some title here"
+    fill_in "search", with: "Some title here"
 
-    click_on "Search Listings"
+    click_on "Search"
 
     expect(page).to have_link listing.title
     expect(page).to_not have_link listing1.title

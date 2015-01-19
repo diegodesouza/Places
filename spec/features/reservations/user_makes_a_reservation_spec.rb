@@ -11,7 +11,7 @@ Acceptance Criteria
 [] i must not be able to book a past date+time
 ) do
 
-  # scenario "user successfully makes a reservation with a date for check in/out", focus: true do
+  # scenario "user successfully makes a reservation with a date for check in/out" do
   #   user = FactoryGirl.create(:user)
   #   user1 = FactoryGirl.create(:user)
   #   listing = FactoryGirl.create(:listing, user_id: user.id)
@@ -43,7 +43,7 @@ Acceptance Criteria
 # visit listing_reservation_path(listing, reservation)
   # end
 
-  # scenario "user tries to make a reservation on an unavailable listing", focus: true do
+  # scenario "user tries to make a reservation on an unavailable listing" do
   #   user = listing.user
   #   reservation = FactoryGirl.create(:reservation)
   #
