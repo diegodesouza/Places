@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   def index
-    if params[:search]
+    if params[:search].present?
       @listings = Listing.search(params[:search])
     else
       @listings = Listing.all
