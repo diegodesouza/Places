@@ -17,11 +17,3 @@
 
 
 $(function(){ $(document).foundation(); });
-
-$(function () {
-  $('#listings th a, #listings .pagination a').live('click', &crarr;
-  function () {
-    $.getScript(this.href);
-    return false;
-  });
-})
