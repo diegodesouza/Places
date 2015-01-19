@@ -23,7 +23,7 @@ so that people know i have it available
 
       visit root_path
 
-      click_on "Add a Place"
+      click_on "New"
 
       fill_in "Title", with: "Some title here"
       fill_in "Description", with: "Some content here Some content here"
@@ -54,7 +54,7 @@ so that people know i have it available
 
     visit root_path
 
-    click_on "Add a Place"
+    click_on "New"
     click_button "Create Listing"
 
     expect(page).to have_content "Title can't be blank"

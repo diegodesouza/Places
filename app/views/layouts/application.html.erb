@@ -2,36 +2,33 @@
 <html>
 <head>
   <title>Places</title>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= javascript_include_tag :application %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= stylesheet_link_tag 'index', media: 'all' %>
   <%= stylesheet_link_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application" %>
+  <%= stylesheet_link_tag "//code.jquery.com/jquery-latest.min.js" %>
   <%= csrf_meta_tag %>
   <title>Inventory</title>
 </head>
 <body>
 
-  <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="/">Places</a></h1>
-      </li>
+  <div id='cssmenu'>
+    <ul>
+      <li><a><%= link_to "Home", root_path %></a></li>
+      <%- if current_user -%>
+      <li><a><%= link_to 'New', new_listing_path %></a> </li>
+      <li><a><%= link_to 'Profile', user_path(current_user) %></a></li>
+      <li><a><%= link_to 'Account', edit_user_registration_path%></a></li>
+      <li><a><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></a></li>
+      <%- else -%>
+      <li><a><%= link_to 'Sign Up', new_user_registration_path, id:"a" %></a></li>
+      <li><a><%= link_to 'Sign In', new_user_session_path %></a></li>
+      <%- end -%>
     </ul>
-
-    <section class="top-bar-section">
-      <ul class="right">
-        <%- if current_user -%>
-          <li> <%= link_to 'Profile', user_path(current_user) %></li>
-          <li><%= link_to 'Account', edit_user_registration_path %></li>
-          <li> <%= link_to 'Add a Place', new_listing_path %></li>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <%- end -%>
-      </ul>
-    </section>
-  </nav>
+  </div>
 
   <%- flash.each do |key, value| -%>
   <div class="flash flash-<%= key %>">
