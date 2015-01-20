@@ -1,12 +1,13 @@
-
-<div class="four columns">
-  <ul class="small-block-grid-2">
-  <%= image_tag @user.profile_photo, class: "profile", width:"200" %><br><hr>
-  <div id="username">
-    <%= @user.email %><hr>
+<div class="row">
+  <div class="small-3 columns">
+    <%= image_tag @user.profile_photo, class: "profile", width:"200" %>
   </div>
-</ul>
-</div>
+       <h4><%= @user.email %></h4>
+
+ </div>
+
+
+<p>&nbsp;</p>
 
 <section>
   <div class="title">
@@ -23,37 +24,55 @@
       <thead>
         <tr>
           <th width="200">TITLE</th>
-    <% @user.listings.each do |listing| %>
-  </tr>
-  <tr>
-    <td><%= link_to listing.title %></td>
-      <% end %>
-    </tr>
-  </thead>
-  <tbody>
-      </div>
-    </section>
+          <th width="200">STREET</th>
+          <th width="200">CITY</th>
+          <th width="200">STATE</th>
+          <th width="200">PROPERTY TYPE</th>
 
+          <% @user.listings.each do |listing| %>
+        </tr>
+      </thead>
+        <tbody>
+        <tr>
+          <td><%= link_to listing.title, listing_path(listing) %></td>
+          <td><%= listing.street %></td>
+          <td><%= listing.city %></td>
+          <td><%= listing.state %></td>
+          <td><%= listing.property_type %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section><hr>
 
-
-
-
-      <section>
-        <div class="title">
-          <h3>MY</h3>
-          <h1>RESERVATIONS</h1>
-        </div>
-      </section>
-
-      <section>
-        <div class="block">
-    <% @user.reservations.each do |reservation| %>
-
-      Check In: <%= reservation.check_in  %><br>
-      Check Out: <%= reservation.check_out  %><br><hr>
-    <% end %>
+<section>
+  <div class="title">
+    <h3>MY</h3>
+    <h1>RESERVATIONS</h1>
   </div>
 </section>
-    </div>
+
+<section>
+  <div class="block">
+    <table>
+      <thead>
+        <tr>
+          <th width="200">RESERVATION ID</th>
+          <th width="200">CHECK IN</th>
+          <th width="200">CHECK OUT</th>
+
+          <% @user.reservations.each do |reservation| %>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= link_to reservation.id, listing_reservation_path(@user, reservation) %></td>
+          <td><%= reservation.check_in.strftime("%B %e, %Y" ) %></td>
+          <td><%= reservation.check_out.strftime("%B %e, %Y" ) %></td>
+       </tr>
+        <% end %>
+     </tbody>
+   </table>
   </div>
-</div>
+</section>
