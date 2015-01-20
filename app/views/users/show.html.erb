@@ -1,28 +1,59 @@
-<div class="row">
-  <div id="profile-info">
-    <div class="large-3 columns">
-      <% @user.listings.each do |listing| %>
-        Title: <%= listing.title %><br><hr>
-        Description: <%= listing.description %><br><hr>
-        Street: <%= listing.street %><br><hr>
-        City: <%= listing.city %><br><hr>
-        State: <%= listing.state %><br><hr>
-        Zipcode: <%= listing.zipcode %><br><hr>
-        Type: <%= listing.property_type %><br><hr>
-        Number of Bedrooms: <%= listing.number_bedroom %><br><hr>
-        Accommodates: <%= listing.number_accommodate %><br><br><hr>
+
+<div class="four columns">
+  <ul class="small-block-grid-2">
+  <%= image_tag @user.profile_photo, class: "profile", width:"200" %><br><hr>
+  <div id="username">
+    <%= @user.email %><hr>
+  </div>
+</ul>
+</div>
+
+<section>
+  <div class="title">
+    <h3>MY</h3>
+    <h1>LISTINGS</h1>
+  </div>
+</section>
+
+<p>&nbsp;</p>
+
+<section>
+  <div class="block">
+    <table>
+      <thead>
+        <tr>
+          <th width="200">TITLE</th>
+    <% @user.listings.each do |listing| %>
+  </tr>
+  <tr>
+    <td><%= link_to listing.title %></td>
       <% end %>
-    </div>
-    <div class="large-9 columns">
-      <%= image_tag @user.profile_photo, class: "profile", width:"200" %><br><hr>
-      <div id="username">
-        <%= @user.email %><hr>
+    </tr>
+  </thead>
+  <tbody>
       </div>
+    </section>
+
+
+
+
+
+      <section>
+        <div class="title">
+          <h3>MY</h3>
+          <h1>RESERVATIONS</h1>
+        </div>
+      </section>
+
+      <section>
+        <div class="block">
     <% @user.reservations.each do |reservation| %>
-    
+
       Check In: <%= reservation.check_in  %><br>
       Check Out: <%= reservation.check_out  %><br><hr>
     <% end %>
+  </div>
+</section>
     </div>
   </div>
 </div>

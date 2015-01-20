@@ -1,43 +1,53 @@
 <% if @listing.errors.any? %>
-  <div><% @listing.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
+<div><% @listing.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
   <% end %>
-<% end %>
+  <% end %>
 
-  <%= image_tag @listing.place_photo.url, style: 'margin-left: auto;
-                                               margin-right: auto;
-                                               width: 100%;'%>
+  <section>
+    <div class="title">
+      <h1><%= @listing.title %></h1>
+    </div>
+  </section>
 
- <section>
-   <div class="title">
-     <h3>TITLE</h3>
-     <h1><%= @listing.title %></h1>
-   </div>
- </section>
+  <div class="row">
+    <%= image_tag @listing.place_photo.url, style: 'margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-bottom: 15px;'%>
+  </div>
+
 
   <section>
     <div class="block">
       <p>Description: <%= @listing.description %><br>
-    Property Type: <%= @listing.property_type %><br>
-    Number of Bedrooms: <%= @listing.number_bedroom %><br>
-    Accommodates: <%= @listing.number_accommodate %><br><hr>
+        Property Type: <%= @listing.property_type %><br>
+        Number of Bedrooms: <%= @listing.number_bedroom %><br>
+        Accommodates: <%= @listing.number_accommodate %><br><hr>
       </p>
-    <p>Address<br>
-    Street: <%= @listing.street %><br>
-    City: <%= @listing.city %><br>
-    State: <%= @listing.state %><br>
-    Zipcode: <%= @listing.zipcode %><br>
-    Country: <%= @listing.country %><br><hr>
-     </p>
+      <h3>Address</h3>
+      <p>Street: <%= @listing.street %><br>
+        City: <%= @listing.city %><br>
+        State: <%= @listing.state %><br>
+        Zipcode: <%= @listing.zipcode %><br>
+        Country: <%= @listing.country %><br><hr>
+      </p>
+
+      <% if current_user == nil %>
+      <% elsif @listing.user == current_user %>
+      <%= link_to "Edit Listing", edit_listing_path(@listing), class:"myButton" %>
+      <%= link_to "Delete Listing", listing_path(@listing), :class=>"myButton", method: :delete,
+      data: { confirm: "Are you sure?" } %><br><hr>
+      <% end %>
     </div>
   </section>
 
-<div class="google-maps">
+  <div class="google-maps">
     <iframe
     width="1200"
     height="450"
     frameborder="0" style="border:0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDz1hnIAtEgfG6OzrqH4hQ728TRtvlkfyQ
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB78gzC40H-qt5UH58ogbiKN-SzdY0Hv-0
     &q=<%= @listing.street %>+<%= @listing.city %>+<%= @listing.state %>
     &attribution_source=Google+Maps+Embed+API
     &attribution_web_url=http://www.butchartgardens.com/
@@ -47,24 +57,18 @@
 
 
 
-      <% if current_user == nil %>
-      <% elsif @listing.user == current_user %>
-      <% else %>
-        <%= render "reservations/new_reservation_form" %>
-      <% end %><hr>
 
-  <section>
-    <div class="block">
-      <% if current_user == nil %>
-      <% elsif @listing.user == current_user %>
-        <%= link_to "Edit Listing", edit_listing_path(@listing) %>
-        <%= link_to "Delete Listing", listing_path(@listing), method: :delete,
-        data: { confirm: "Are you sure?" } %><br><hr>
-      <% end %>
-    </div>
-  </section>
+<section>
+  <div class="block">
+    <% if current_user == nil %>
+    <% elsif @listing.user == current_user %>
+    <% else %>
+    <%= render "reservations/new_reservation_form" %>
+    <% end %><hr>
 
+    <% if @listing.reviews.any? %>
+    <p><%= render '/reviews/show_review' %><br><hr></p>
+    <% end %>
 
-   <% if @listing.reviews.any? %>
-   <p><%= render '/reviews/show_review' %><br><hr></p>
-   <% end %>
+  </div>
+</section>

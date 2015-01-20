@@ -1,0 +1,25 @@
+.myButton {
+  -moz-box-shadow:inset 0px -2px 6px -2px #0e0f0e;
+  -webkit-box-shadow:inset 0px -2px 6px -2px #0e0f0e;
+  box-shadow:inset 0px -2px 6px -2px #0e0f0e;
+  background-color:transparent;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;
+  display:inline-block;
+  cursor:pointer;
+  color:#000000;
+  font-family:Verdana;
+  font-size:14px;
+  font-style:italic;
+  padding:6px 9px;
+  text-decoration:none;
+  text-shadow:-4px 3px 0px #ffffff;
+}
+.myButton:hover {
+  background-color:transparent;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
