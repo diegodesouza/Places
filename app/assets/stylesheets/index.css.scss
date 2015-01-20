@@ -1,16 +1,6 @@
 /* ************************************************************************* */
 /* ********************* search form ***********************/
 /* ************************************************************************* */
-
-
-/* .search {
-  width: 25%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  background: transparent;
-} */
-
 .search {
   width: 500px;
   height: 40px;
@@ -66,42 +56,7 @@
   color: #fff;
 }
 
-/* **************************profile**************************************** */
-/* ************************************************************************* */
 
-/* #profile-info {
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-.profile {
-  width: 100%;
-  border-radius: 100px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  float: left;
-}
-
-#username {
-  text-align: center;
-}
-
-.large-4 {
-
-}
- */
-/******************************************************************************/
-/******************** photo in the show page **********************************/
-/******************************************************************************/
-
-.place-photo-show {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 /******************************************************************************/
 /* ******************* pagination **************************/
 /******************************************************************************/
@@ -178,6 +133,7 @@
   color:black;
   padding:0;
   margin:0;
+  margin-top: 30px;
 }
 
 #parallax-world h2 {
@@ -232,7 +188,7 @@
   padding: 60px;
   margin:0 auto;
   text-align:center;
-  padding-top: 0px;
+  padding-top: 20px;
   padding-right: 60px;
   padding-bottom: 60px;
   padding-left: 60px;
@@ -258,7 +214,7 @@
 }
 
 #parallax-world .section-overlay-mask {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;

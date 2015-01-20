@@ -15,6 +15,7 @@
 </head>
 <body>
 
+
   <div id='cssmenu'>
     <ul>
       <li><a><%= link_to "Home", root_path %></a></li>
@@ -29,6 +30,7 @@
       <%- end -%>
     </ul>
   </div>
+
 
   <%- flash.each do |key, value| -%>
   <div class="flash flash-<%= key %>">
