@@ -52,25 +52,15 @@
   margin-top: 6%;
   width: 56%;
   cursor: pointer;
-/*
-  width: 120px;
-  color: #fff;
-  background: transparent;
-  border-left: 1px solid #fff;
-  border-radius: 0 3px 3px 0; */
-
 }
 
 .google-maps {
   position: relative;
-  padding-bottom: 75%; // This is the aspect ratio
+  padding-bottom: 36%; // This is the aspect ratio
   height: 0;
   overflow: hidden;
 }
-.google-maps iframe {
+iframe {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 40% !important;
+  width: 100%;
 }

@@ -1,15 +1,22 @@
+.alert-box.radius {
+  border-radius: 3px;
+  margin-top: 5%;
+  text-align: center;
+  border-top: none;
+  border-bottom: none;
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
+
+a {
+  color: #74AFB2;
+  text-decoration: none;
+  line-height: inherit;
+}
+
 /******************************************************************************/
 /*   Thumbnails section   */
 /******************************************************************************/
-/*  .column, .one-col {
- width: 32%;
- float: left;
- margin-right: 2.5%;
- display: inline;
- font-size: 16px;
- background-color: #fd2900;
-} */
-
 .section-thumbnails {
   font-family:'Oswald', sans-serif;
 }
@@ -128,7 +135,7 @@
 /******************************************************************************/
 #parallax-world .block {
   background: white;
-  padding: 60px;
+  padding: 10px;
   width:820px;
   margin:0 auto;
   text-align:justify;
@@ -166,28 +173,13 @@
   background-position: top center;
 }
 
-#parallax-world .parallax-index-two {
+#parallax-world .parallax-index-two{
   padding-top: 200px;
   padding-bottom: 200px;
   overflow: hidden;
   position: relative;
   width: 100%;
   background-image: image-url('project4.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-#parallax-world .parallax-index-three {
-  padding-top: 200px;
-  padding-bottom: 200px;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  background-image: image-url('project6.jpeg');
   background-attachment: fixed;
   background-size: cover;
   -moz-background-size: cover;
