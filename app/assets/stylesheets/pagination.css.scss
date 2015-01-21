@@ -1,0 +1,13 @@
+/******************************************************************************/
+/* ******************* pagination **************************/
+/******************************************************************************/
+
+.pagination ul {
+  float: right;
+  display: inline-block;
+  overflow: hidden;
+}
+.pagination.center {
+  text-align: center;
+  position: center;
+}
