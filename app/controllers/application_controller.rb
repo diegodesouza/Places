@@ -11,4 +11,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :profile_photo
     devise_parameter_sanitizer.for(:account_update) << [ :profile_photo, :remove_profile_photo ]
   end
+
+  def authorized
+    unless current_user.id == Reservation.find(params[:listing_id]).user
+      redirect_to root_path
+    end
+  end
 end

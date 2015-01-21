@@ -37,7 +37,7 @@ password = Faker::Internet.password
 )
 
   Review.create(
-  title: Faker::Lorem.words,
+  title: Faker::Lorem.words.join(" "),
   description: Faker::Lorem.sentence,
   user_id: User.last.id,
   listing_id: Listing.last.id,

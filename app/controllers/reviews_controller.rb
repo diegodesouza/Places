@@ -3,8 +3,8 @@ class ReviewsController < ApplicationController
     @reservation = Reservation.find_by(listing_id: params[:listing_id])
     @listing = Listing.find(params[:listing_id])
     @review = Review.new(review_params)
-    @review.user_id = current_user.id
     @review.listing_id = @listing.id
+    @review.user_id = current_user.id
 
     if @review.save
       flash[:notice] = "Review successfully created"
