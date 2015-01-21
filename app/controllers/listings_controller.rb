@@ -28,7 +28,6 @@ class ListingsController < ApplicationController
       flash[:notice] = "Listing successfully created."
       redirect_to listing_path(@listing)
     else
-
       render :new
     end
   end

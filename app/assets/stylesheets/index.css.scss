@@ -1,89 +1,22 @@
-/* ************************************************************************* */
-/* ********************* search form ***********************/
-/* ************************************************************************* */
-.search {
-  width: 500px;
-  height: 40px;
-  margin: 150px auto;
-  background: #fff;
-  background: rgba(0,0,0,.2);
-  border-radius:  3px;
-  border: 1px solid #fff;
-}
-
-.search .input {
-  width: 370px;
-  padding: 10px 5px;
-  float: left;
-  color: #fff;
-  border: 0;
-  background: transparent;
-  border-radius: 3px 0 0 3px;
-}
-
-.search .input:focus {
-  outline: 0;
-  background:transparent;
-}
-
-.search .button {
-  position: relative;
-  float: right;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-  height: 40px;
-  width: 120px;
-  color: #fff;
-  background: transparent;
-  border-left: 1px solid #fff;
-  border-radius: 0 3px 3px 0;
-}
-
-.search .button:hover {
-  background: #fff;
-  color:#444;
-}
-.search .button:active {
-  box-shadow: 0px 0px 12px 0px rgba(225, 225, 225, 1);
-}
-
-.search .button:focus {
-  outline: 0;
-}
-
-#placeholder {
-  color: #fff;
-}
-
-
-/******************************************************************************/
-/* ******************* pagination **************************/
-/******************************************************************************/
-
-.pagination ul {
-  float: right;
-  display: inline-block;
-  overflow: hidden;
-}
-.pagination.center {
+.alert-box.radius {
+  border-radius: 3px;
+  margin-top: 5%;
   text-align: center;
-  position: center;
+  border-top: none;
+  border-bottom: none;
+  padding-top: 0%;
+  padding-bottom: 0%;
 }
 
+a {
+  color: #74AFB2;
+  text-decoration: none;
+  line-height: inherit;
+}
 
 /******************************************************************************/
 /*   Thumbnails section   */
 /******************************************************************************/
-/*  .column, .one-col {
- width: 32%;
- float: left;
- margin-right: 2.5%;
- display: inline;
- font-size: 16px;
- background-color: #fd2900;
-} */
-
 .section-thumbnails {
   font-family:'Oswald', sans-serif;
 }
@@ -202,7 +135,7 @@
 /******************************************************************************/
 #parallax-world .block {
   background: white;
-  padding: 60px;
+  padding: 10px;
   width:820px;
   margin:0 auto;
   text-align:justify;
@@ -231,7 +164,7 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-  background-image: image-url('project3.jpg');
+  background-image: image-url('project4.jpg');
   background-attachment: fixed;
   background-size: cover;
   -moz-background-size: cover;
@@ -240,28 +173,13 @@
   background-position: top center;
 }
 
-#parallax-world .parallax-index-two {
+#parallax-world .parallax-index-two{
   padding-top: 200px;
   padding-bottom: 200px;
   overflow: hidden;
   position: relative;
   width: 100%;
   background-image: image-url('project4.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-#parallax-world .parallax-index-three {
-  padding-top: 200px;
-  padding-bottom: 200px;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  background-image: image-url('project6.jpeg');
   background-attachment: fixed;
   background-size: cover;
   -moz-background-size: cover;
