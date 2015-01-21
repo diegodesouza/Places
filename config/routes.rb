@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
 
+
   resources :listings do
     resources :reservations, only: [:new, :show, :create, :destroy, :edit, :update]
   end

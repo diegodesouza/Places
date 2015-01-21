@@ -1,20 +1,47 @@
-<div>
-  </ul>
-    Title: <%= @listing.title %><br>
-    Description: <%= @listing.description %><br>
-    Property Type: <%= @listing.property_type %><br>
-    Number of Bedrooms: <%= @listing.number_bedroom %><br>
-    Accommodates: <%= @listing.number_accommodate %><br><br>
-    Address<br>
-    Street: <%= @listing.street %><br>
-    City: <%= @listing.city %><br>
-    State: <%= @listing.state %><br>
-    Zipcode: <%= @listing.zipcode %><br>
-    Country: <%= @listing.country %><br><br>
+<section>
+  <div class="title">
+    <h3>Welcome</h3>
+  </div>
+</section>
 
-    Check In: <%= @reservation.check_in.strftime("%B %e, %Y" ) %><br>
-    Check Out: <%= @reservation.check_out.strftime("%B %e, %Y" ) %>
-  <ul>
+<p>&nbsp;</p>
+
+
+<div class="row">
+  <%= image_tag @listing.place_photo.url, style: 'margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-bottom: 15px;'%>
 </div>
+<section>
+  <div class="block">
+    </ul>
+      <p>
+        Title: <%= @listing.title %><br>
+        Description: <%= @listing.description %><br>
+        Property Type: <%= @listing.property_type %><br>
+        Number of Bedrooms: <%= @listing.number_bedroom %><br>
+        Accommodates: <%= @listing.number_accommodate %><br><br></p>
+        <p>
+          Address<br>
+          Street: <%= @listing.street %><br>
+          City: <%= @listing.city %><br>
+          State: <%= @listing.state %><br>
+          Zipcode: <%= @listing.zipcode %><br>
+          Country: <%= @listing.country %><br><br>
+
+        </p>
+        <p>
+        Check In: <%= @reservation.check_in.strftime("%B %e, %Y" ) %><br>
+        Check Out: <%= @reservation.check_out.strftime("%B %e, %Y" ) %>
+      </p>
+    <ul>
+  </div>
+</section>
+
+<section>
+  <div class="block">
 
 <%= render 'reviews/new_review_form' %>
+</div>
+</section>

@@ -1,9 +1,15 @@
 class ReservationsController < ApplicationController
   def show
-    @listing = Listing.find(params[:listing_id])
     @reservation = Reservation.find(params[:id])
-    @reservation.listing_id = @listing.id
-    @review = Review.new
+    if current_user.id != @reservation.user_id
+      flash[:alert] = "Access Denied"
+      redirect_to root_path
+    else
+      @listing = Listing.find(params[:listing_id])
+      @reservation.listing_id = @listing.id
+      @reservation.user_id = current_user.id
+      @review = Review.new
+    end
   end
 
   def new
@@ -17,8 +23,8 @@ class ReservationsController < ApplicationController
   def create
     @listing = Listing.find(params[:listing_id])
     @reservation = Reservation.new(reservation_params)
-    @reservation.user_id = current_user.id
     @reservation.listing_id = @listing.id
+    @reservation.user_id = current_user.id
 
     if @reservation.save
       flash[:notice] = "You have successfully booked this place"

@@ -17,6 +17,7 @@ class Reservation < ActiveRecord::Base
       errors.add(:listing, "Check out date can't be lower than Check in date")
     end
   end
+
   belongs_to :listing
   belongs_to :user
 
