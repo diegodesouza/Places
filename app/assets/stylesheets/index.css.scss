@@ -15,9 +15,17 @@
 }
 
 #title-link {
-  margin-left: auto;
-  margin-right: auto;
-  width: 150px;
+margin-left: 35%;
+
+}
+
+.slick-slider {
+  margin-bottom: 0px;
+}
+
+.slick-slide img {
+  width: 60%;
+  height: 10%;
 }
 
 /******************************************************************************/
@@ -48,8 +56,14 @@ a {
 /******************************************************************************/
 /*   Thumbnails section   */
 /******************************************************************************/
-.masonry-brick { width: 220px; margin: 10px; float: left;  }
-#masonryContainer { width: 0 auto; }
+.masonry-brick {
+  width: 450px;
+  margin: 10px;
+  float: left;
+}
+#masonryContainer {
+  width: 0 auto;
+}
 
 
 .section-thumbnails {

@@ -21,7 +21,11 @@
 
 <div id="listings"><%= render 'listings' %></div>
 
-  <p>&nbsp;</p>
+<div class="pagination center">
+  <%= paginate @listings, :left => 1, :right => 3 %>
+</div>
+
+<p>&nbsp;</p>
 
 <section>
   <div class="parallax-index-two">
