@@ -69,9 +69,14 @@ class ListingsController < ApplicationController
       :number_bedroom,
       :property_type,
       :number_accommodate,
+      :place_photo,
+      :image_one,
+      :image_two,
+      :image_three,
+      :image_four,
+      :image_five,
       :user_id,
       :reservation_id,
-      :place_photo,
       :review_id
     )
   end

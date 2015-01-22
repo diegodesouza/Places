@@ -1,10 +1,15 @@
 class Listing < ActiveRecord::Base
-  paginates_per 8
+  paginates_per 4
   belongs_to :user
   has_many :reservations, dependent: :destroy
   has_many :reviews, dependent: :destroy
 
   mount_uploader :place_photo, PlacePhotoUploader
+  mount_uploader :image_one, ImageOneUploader
+  mount_uploader :image_two, ImageOneUploader
+  mount_uploader :image_three, ImageOneUploader
+  mount_uploader :image_four, ImageOneUploader
+
 
   validates :title,
     presence: true,

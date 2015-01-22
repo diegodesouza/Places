@@ -11,18 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150121195854) do
+ActiveRecord::Schema.define(version: 20150122001338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "images", force: :cascade do |t|
-    t.string "image1"
-    t.string "image2"
-    t.string "image3"
-    t.string "image4"
-    t.string "image5"
-  end
 
   create_table "listings", force: :cascade do |t|
     t.string   "title",                                        null: false
@@ -39,6 +31,11 @@ ActiveRecord::Schema.define(version: 20150121195854) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "place_photo"
+    t.string   "image_one"
+    t.string   "image_two"
+    t.string   "image_three"
+    t.string   "image_four"
+    t.string   "image_five"
   end
 
   create_table "reservations", force: :cascade do |t|
