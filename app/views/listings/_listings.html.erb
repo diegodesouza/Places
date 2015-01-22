@@ -1,8 +1,13 @@
-<div class="index-carousel">
-  <% @listings.each do |listing| %>
-  <div><%= image_tag listing.place_photo, class: "place_photo", size:"250x500",
-   class:"attachment-thumbnail" %>
-    <div id="title-link"><%= link_to listing.title, listing_path(listing) %></div>
+<div class="row">
+  <div class="large-12 columns">
+    <div id="masonryContainer">
+        <% @listings.each do |listing| %>
+      <div class="masonry-brick">
+        <%= image_tag listing.place_photo, class: "place_photo", size:"700x700",
+        class:"attachment-thumbnail" %>
+        <div id="title-link"><%= link_to listing.title, listing_path(listing) %></div>
+      </div>
+      <% end %>
+    </div>
   </div>
-  <% end %>
 </div>

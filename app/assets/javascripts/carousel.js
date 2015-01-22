@@ -1,13 +1,15 @@
 $(document).ready(function(){
   $('.index-carousel').slick({
-    arrows: true,
     dots: true,
     infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    centerMode: true,
-    centerPadding: '60px',
-    variableWidth: true
+    speed: 500,
+    fade: true,
+    slide: 'div',
+    cssEase: 'linear',
+    autoplay: true,
+    autoplaySpeed: 4000,
+    slidesToShow: 3,
+    adaptiveHeight: false
   });
 });
 
