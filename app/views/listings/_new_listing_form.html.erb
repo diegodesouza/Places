@@ -35,10 +35,22 @@
 
   <%= f.label :country %>
   <%= f.text_field :country, default: "United States" %>
-
+<div>
   <%= f.label :place_photo, "Add a Photo" %>
   <%= f.file_field :place_photo %>
 
+  <%= f.label :image_one, "Add a Photo" %>
+  <%= f.file_field :image_one %>
+
+  <%= f.label :image_two, "Add a Photo" %>
+  <%= f.file_field :image_two %>
+
+  <%= f.label :image_three, "Add a Photo" %>
+  <%= f.file_field :image_three %>
+
+  <%= f.label :image_four, "Add a Photo" %>
+  <%= f.file_field :image_four %>
+</div>
   <%= f.submit "Create Listing", class:"this-thing", method: :post %>
 <% end %>
 </div>
