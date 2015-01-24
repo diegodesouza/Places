@@ -22,7 +22,7 @@ class ListingsController < ApplicationController
   def create
     @reservation = Reservation.new
     @listing = Listing.new(listing_params)
-    @listing.user_id = current_user.id
+    @listing.user = current_user
 
     if @listing.save
       flash[:notice] = "Listing successfully created."

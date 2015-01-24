@@ -11,8 +11,9 @@ Acceptance Criteria
 [] i must not be able to book a past date+time
 ) do
 
-  # scenario "user successfully makes a reservation with a date for check in/out" do
-  #   user = FactoryGirl.create(:user)
+scenario "user successfully makes a reservation with a date for check in/out" do
+  pending "test for reservation"
+  #  user = FactoryGirl.create(:user)
   #   user1 = FactoryGirl.create(:user)
   #   listing = FactoryGirl.create(:listing, user_id: user.id)
   #
@@ -58,5 +59,5 @@ Acceptance Criteria
   #
   #   expect(page).to_not have_content "January 01 2015 at 1:00 am"
   #   expect(page).to have_content "Dates are not availble at this time"
-  # end
+  end
 end

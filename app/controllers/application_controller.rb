@@ -13,8 +13,9 @@ class ApplicationController < ActionController::Base
   end
 
   def authorized
-    unless current_user.id == Reservation.find(params[:listing_id]).user
-      redirect_to root_path
+    reservation = Reservation.find(params[:reservation_id])
+    unless current_user && reservation && current_user == reservation.user
+      redirect_to root_path, notice: "You are not authorized to view this Reservation"
     end
   end
 end
