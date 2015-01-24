@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
     @listing = Listing.find(params[:listing_id])
     @review = Review.new(review_params)
     @review.listing_id = @listing.id
-    @review.user_id = current_user.id
+    @review.user = current_user
 
     if @review.save
       flash[:notice] = "Review successfully created"
