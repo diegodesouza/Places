@@ -40,10 +40,6 @@ GEM
     addressable (2.3.6)
     arel (6.0.0)
     bcrypt (3.1.9)
-    better_date_picker (0.0.5)
-      activemodel
-      activesupport
-      chronic
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -62,7 +58,6 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
-    chronic (0.10.2)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -326,7 +321,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  better_date_picker
   byebug
   capybara
   carrierwave

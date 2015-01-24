@@ -37,7 +37,6 @@ gem 'unicorn', group: :production
 gem 'devise'
 gem 'foundation-rails'
 gem 'validates_overlap'
-gem 'better_date_picker'
 gem 'faker'
 gem 'slick_rails'
 gem 'kaminari'
