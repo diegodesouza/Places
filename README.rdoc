@@ -1,3 +1,0 @@
-== README
-
-places-launch.herokuapp.com
