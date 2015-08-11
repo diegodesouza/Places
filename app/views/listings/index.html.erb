@@ -20,12 +20,11 @@
 <p>&nbsp;</p>
 
 <div id="listings">
-    <%= render 'listings' %>
-    <div class="fill"></div>
+  <%= render 'listings' %>
 </div>
 
 <div class="pagination center">
-  <%= paginate @listings, :left => 1, :right => 3 %>
+  <%= paginate @listings, remote: true, :left => 1, :right => 3 %>
 </div>
 
 <p>&nbsp;</p>

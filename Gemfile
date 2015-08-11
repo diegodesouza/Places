@@ -36,7 +36,5 @@ gem 'rails_12factor', group: :production
 gem 'unicorn', group: :production
 gem 'devise'
 gem 'foundation-rails'
-gem 'validates_overlap'
 gem 'faker'
-gem 'slick_rails'
 gem 'kaminari'

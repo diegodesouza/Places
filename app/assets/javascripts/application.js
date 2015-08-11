@@ -18,8 +18,14 @@
 
 $(function(){ $(document).foundation(); });
 
-// listing search on index home page.
 $(function() {
+  $("#listings .pagination a").on("click",
+    function() {
+      $.getScript(this.href);
+      return false;
+    });
+
+// listing search on index home page.
   $("#listing-search input").keyup(function() {
     $.get($("#listing-search").attr("action"), $("#listing-search").serialize(), null, "script");
     return false;

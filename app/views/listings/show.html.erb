@@ -36,7 +36,7 @@
       <% if current_user == @listing.user %>
       <%= link_to "Edit Listing", edit_listing_path(@listing), class:"this-thing" %>
       <%= link_to "Delete Listing", listing_path(@listing), class:"this-thing", method: :delete,
-      data: { confirm: "Are you sure?" } %><br><hr>
+                                                            data: { confirm: "Are you sure?" } %><br><hr>
       <% end %>
     </div>
   </section>

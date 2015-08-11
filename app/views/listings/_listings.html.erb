@@ -1,10 +1,9 @@
 <div class="row">
   <div class="large-12 columns">
     <div id="masonryContainer">
-        <% @listings.each do |listing| %>
+      <% @listings.each do |listing| %>
         <div class="masonry-brick">
-          <%= image_tag listing.place_photo, class: "place_photo", size:"700x700",
-          class:"attachment-thumbnail" %>
+          <%= image_tag listing.place_photo, class: "place_photo attachment-thumbnail", size:"700x700"%>
           <div id="title-link"><%= link_to listing.title, listing_path(listing) %></div>
         </div>
       <% end %>
