@@ -10,7 +10,7 @@
     </div>
   </section>
 
-    <div class="carousel">
+    <div class="carousel-show-page">
       <div><%= image_tag @listing.place_photo.url%></div>
       <div><%= image_tag @listing.image_one.url %></div>
       <div><%= image_tag @listing.image_two.url %></div>
@@ -19,7 +19,7 @@
     </div>
 
   <section>
-    <div class="block">
+    <div class="block block-show">
       <p>Description: <%= @listing.description %><br>
         Property Type: <%= @listing.property_type %><br>
         Number of Bedrooms: <%= @listing.number_bedroom %><br>

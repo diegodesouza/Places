@@ -1,43 +1,7 @@
-#parallax-show-one {
-  padding-top: 200px;
-  padding-bottom: 200px;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  background-attachment: fixed;
-  background-size: cover;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-}
-
-#parallax-show-two {
-  padding-top: 200px;
-  padding-bottom: 200px;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  background-attachment: fixed;
-  background-size: cover;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-#parallax-show-three {
-  padding-top: 200px;
-  padding-bottom: 200px;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  background-attachment: fixed;
-  background-size: cover;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+.block-show {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 52.5% !important;
 }
 
 #button-reservation {
@@ -60,6 +24,7 @@
   height: 0;
   overflow: hidden;
 }
+
 iframe {
   position: absolute;
   width: 100%;
@@ -68,4 +33,12 @@ iframe {
 .slick-slide img {
   margin-left: auto;
   margin-right: auto;
+}
+
+.slick-dots {
+  margin-left: 0px !important;
+}
+
+.slick-next:before, .slick-prev:before {
+  color: black !important;
 }
