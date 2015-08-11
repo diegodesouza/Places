@@ -19,7 +19,10 @@
 
 <p>&nbsp;</p>
 
-<div id="listings"><%= render 'listings' %></div>
+<div id="listings">
+    <%= render 'listings' %>
+    <div class="fill"></div>
+</div>
 
 <div class="pagination center">
   <%= paginate @listings, :left => 1, :right => 3 %>

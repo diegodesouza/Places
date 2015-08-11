@@ -38,8 +38,8 @@ class Listing < ActiveRecord::Base
     "Condo", "Townhouse", "Flat"]
 
   def self.search(query)
-    where("title ILIKE ? OR city ILIKE ? OR state ILIKE ? OR zipcode ILIKE ?
+    where("title ILIKE ? OR street ILIKE ? OR city ILIKE ? OR state ILIKE ? OR zipcode ILIKE ?
     OR property_type ILIKE ?", "%" + query + "%",
-     "%" + query + "%", "%" + query + "%", "%" + query + "%", "%" + query + "%")
+     "%" + query + "%", "%" + query + "%", "%" + query + "%", "%" + query + "%", "%" + query + "%")
   end
 end

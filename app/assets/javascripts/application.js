@@ -16,5 +16,12 @@
 //= require slick
 //= require_tree .
 
-
 $(function(){ $(document).foundation(); });
+
+// listing search on index home page.
+$(function() {
+  $("#listing-search input").keyup(function() {
+    $.get($("#listing-search").attr("action"), $("#listing-search").serialize(), null, "script");
+    return false;
+  });
+});
