@@ -26,7 +26,6 @@ group :development, :test do
   gem 'pry-rails'
 end
 
-gem 'foundation-datetimepicker-rails'
 gem 'carrierwave'
 gem "mini_magick"
 gem 'fog'
