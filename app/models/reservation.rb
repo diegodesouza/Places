@@ -1,7 +1,7 @@
 class Reservation < ActiveRecord::Base
   belongs_to :listing
   belongs_to :user
-  
+
   validates :check_in,
     presence: :true
   validates :check_out,
@@ -24,6 +24,4 @@ class Reservation < ActiveRecord::Base
       errors.add(:listing, "Check out date can't be lower than Check in date")
     end
   end
-
-
 end

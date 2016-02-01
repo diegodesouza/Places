@@ -14,3 +14,4 @@
 .env
 .env.example
 /public/uploads
+.DS_Store

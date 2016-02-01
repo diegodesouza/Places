@@ -1,11 +1,13 @@
 class ReservationsController < ApplicationController
+  before_action :find_reservation, only: [:show, :destroy]
+  before_action :find_current_user_reservation, only: [:edit, :update, :destroy]
+  before_action :find_listing_id, only: [:show, :new, :create, :edit, :destroy]
+
   def show
-    @reservation = Reservation.find(params[:id])
     if current_user != @reservation.user
       flash[:alert] = "Access Denied"
       redirect_to root_path
     else
-      @listing = Listing.find(params[:listing_id])
       @reservation.listing_id = @listing.id
       @reservation.user = current_user
       @review = Review.new
@@ -13,15 +15,11 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    @listing = Listing.find(params[:id])
-    @reservation = Reservation.find_by(listing_id: @listing.id)
-    @reservation.listing_id = @listing
     @review = Review.new
     @review.listing = @listing
   end
 
   def create
-    @listing = Listing.find(params[:listing_id])
     @reservation = Reservation.new(reservation_params)
     @reservation.listing_id = @listing.id
     @reservation.user = current_user
@@ -35,12 +33,9 @@ class ReservationsController < ApplicationController
   end
 
   def edit
-    @listing = Listing.find(params[:listing_id])
-    @reservation = current_user.reservations.find(params[:id])
   end
 
   def update
-    @reservation = current_user.reservation.find(params[:id])
     if user_signed_in?
       if @reservation.update_attributes(reservation_params)
         flash[:notice] = "You have successfully updated your reservation"
@@ -50,14 +45,11 @@ class ReservationsController < ApplicationController
       end
     else
       flash[:alert] = "You must be signed in to update a reservation."
-      render :edit
+      redirect_to users_url
     end
   end
 
   def destroy
-    @reservation = current_user.reservation.find(params[:id])
-    @listing = Listing.find(params[:listing_id])
-    @reservation = Reservation.find(params[:id])
     @reservation.destroy
     redirect_to listing_path(@listing)
   end
@@ -66,5 +58,17 @@ class ReservationsController < ApplicationController
 
   def reservation_params
     params.require(:reservation).permit(:user_id, :listing_id, :check_in, :check_out)
+  end
+
+  def find_reservation
+    @reservation = Reservation.find(params[:id])
+  end
+
+  def find_current_user_reservation
+    @reservation = current_user.reservation.find(params[:id])
+  end
+
+  def find_listing_id
+    @listing = Listing.find(params[:listing_id])
   end
 end

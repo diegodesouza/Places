@@ -1,7 +1,9 @@
 class ReviewsController < ApplicationController
+  before_action :find_listing, only: [:create, :edit, :destroy]
+  before_action :find_review, only: [:edit, :destroy]
+
   def create
     @reservation = Reservation.find_by(listing_id: params[:listing_id])
-    @listing = Listing.find(params[:listing_id])
     @review = Review.new(review_params)
     @review.listing_id = @listing.id
     @review.user = current_user
@@ -16,8 +18,6 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @listing = Listing.find(params[:listing_id])
-    @review = @listing.reviews.find(params[:id])
   end
 
   def update
@@ -33,8 +33,6 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @listing = Listing.find(params[:listing_id])
-    @review = Review.find(params[:id])
     @review.destroy
     flash[:notice] = "Review successfully deleted"
     redirect_to listing_path(@listing)
@@ -44,5 +42,14 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(:user_id, :listing_id, :title, :description)
+  end
+
+  def find_listing
+    @listing = Listing.find(params[:listing_id])
+  end
+
+  def find_review
+    @review = @listing.reviews.find(params[:id])
+    # @review = Review.find(params[:id])
   end
 end

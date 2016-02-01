@@ -1,4 +1,6 @@
 class ListingsController < ApplicationController
+  before_action :find_listing, only: [:edit, :update, :destroy]
+
   def index
     if params[:search].present?
       @listings = Listing.search(params[:search])
@@ -33,11 +35,9 @@ class ListingsController < ApplicationController
   end
 
   def edit
-    @listing = current_user.listings.find(params[:id])
   end
 
   def update
-    @listing = current_user.listings.find(params[:id])
     if @listing.update(listing_params)
       flash[:notice] = "Listing has been successfully updated."
       redirect_to listing_path(@listing)
@@ -48,7 +48,6 @@ class ListingsController < ApplicationController
   end
 
   def destroy
-    @listing = current_user.listings.find(params[:id])
     if @listing.destroy
       flash[:notice] = "Listing has been successfully deleted."
       redirect_to root_path
@@ -79,5 +78,9 @@ class ListingsController < ApplicationController
       :reservation_id,
       :review_id
     )
+  end
+
+  def find_listing
+    @listing = current_user.listings.find(params[:id])
   end
 end
