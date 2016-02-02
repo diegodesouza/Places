@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
 
-  resources :images, only: [:new, :create, :show, :destroy, :edit, :update]
+  resources :images, except: [:index]
 
   resources :listings do
-    resources :reservations, only: [:new, :show, :create, :destroy, :edit, :update]
-    resources :reviews, only: [:new, :create, :edit, :destroy, :update]
+    resources :reservations, except: [:index]
+    resources :reviews, except: [:index, :show]
   end
 end
