@@ -1,8 +1,4 @@
-<% if @listing.errors.any? %>
-  <div><% @listing.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-<% end %>
+<%= render "shared/error_messages", object: @listing %>
 
   <section>
     <div class="title">
@@ -60,7 +56,7 @@
 
 <section>
   <div class="block">
-    <% if current_user == @listing.user %>
+    <% if current_user == !@listing.user %>
     <%= render "reservations/new_reservation_form" %>
     <% end %><hr>
 

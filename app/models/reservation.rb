@@ -2,10 +2,8 @@ class Reservation < ActiveRecord::Base
   belongs_to :listing
   belongs_to :user
 
-  validates :check_in,
-    presence: :true
-  validates :check_out,
-    presence: :true
+  validates :check_in, presence: :true
+  validates :check_out, presence: :true
 
   validate :available, on: :create
   validate :check_out_cannot_be_less_than_check_in, on: :create

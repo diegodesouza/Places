@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  before_action :find_listing, only: [:edit, :update, :destroy]
+  before_action :find_current_user_listing, only: [:edit, :update, :destroy]
 
   def index
     if params[:search].present?
@@ -51,6 +51,8 @@ class ListingsController < ApplicationController
     if @listing.destroy
       flash[:notice] = "Listing has been successfully deleted."
       redirect_to root_path
+    else
+      redirect_to :back
     end
   end
 
@@ -80,7 +82,7 @@ class ListingsController < ApplicationController
     )
   end
 
-  def find_listing
+  def find_current_user_listing
     @listing = current_user.listings.find(params[:id])
   end
 end

@@ -1,10 +1,6 @@
-<% if current_user != @listing.user %>
+<%= render "shared/error_messages", object: @review %>
 
-<% if @review.errors.any? %>
-  <%  @review.errors.full_messages.each do |msg| %>
-    <li>  <%= msg %>  </li>
-  <% end %>
-<% end %>
+<% if current_user != @listing.user %>
 
 <%= form_for [@listing, @review] do |f| %>
   <div class="field">
