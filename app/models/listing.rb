@@ -11,27 +11,17 @@ class Listing < ActiveRecord::Base
   mount_uploader :image_four, ImageOneUploader
 
 
-  validates :title,
-    presence: true,
+  validates :title, presence: true,
     length: { minimum: 5, maximum: 50 }
-  validates :description,
-    presence: true,
+  validates :description, presence: true,
     length: { minimum: 25, maximum: 400 }
   validates :street,
-    presence: true
-  validates :city,
-    presence: true
-  validates :state,
-    presence: true
-  validates :zipcode,
-    presence: true
-  validates :property_type,
-    presence: true
-  validates :number_bedroom,
-    presence: true
-  validates :number_accommodate,
-    presence: true
-
+            :city,
+            :state,
+            :zipcode,
+            :property_type,
+            :number_bedroom,
+            :number_accommodate, presence: true
 
 
   PROPERTY_TYPE = ["Apartment", "Loft", "Single Family", "Multi-Family",
