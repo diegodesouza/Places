@@ -1,6 +1,5 @@
-.parallax-index-one
-  #search-form
-    = render "search/search_form"
+.search
+  = render "search/search_form"
 %p  
 %h3 Listings
 %p  
@@ -8,6 +7,3 @@
   = render 'listings'
 .pagination.center
   = paginate @listings, remote: true, :left => 1, :right => 3
-%p  
-%section
-  .parallax-index-two

@@ -1,25 +1,32 @@
 ////////////////////
-// Search Objects 
+// Search Objects
 ////////////////////
 
 .search
-  display: inline-block
-  
+  margin-top: 5em
+  width: 100%
   // .search__input
   &__input
+    color: $white
+    background: transparent
     display: block
     float: left
-    margin: 0 
-    width: auto
-
-  // .search__button
-  &__button
-    display: inline-block
-    float: left
     margin: 0
+    width: 85%
+  input
+    width: 80%
+    border-right: 0
 
   // .search__icon
   &__icon
     display: block
     height: 1.5em
-    
+
+  // .search__button
+  .search__button
+    background-color: transparent
+    float: right
+    width: 20%
+    height: 3.1em
+    border: 1px solid $white
+    border-radius: 0 3px 3px 0

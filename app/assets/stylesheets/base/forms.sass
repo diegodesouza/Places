@@ -4,7 +4,7 @@
 
 %input-text-styles
   appearance: none
-  background: $color-inverted
+  background: transparent
   border: 1px solid rgb(223, 223, 223)
     radius: $border-radius
   box-shadow: none
@@ -20,7 +20,8 @@
   @media #{$large-up}
     width: 50%
   &:active, &:focus, &:hover
-    background-color: $color-secondary
+    background-color: $white
+    outline-width: 0
   +placeholder
     color: rgba($font-color, .5)
     +ellipsize
@@ -40,15 +41,6 @@
 
 .input
   @extend %input-text-styles
-  + .label
-    margin: 0 1em 0 .25em
-
-  // .input--hidden
-  &--hidden
-    display: none
-
-  &--small
-    font-size: .6em
 
   // .input--with-button
   &--with-button
@@ -77,16 +69,6 @@
   // .input--radio, .input--radio:before
   &--radio, &--radio:before
     border-radius: $border-radius-round
-
-  // .input--range
-  &--range
-    appearance: none
-    vertical-align: middle
-    //&::-webkit-slider-runnable-track
-      @extend %input-range-track-styles
-    //&::-webkit-slider-thumb
-      @extend %input-range-thumb-styles
-    // TODO ADD CROSS BROWSER SUPPORT, FIGURE OUT WAY TO MAKE RENDER LAST FOR FIREFOX SUPPORT
 
   // .input--search
   &--search
