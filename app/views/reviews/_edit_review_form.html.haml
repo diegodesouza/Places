@@ -1,0 +1,11 @@
+= form_for [@review.listing, @review] do |f|
+  .field
+    = f.label :title
+    %br/
+    = f.text_field :title
+  .field
+    = f.label :description
+    %br/
+    = f.text_area :description
+  .actions
+    = f.submit "Update Review", method: :post

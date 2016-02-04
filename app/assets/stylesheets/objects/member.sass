@@ -1,0 +1,42 @@
+////////////////////
+// Member Objects 
+////////////////////
+
+.member-group
+  display: none
+  @media #{$large-up}
+    display: block
+  &--medium
+    @media #{$large-up}
+      display: none
+
+.member-card
+  float: left
+  padding: 0 1% 1% 1%
+  text:
+    align: center
+  width: 50%
+  +greyscale
+  @media #{$medium-up}
+    width: 33.333333%
+  @media #{$large-up}
+    width: 20%
+    &--is-selected
+      // taken from greyscale hoverstate
+      filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\' filterRes=\'800\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale")
+      -webkit-filter: grayscale(0%)  
+  &__image
+    max-width: 100%
+    height: 15em
+    @media #{$medium-up}
+      height: 21em
+    @media #{$large-up}
+      height: 15em
+    @media #{$xlarge-up}
+      height: 21em
+
+  &__name
+    color: $color-accent
+    text:
+      transform: uppercase
+

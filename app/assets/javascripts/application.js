@@ -12,11 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
-//= require slick
 //= require_tree .
-
-$(function(){ $(document).foundation(); });
 
 $(function() {
   $("#listings .pagination a").on("click",

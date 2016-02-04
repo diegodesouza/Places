@@ -1,0 +1,54 @@
+////////////////////
+// Primary Header
+////////////////////
+
+.header
+
+  // .header--primary
+  &--primary
+    background: $header-primary-background
+    color: $header-primary-color
+    font:
+      size: $header-font-size
+    position: relative
+    width: 100%
+    z-index: 4
+    +clearfix
+
+    // .header--primary__nav
+    &__nav
+      display: inline-block
+      float: left
+      width: inherit
+
+  &--landing-page
+    background: $header-landing-page-background
+
+  // .header--secondary
+  &--secondary
+    background: $header-secondary-background
+    color: $header-secondary-color
+    display: inline-block
+    float: left
+    padding: .5em 0
+    text:
+      align: center
+      transform: uppercase
+    width: inherit
+    +clearfix
+    @media #{$large-up}
+      text:
+        align: left
+
+    &__center-name
+      display: inline-block
+      font:
+        weight: $font-weight-light
+        size: .5em
+      letter-spacing: .15em
+      margin-bottom: .3em
+      &:hover, &:focus, &:active
+        color: darken($color-accent, 25%)
+      @media #{$large-up}
+        font:
+          size: .75em

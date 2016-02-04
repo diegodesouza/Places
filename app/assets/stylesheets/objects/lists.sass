@@ -1,0 +1,62 @@
+////////////////////
+// List Objects
+////////////////////
+
+.list
+  margin: 0
+
+  // .list--unstyled
+  &--unstyled
+    list-style-type: none
+    margin: 0
+
+  // .list--affiliates
+  &--affiliates
+    &:after
+      content: 'flickity'
+      display: none
+      @media #{$medium-up}
+        content: ''
+
+  // .list__item
+  &__item
+    display: block
+    padding: $rhythm
+
+    // .list__item--horizontal
+    &--horizontal
+      display: inline-block
+
+    &--form
+      padding: ($input-padding * 3) $rhythm-horizontal
+
+    &--affiliate
+      background: $color-secondary
+      border:
+        bottom: $border-width solid $color-inverted
+        right: $border-width solid $color-inverted
+      color: darken($color-primary, 15%)
+      float: left
+      min-height: 7em
+      padding:
+        bottom: 2.5em
+      position: relative
+      width: 100%
+      &:after
+        border: 1px solid $color-accent
+        bottom: 1.5em
+        content: ""
+        display: block
+        position: absolute
+        width: 20px
+      @media #{$medium-up}
+        width: 50%
+        &:hover, &:active, &:focus
+          background: $color-accent
+          color: $color-inverted
+          &:after
+            border: 1px solid $color-inverted
+      @media #{$large-up}
+        width: 33.333333%
+      @media #{$xlarge-up}
+        width: 25%

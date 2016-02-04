@@ -1,0 +1,62 @@
+////////////////////
+// Primary Footer 
+////////////////////
+
+.footer
+
+  // .footer--primary
+  &--primary
+    background: $footer-background
+    position: relative
+    text-align: center
+    width: 100%
+    +clearfix
+    @media #{$large-up}
+      text-align: left
+
+    // .footer--primary__nav
+    &__nav
+      background: $footer-background-nav
+      color: $footer-color-nav
+      float: left
+      position: relative
+      @media #{$large-up}
+        bottom: 0
+        left: 0
+        position: absolute 
+        top: 0
+        width: 69%
+
+    &__social
+      background: $background-secondary
+      margin: 0 auto
+      transform: translate(0%, 150%)
+      @media #{$large-up}
+        bottom: auto 
+        position: absolute
+        right: 0 
+        top: 50%
+        transform: translate(50%, -50%)
+
+    // .footer--primary__content
+    &__contact
+      width: 100%
+      @media #{$large-up}
+        float: right 
+        padding-left: 5em
+        width: 31%
+      @media #{$xlarge-up}
+        padding-left: 7em
+
+    // .footer--primary__logo
+    &__logo
+      height: 2.3em
+
+  &--secondary
+    background: $footer-background-secondary
+    color: $footer-color-secondary
+    font:
+      family: $footer-font-family-secondary
+      weight: $font-weight-light
+    padding: $rhythm-vertical
+    text-align: center

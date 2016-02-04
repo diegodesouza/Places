@@ -1,0 +1,32 @@
+////////////////////
+// Primary Content
+////////////////////
+
+.content
+  float: left
+  padding: 0 $rhythm-horizontal
+  width: 100%
+  @media #{$large-up}
+    padding: 0 ($rhythm-horizontal * 3)
+  @media #{$xlarge-up}
+    padding: 0 ($rhythm-horizontal * 6)
+
+  // .content--with-sidebar
+  &--with-sidebar
+    @media #{$large-up}
+      padding: 0 ($rhythm-horizontal * 3)
+      width: 66.666666%
+
+  &--without-padding
+    padding: 0
+
+  &--with-border-left
+    @media #{$large-up}
+      border-left: 2px solid $color-accent
+
+  &--footer
+    padding: 4.8em $rhythm-horizontal
+    @media #{$large-up}
+      padding: 4.8em ($rhythm-horizontal * 3)
+    @media #{$xlarge-up}
+      padding: 4.8em ($rhythm-horizontal * 6)

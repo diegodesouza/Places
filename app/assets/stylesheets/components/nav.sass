@@ -1,0 +1,66 @@
+////////////////////
+// Mixins
+////////////////////
+
+@mixin base
+  margin: 5px 0px 0px 0px
+  padding: 0px
+  list-style: none
+  line-height: 1
+  box-sizing: border-box
+  height: 20px
+  position: relative
+  z-index: 2
+
+////////////////////
+// Nav Components
+////////////////////
+
+.menu-base
+  @include base
+
+#dropdown-menu
+  width: 100%
+  font-family: 'Open Sans', sans-serif
+  line-height: 1
+  background: $color-inverted
+  ul
+    display: none
+    margin-top: 1em
+    right: 10%
+    width: 100
+    position: absolute
+    li
+      position: relative
+      a
+        font-size: 12px
+        text-transform: uppercase
+        color: $color-primary
+        transition: color .2s ease
+        &:hover > a, a:hover
+          color: $color-primary
+
+////////////////////
+// Links
+////////////////////
+
+#menu-button
+  @include base
+  display: block
+  cursor: pointer
+  text-transform: uppercase
+  &:after, &:before
+    content: ''
+    position: absolute
+    display: block
+    right: 20px
+    width: 15px
+  &:after
+    top: 20px
+    height: 2px
+    background: $color-primary
+  &:before
+    top: 25px
+    height: 3px
+    border-top: 2px solid $color-primary
+    border-bottom: 2px solid $color-primary

@@ -1,0 +1,14 @@
+////////////////////
+// Primary Sidebar 
+////////////////////
+
+.sidebar
+  float: left
+  width: 100%
+  @media #{$large-up}
+    width: 33.333333%
+
+  &--with-padding
+    padding: $rhythm-vertical $rhythm-horizontal
+    @media #{$large-up}
+      padding: 0 $rhythm-horizontal 0 ($rhythm-horizontal * 4)

@@ -1,0 +1,59 @@
+////////////////////
+// News Objects 
+////////////////////
+
+.news-block
+  display: inline-block
+  float: left
+  &:hover, &:active, &:focus
+    opacity: 0.8
+
+  // .outbound-block--home
+  &--home
+    border: 1px solid transparent 
+    width: 100%
+    @media #{$large-up}
+      max-width: 33.33333%
+
+  // .outbound-block__image
+  &__image
+    background:
+      color: $background-primary
+      size: cover
+    display: block
+    height: 320px
+    width: 100%
+
+  // .outbound-block__content
+  &__content
+    background:
+      color: $color-secondary
+    padding: 2em
+
+  // .outbound-block__header
+  &__header
+    padding-top: 0
+
+  &__time
+    color: $color-accent
+    font:
+      size: .8125em
+      family: $font-family-secondary
+    text-transform: uppercase
+
+  // .outbound-block__title
+  &__title
+    padding-bottom: .5em
+    font:
+      size: .875em
+      weight: $font-weight
+
+  // .outbound-block__body
+  &__body
+    font-weight: $font-weight-light
+    margin: 0
+
+  &__read-more
+    font:
+      weight: $font-weight-light
+    margin-bottom: 0

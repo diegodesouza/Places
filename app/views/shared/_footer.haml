@@ -1,0 +1,51 @@
+%footer.footer--primary
+  .footer--primary__nav.content.content--footer
+    %ul.nav.nav--secondary
+      %li.nav--secondary__block
+        %h3.h3.nav--secondary__title Organization
+        %ul
+          %li.nav--secondary__item
+            -# = link_to "About", about_path, class: "nav__link nav--secondary__link"
+          %li.nav--secondary__item
+            -# = link_to "Team", some_path, class: "nav__link nav--secondary__link"
+          %li.nav--secondary__item
+            -# = link_to "Join Us", new_contact_path, class: "nav__link nav--secondary__link"
+      %li.nav--secondary__block
+        %h5.nav--secondary__title Centers
+        %ul
+          %li.nav--secondary__item
+            Places
+          %li.nav--secondary__item
+            Places
+    .footer--primary__social
+      %ul.nav.nav--social
+        %li.nav__item.nav--social__item
+          = link_to "https://www.facebook.com/pages/places", target: "_blank", class: "nav__link" do
+            = inline_svg "facebook.svg", class: "nav--social__icon"
+        %li.nav__item.nav--social__item
+          = link_to "https://twitter.com/places", target: "_blank", class: "nav__link" do
+            = inline_svg "twitter.svg", class: "nav--social__icon"
+        %li.nav__item.nav--social__item
+          = link_to "https://instagram.com/places", target: "_blank", class: "nav__link" do
+            = inline_svg "instagram.svg", class: "nav--social__icon"
+        %li.nav__item.nav--social__item
+          = link_to "https://www.youtube.com/user/places", target: "_blank", class: "nav__link" do
+            = inline_svg "youtube.svg", class: "nav--social__icon"
+
+  .footer--primary__contact.content.content--footer
+    %p
+      -# = inline_svg "berggruen-institute-logo-stacked.svg", class: "footer--primary__logo"
+    %p
+      111 Main Street
+      %br
+      City, CT 06606
+    %p
+      Tel
+      = link_to "+1 (222) 222-2222", "tel:+1-222-222-2222", class: "link"
+      %br
+      Fax
+      = link_to "+1 (111) 111-1111", "fax:+1-111-111-1111", class: "link"
+    %p
+      = mail_to "your@place.com", nil, class: "link"
+.footer--secondary
+  %p Copyright &copy; #{Date.today.year} Places, all rights resesrved.

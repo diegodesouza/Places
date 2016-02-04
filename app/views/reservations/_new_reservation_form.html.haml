@@ -1,0 +1,26 @@
+-# = render "shared/error_messages", object: @reservation
+-# %section
+  -# .block
+    -# .row
+      -# .large-6.columns
+        -# .row.collapse.postfix-round
+          -# = form_for [@listing, @reservation] do |f|
+            -# = f.label :check_in, "Check In"
+            -# = f.date_field :check_in,          |
+              -# discard_time: true,              |
+              -# placeholder: "Check In",         |
+              -# :order => [:month, :day, :year], |
+              -# min: Time.zone.today             |
+      -# .large-6.columns
+        -# .row.collapse.prefix-round
+          -# = f.label :check_out, "Check Out"
+          -# = f.date_field :check_out,         |
+            -# discard_time: true,              |
+            -# placeholder: "Check Out",        |
+            -# :order => [:month, :day, :year], |
+            -# min: Time.zone.today             |
+      -# .panel.clearfix
+        -# = f.submit "Submit", method: :post, class: "this-thing", |
+          -# style:"margin-left: auto;                              |
+          -# margin-right: auto;                                    |
+          -# width: 100%;"                                          |

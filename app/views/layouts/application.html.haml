@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Places
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tag
+    = favicon_link_tag "p.ico"
+    %title Inventory
+  %body
+    = render 'layouts/flash_notice'
+    .wrapper
+      = render 'shared/header'
+    %main.wrapper.wrapper--main
+      .content
+        = yield
+    .wrapper
+      = render partial: 'shared/footer'
+    = javascript_include_tag 'application'
+    = javascript_include_tag "//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"

@@ -1,0 +1,96 @@
+////////////////////
+// Heading Objects
+////////////////////
+
+.heading
+  color: $color-primary
+  display: block
+  padding: 1em 0
+  margin-bottom: 3.25em
+  position: relative
+  text-align: center
+  width: 100%
+  +clearfix
+  &:after
+    border: 1px solid $color-accent
+    content: ""
+    display: block
+    margin: 1em auto .5em
+    width: 30px
+
+
+  // .heading__title
+  &__title
+    font:
+      size: 2.25em
+      weight: $font-weight-light
+    line-height: 1
+
+  &__subtitle
+    font:
+      family: $font-family-secondary
+      size: 1.125em
+    padding:
+      top: 1em
+
+  &--align-left
+    text-align: left
+    &:after
+      margin: 1em 0 0
+
+  &--without-margin
+    margin: 0
+
+  &--line
+    margin: 0
+    text-align: left
+    &:after
+      display: none
+    &:before
+      border: 1px solid $color-accent
+      content: ""
+      display: block
+      position: relative
+      top: .75em
+      width: 100%
+      height: 0
+      z-index: 1
+    &__title
+      background: $color-inverted
+      display: inline-block
+      font:
+        size: 1.5em
+      position: relative
+      padding:
+        right: .75em
+      z-index: 4
+
+  &--index
+    &:last-child
+      margin-bottom: 0
+
+    &__title
+      color: $color-accent
+      font:
+        size: 4.5em
+
+  &--page
+    margin-bottom: 1em
+    text-align: left
+    &:after
+      display: none
+
+    &__title
+      color: $color-accent
+
+  &--outbound-block
+    margin: 0
+    padding-top: 0
+    text-align: left
+    &:after
+      margin: 1em 0 0
+
+    &__title
+      font:
+        size: 1.85em
+        weight: $font-weight-light

@@ -1,0 +1,4 @@
+- flash.keys.each do |type|
+  %div{:class => "flash #{type} alert-box radius", "data-alert" => ""}
+    %p= flash[type]
+    %a.close{:href => "#"} ×

@@ -1,0 +1,24 @@
+%header.header--primary
+  %nav.header--primary__nav
+    .nav--section__collapse
+      #dropdown-menu.menu-base
+
+        %ul.nav--section.menu-base
+          %li.nav__item.nav--section__item.menu-base
+            = link_to "Home", root_path, class: "menu-base"
+            - if current_user
+              %li.nav__item.nav--section__dropdown__item.menu-base
+                = link_to 'New', new_listing_path, class: "menu-base"
+              %li.nav__item.nav--section__dropdown__item.menu-base
+                = link_to 'Profile', user_path(current_user), class: "menu-base"
+              %li.nav__item.nav--section__dropdown__item.menu-base
+                = link_to 'Account', edit_user_registration_path, class: "menu-base"
+              %li.nav__item.nav--section__dropdown__item.menu-base
+                = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "menu-base"
+            - else
+              %li.nav__item.nav--section__dropdown__item.menu-base
+                = link_to 'Sign Up', new_user_registration_path, class: "menu-base"
+              %li.nav__item.nav--section__dropdown__item.menu-base
+                = link_to 'Sign In', new_user_session_path, class: "menu-base"
+
+

@@ -1,0 +1,17 @@
+%section
+  #parallax-world
+    .title
+      %h1 Reviews
+      .block
+        - @reviews.each do |review|
+          %p
+            Title: #{review.title}
+            %br/
+            Description: #{review.description}
+            %br/
+          - if current_user == review.user
+            = link_to "Edit Review", edit_listing_review_path(@listing, review)
+            = link_to "Delete Review", listing_review_path(@listing, review), method: :delete, |
+              data: { confirm: "Are you sure?" }                                               |
+            %br/
+            %hr/

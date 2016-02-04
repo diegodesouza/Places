@@ -1,14 +1,12 @@
 (function($) {
-
   $.fn.menumaker = function(options) {
-
-    var cssmenu = $(this), settings = $.extend({
+    var menu = $(this), settings = $.extend({
       format: "dropdown",
       sticky: false
     }, options);
 
     return this.each(function() {
-      cssmenu.prepend('<div id="menu-button">' + '</div>');
+      menu.prepend('<div id="menu-button">' + '</div>');
       $(this).find("#menu-button").on('click', function(){
         $(this).toggleClass('menu-opened');
         var mainmenu = $(this).next('ul');
@@ -23,33 +21,15 @@
         }
       });
 
-      cssmenu.find('li ul').parent().addClass('has-sub');
-
-      multiTg = function() {
-        cssmenu.find(".has-sub").prepend('<span class="submenu-button"></span>');
-        cssmenu.find('.submenu-button').on('click', function() {
-          $(this).toggleClass('submenu-opened');
-          if ($(this).siblings('ul').hasClass('open')) {
-            $(this).siblings('ul').removeClass('open').hide();
-          }
-          else {
-            $(this).siblings('ul').addClass('open').show();
-          }
-        });
-      };
-
-      if (settings.format === 'multitoggle') multiTg();
-      else cssmenu.addClass('dropdown');
-
-      if (settings.sticky === true) cssmenu.css('position', 'fixed');
+      if (settings.sticky === true) menu.css('position', 'fixed');
 
       resizeFix = function() {
         if ($( window ).width() > 3000) {
-          cssmenu.find('ul').show();
+          menu.find('ul').show();
         }
 
         if ($(window).width() <= 768) {
-          cssmenu.find('ul').hide().removeClass('open');
+          menu.find('ul').hide().removeClass('open');
         }
       };
       resizeFix();
@@ -63,15 +43,15 @@
   $(document).ready(function(){
 
     $(document).ready(function() {
-      $("#cssmenu").menumaker({
+      $("#dropdown-menu").menumaker({
         format: "multitoggle"
       });
 
-      $("#cssmenu").prepend("<div id='menu-line'></div>");
+      $("#dropdown-menu").prepend("<div id='menu-line'></div>");
 
-      var foundActive = false, activeElement, linePosition = 0, menuLine = $("#cssmenu #menu-line"), lineWidth, defaultPosition, defaultWidth;
+      var foundActive = false, activeElement, linePosition = 0, menuLine = $("#menu #menu-line"), lineWidth, defaultPosition, defaultWidth;
 
-      $("#cssmenu > ul > li").each(function() {
+      $("#dropdown-menu > ul > li").each(function() {
         if ($(this).hasClass('active')) {
           activeElement = $(this);
           foundActive = true;
@@ -79,7 +59,7 @@
       });
 
       if (foundActive === false) {
-        activeElement = $("#cssmenu > ul > li").first();
+        activeElement = $("#dropdown-menu > ul > li").first();
       }
 
       defaultWidth = lineWidth = activeElement.width();
@@ -89,7 +69,7 @@
       menuLine.css("width", lineWidth);
       menuLine.css("left", linePosition);
 
-      $("#cssmenu > ul > li").hover(function() {
+      $("#dropdown-menu > ul > li").hover(function() {
         activeElement = $(this);
         lineWidth = activeElement.width();
         linePosition = activeElement.position().left;
@@ -100,9 +80,6 @@
         menuLine.css("left", defaultPosition);
         menuLine.css("width", defaultWidth);
       });
-
     });
-
-
   });
 })(jQuery);

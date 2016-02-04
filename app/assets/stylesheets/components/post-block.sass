@@ -1,0 +1,110 @@
+////////////////////
+// Post Objects
+////////////////////
+
+.post-block
+  $block: &
+  color: $color-inverted
+  display: inline-block
+  height: 400px
+  position: relative
+  float: left
+  &:hover, &:focus, &:active
+    #{$block}__content, #{$block}__type
+      opacity: 1
+    #{$block}__image
+      +greyscale
+
+
+
+  // .post-block--home
+  &--home
+    border: 1px solid transparent
+    width: 100%
+    @media #{$large-up}
+      max-width: 33.3333333%
+
+  // .post-block--activity
+  &--activity
+    &:hover, &:focus, &:active
+      color: $color-accent
+
+  // .post-block--news
+  &--news
+    &:hover, &:focus, &:active
+      color: darken($color-primary, 20%)
+
+  // .post-block--idea
+  &--idea
+    &:hover, &:focus, &:active
+      color: $color-inverted
+
+  // .post-block__image
+  &__image
+    background:
+      color: $background-primary
+      size: cover
+    display: block
+    height: 100%
+    width: 100%
+
+  // .post-block__icon
+  &__icon
+    fill: currentColor
+    left: 2em
+    position: absolute
+    top: 2em
+    z-index: 2
+
+  // .post-block__type
+  &__type
+    left: 4em
+    opacity: 0
+    position: absolute
+    top: 2em
+    transition: opacity 0.25s
+    z-index: 2
+
+  // .post-block__content
+  &__content
+    bottom: 0
+    color: currentColor
+    display: table
+    left: 0
+    position: absolute
+    transition: opacity 0.25s, color 0.25s
+    width: 100%
+    // .post-block__content--activity
+    &--activity
+      background:
+        color: rgba($color-inverted, 0.9)
+    // .post-block__content--news
+    &--news
+      background:
+        color: rgba($silver, 0.9)
+    // .post-block__content--news
+    &--idea
+      background:
+        color: rgba($color-accent, 0.9)
+    @media #{$large-up}
+      height: 100%
+      opacity: 0
+
+  // .post-block__header
+  &__header
+    display: table-cell
+    padding: 2em
+    vertical-align: bottom
+
+  // .post-block__title
+  &__title
+    padding-bottom: 0.5em
+    font:
+      size: 1em
+      weight: $font-weight-light
+
+  // .post-block__read-more
+  &__read-more
+    font:
+      style: italic
+    margin-bottom: 0
