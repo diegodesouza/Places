@@ -12,8 +12,9 @@
     %title Inventory
   %body
     = render 'layouts/flash_notice'
-    .wrapper
-      = render 'shared/header'
+    .parallax-wrapper
+      .wrapper
+        = render 'shared/header'
     %main.wrapper.wrapper--main
       .content
         = yield
