@@ -13,10 +13,10 @@
   %body
     = render 'layouts/flash_notice'
     .parallax-wrapper
-      .wrapper
+      %section.wrapper
         = render 'shared/header'
     %main.wrapper.wrapper--main
-      .content.parallax--content
+      %section.content.parallax--content
         = yield
     .wrapper
       = render partial: 'shared/footer'

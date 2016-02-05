@@ -1,9 +1,13 @@
 .search
   = render "search/search_form"
-%p  
-%h3 Listings
-%p  
-#listings
+
+%p.block  
+%h3.listings-title Listings
+%p.block  
+
+.listings-content
   = render 'listings'
+
 .pagination.center
   = paginate @listings, remote: true, :left => 1, :right => 3
+

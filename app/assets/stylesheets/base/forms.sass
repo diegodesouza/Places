@@ -17,10 +17,11 @@
   padding: $input-padding
   vertical-align: middle
   width: 100%
+  color: $white
   @media #{$large-up}
     width: 50%
   &:active, &:focus, &:hover
-    background-color: $white
+    background-color: rgba(0,0,0,0.2)
     outline-width: 0
   +placeholder
     color: rgba($font-color, .5)
@@ -138,3 +139,4 @@ button, .input[type="button"], .input[type="reset"], .input[type="submit"]
   border: none
     radius: 0px
   font-family: inherit
+  outline: none
