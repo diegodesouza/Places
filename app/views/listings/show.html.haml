@@ -1,56 +1,57 @@
-= render "shared/error_messages", object: @listing
-.heading__show
-  %h1= @listing.title
+.center-block
+  = render "shared/error_messages", object: @listing
+  .heading__show.text-align--center
+    %h1= @listing.title
 
-.image.image--fluid.image--show
-  = image_tag @listing.place_photo.url
+  .image.image--fluid.image--show
+    = image_tag @listing.place_photo.url
 
-%section
-.block.block__show
-  %p
-    Description: #{@listing.description}
-    %br/
-    Property Type: #{@listing.property_type}
-    %br/
-    Number of Bedrooms: #{@listing.number_bedroom}
-    %br/
-    Accommodates: #{@listing.number_accommodate}
-    %br/
-  %hr/
-  %h3 Address
-.block.block__show
-  %p
-    Street: #{@listing.street}
-    %br/
-    City: #{@listing.city}
-    %br/
-    State: #{@listing.state}
-    %br/
-    Zipcode: #{@listing.zipcode}
-    %br/
-    Country: #{@listing.country}
-    %br/
-  %hr/
-  -if current_user == @listing.user
-    .text-align--center
-      .block__link-button.block__link-button__left
-        = link_to "Edit Listing", edit_listing_path(@listing)
-      .block__link-button.block__link-button__right
-        = link_to "Delete Listing", listing_path(@listing), method: :delete, |
-          data: { confirm: "Are you sure?" }                                                     |
-    %br/
+  %section
+  .block.block__show
+    %p
+      Description: #{@listing.description}
+      %br/
+      Property Type: #{@listing.property_type}
+      %br/
+      Number of Bedrooms: #{@listing.number_bedroom}
+      %br/
+      Accommodates: #{@listing.number_accommodate}
+      %br/
     %hr/
--# %section
-  -# .block
-    -# .google-maps
-      -# %iframe{:width => "400", :frameborder => "0", :height => "250", :src => "https://www.google.com/maps/embed/v1/place?key=AIzaSyB78gzC40H-qt5UH58ogbiKN-SzdY0Hv-0 &q=#{@listing.street}+#{@listing.city}+#{@listing.state} =Google+Maps+Embed+API =http://www.butchartgardens.com/ =comgooglemaps://?daddr=#{@listing.street}+#{@listing.city}+#{@listing.state}"}
-%section
-  .block
-    - if current_user != @listing.user
-      = render "reservations/new_reservation_form"
+    %h3 Address
+  .block.block__show
+    %p
+      Street: #{@listing.street}
+      %br/
+      City: #{@listing.city}
+      %br/
+      State: #{@listing.state}
+      %br/
+      Zipcode: #{@listing.zipcode}
+      %br/
+      Country: #{@listing.country}
+      %br/
+    %hr/
+    -if current_user == @listing.user
+      .text-align--center.no--margin-bottom-minus-one-em
+        .block__link-button.block__link-button__left
+          = link_to "Edit Listing", edit_listing_path(@listing)
+        .block__link-button.block__link-button__right
+          = link_to "Delete Listing", listing_path(@listing), method: :delete, |
+            data: { confirm: "Are you sure?" }                                                     |
+      %br/
       %hr/
-    - if @listing.reviews.any?
-      %p
-        = render '/reviews/show_review'
-        %br/
+  -# %section
+    -# .block
+      -# .google-maps
+        -# %iframe{:width => "400", :frameborder => "0", :height => "250", :src => "https://www.google.com/maps/embed/v1/place?key=AIzaSyB78gzC40H-qt5UH58ogbiKN-SzdY0Hv-0 &q=#{@listing.street}+#{@listing.city}+#{@listing.state} =Google+Maps+Embed+API =http://www.butchartgardens.com/ =comgooglemaps://?daddr=#{@listing.street}+#{@listing.city}+#{@listing.state}"}
+  %section
+    .block
+      - if current_user != @listing.user
+        = render "reservations/new_reservation_form"
         %hr/
+      - if @listing.reviews.any?
+        %p
+          = render '/reviews/show_review'
+          %br/
+          %hr/
