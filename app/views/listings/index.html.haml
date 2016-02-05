@@ -8,6 +8,6 @@
 .listings-content
   = render 'listings'
 
-.pagination.center
+.pagination
   = paginate @listings, remote: true, :left => 1, :right => 3
 

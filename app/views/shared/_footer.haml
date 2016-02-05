@@ -1,34 +1,32 @@
 %footer.footer--primary
   .footer--primary__nav.content.content--footer
-    %ul.nav.nav--secondary
-      %li.nav--secondary__block
-        %h3.h3.nav--secondary__title Organization
+    %ul.footer-nav.footer-nav--secondary
+      %li.footer-nav--secondary__block
+        %h3.h3.footer-nav--secondary__title Places
         %ul
-          %li.nav--secondary__item
-            -# = link_to "About", about_path, class: "nav__link nav--secondary__link"
-          %li.nav--secondary__item
-            -# = link_to "Team", some_path, class: "nav__link nav--secondary__link"
-          %li.nav--secondary__item
-            -# = link_to "Join Us", new_contact_path, class: "nav__link nav--secondary__link"
-      %li.nav--secondary__block
-        %h5.nav--secondary__title Centers
+          %li.footer-nav--secondary__item
+            = link_to "About", '#', class: "nav__link nav--secondary__link"
+          %li.footer-nav--secondary__item
+            = link_to "Team", "#", class: "nav__link nav--secondary__link"
+          %li.footer-nav--secondary__item
+            = link_to "Join Us", "#", class: "nav__link nav--secondary__link"
+      %li.footer-nav--secondary__block
+        %h5.footer-nav--secondary__title Centers
         %ul
-          %li.nav--secondary__item
-            Places
-          %li.nav--secondary__item
+          %li.footer-nav--secondary__item
             Places
     .footer--primary__social
-      %ul.nav.nav--social
-        %li.nav__item.nav--social__item
+      %ul.footer-nav.footer-nav--social
+        %li.footer-nav__item.footer-nav--social__item
           = link_to "https://www.facebook.com/pages/places", target: "_blank", class: "nav__link" do
             = inline_svg "facebook.svg", class: "nav--social__icon"
-        %li.nav__item.nav--social__item
+        %li.footer-nav__item.footer-nav--social__item
           = link_to "https://twitter.com/places", target: "_blank", class: "nav__link" do
             = inline_svg "twitter.svg", class: "nav--social__icon"
-        %li.nav__item.nav--social__item
+        %li.footer-nav__item.footer-nav--social__item
           = link_to "https://instagram.com/places", target: "_blank", class: "nav__link" do
             = inline_svg "instagram.svg", class: "nav--social__icon"
-        %li.nav__item.nav--social__item
+        %li.footer-nav__item.footer-nav--social__item
           = link_to "https://www.youtube.com/user/places", target: "_blank", class: "nav__link" do
             = inline_svg "youtube.svg", class: "nav--social__icon"
 
