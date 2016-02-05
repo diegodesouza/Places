@@ -1,5 +1,3 @@
-#masonryContainer
-  - @listings.each do |listing|
-    .masonry-brick
-      = image_tag listing.place_photo, class: "place_photo attachment-thumbnail", size:"700x700"
-      #title-link= link_to listing.title, listing_path(listing)
+- @listings.each do |listing|
+  = image_tag listing.place_photo
+  = link_to listing.title, listing_path(listing)
