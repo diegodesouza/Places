@@ -1,3 +1,7 @@
+//////////////////////////
+// Parallax
+//////////////////////////
+
 .parallax-wrapper
   font-weight: 400
   font-family: $font-family
@@ -15,14 +19,22 @@
     letter-spacing: 7px
     font-weight: 350
     text-transform: uppercase
-  .block-gray
-    background: $grey
+    padding-top: 1em
+    text-align: center
   p
     font-family: $font-family-secondary
     font-size: 87.5%
     line-height: 24px
     display: block
     margin: auto
+  hr
+    width: 87vw
+    margin-left: 0
+    margin-right: 0
+    @media #{$medium-up}
+      width: 96vw
+    @media #{$large-up}
+      width: 97vw
 
 .parallax--content
   overflow: hidden
@@ -40,7 +52,33 @@
 
 .block
   background: $white
-  padding: 10px
-  width: 100%
-  margin: 0 auto
+  margin: 1em 1em 1em 1em
+  max-width: 100%
   text-align: justify
+  &__show
+    font-size: 1.1em
+  &__link-button
+    display: inline-block
+    &__left
+      margin-right: 2.5em
+      @media #{$medium-up}
+    // &__right
+      // @media #{$medium-up}
+      // margin-left: 1em
+
+//////////////////////////
+// Listings Content
+//////////////////////////
+
+.listings-content
+  background: $white
+  padding: 0em 1em 0em 1em
+  font-weight: 300
+  letter-spacing: 2px
+  text-align: center
+  .image
+    width: 100%
+  .listings-title
+    line-height: 3em
+    @media #{$medium-up}
+      line-height: 5em
