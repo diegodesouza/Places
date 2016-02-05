@@ -8,6 +8,8 @@
   line-height: 1
   box-sizing: border-box
   position: relative
+  @media #{$medium-up}
+    line-height: 2
 
 ////////////////////
 // Nav Components
@@ -17,6 +19,8 @@
   @include base
   &.open
     margin-bottom: 3em
+    @media #{$medium-up}
+      line-height: 2
 
 #dropdown-menu
   width: 100%
@@ -26,8 +30,12 @@
   ul
     display: none
     @media #{$medium-up}
-      right: 5%
-      margin-top: -.8em
+      right: 6%
+      margin-top: -1.2em
+      position: absolute
+    @media #{$large-up}
+      right: 4%
+      margin-top: -.9em
       position: absolute
     li
       a
