@@ -39,8 +39,8 @@
         .block__link-button.block__link-button__right
           = link_to "Delete Listing", listing_path(@listing), method: :delete, |
             data: { confirm: "Are you sure?" }                                                     |
-      %br/
-      %hr/
+      -# %br/
+      -# %hr/
   -# %section
     -# .block
       -# .google-maps
@@ -49,9 +49,9 @@
     .block
       - if current_user != @listing.user
         = render "reservations/new_reservation_form"
-        %hr/
+        -# %hr/
       - if @listing.reviews.any?
         %p
           = render '/reviews/show_review'
-          %br/
-          %hr/
+          -# %br/
+          -# %hr/

@@ -140,3 +140,99 @@ button, .input[type="button"], .input[type="reset"], .input[type="submit"]
     radius: 0px
   font-family: inherit
   outline: none
+
+.form-wrapper
+  font-family: inherit
+  margin-left: auto
+  margin-right: auto
+  margin-top: -10em
+  width: 100%
+  @media #{$medium-up}
+    width: 50%
+    margin-top: 0
+  .element-wrapper, .select-wrapper, .file-wrapper
+    margin-top: 3em
+    position: relative
+    width: 100%
+
+  .form-row
+    width: 45%
+    clear: both
+    display: inline-block
+    margin: 1em 0
+    &__left
+      margin-left: -1px
+    &__right
+      float: right
+
+  input, textarea, select, input[type="file"]
+    border: none
+    border-bottom: 3px solid #34495e
+    padding: 10px 0
+    width: 100%
+    display: block
+    &:focus
+      border: none
+      outline: none
+      ~ label
+        top: -10px
+        font-size: 12px
+        left: 2px
+
+  .element-wrapper input:valid ~ label, textarea:valid ~ label, select:valid ~ label, input[type="file"] ~ label
+    top: -10px
+    font-size: 12px
+    left: 2px
+
+  label
+    position: absolute
+    top: 8px
+    left: 5px
+    font-size: 16px
+
+  .bar
+    position: relative
+    width: 400px
+    display: block
+    &:before, &:after
+      content: ''
+      height: 3px
+      width: 0
+      bottom: 1px
+      position: absolute
+      transition: 0.2s ease all
+    &:before
+      left: 50%
+    &:after
+      right: 50%
+
+  input, textarea
+    &:focus ~ .bar
+      &:before, &:after
+        width: 50%
+    &:valid ~ .bar
+      &:before, &:after
+        background: #2ecc71
+    &:invalid ~ .bar
+      &:before, &:after
+        background: #e74c3c
+
+  .select-wrapper
+    width: 100%
+    padding-top: 1em
+    select
+      text-transform: uppercase
+      font-family: $font-family
+      font-size: 12px
+      padding: 0
+      margin: 0
+      border: 0
+      border-bottom: 3px solid $black
+      appearance: none
+      border-radius: 0
+      overflow: hidden
+      background: $white
+
+.file-wrapper
+  input[type="file"]
+    padding-top: .2em

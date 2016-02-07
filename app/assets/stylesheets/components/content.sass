@@ -6,10 +6,12 @@
   float: left
   padding-top: 10em
   width: 100%
+  @media #{$medium-up}
+    padding: 0 $rhythm-horizontal
   @media #{$large-up}
-    // padding: 0 ($rhythm-horizontal * 3)
+    padding: 0 ($rhythm-horizontal * 3)
   @media #{$xlarge-up}
-    // padding: 0 ($rhythm-horizontal * 6)
+    padding: 0 ($rhythm-horizontal * 6)
 
   &--without-padding
     padding: 0
@@ -19,7 +21,9 @@
       border-left: 2px solid $color-accent
 
   &--footer
-    padding: 4.8em $rhythm-horizontal
+    padding: 2.8em $rhythm-horizontal
+    @media #{$medium-up}
+      padding: 4.8em $rhythm-horizontal
     @media #{$large-up}
       padding: 4.8em ($rhythm-horizontal * 3)
     @media #{$xlarge-up}
