@@ -1,47 +1,59 @@
-.row
-  .small-3.columns
-    = image_tag @user.profile_photo, class: "profile", width:"200"
-  %h4= @user.email
-%p  
-%section
-  .title
-    %h3 MY
-    %h1 LISTINGS
-%p  
-%section
-  .block
-    %table
-      %thead
-        %tr
-          %th{:width => "200"} TITLE
-          %th{:width => "200"} STREET
-          %th{:width => "200"} CITY
-          %th{:width => "200"} STATE
-          %th{:width => "200"} PROPERTY TYPE
-          - @user.listings.each do |listing|
-      %tbody
-        %tr
-          %td= link_to listing.title, listing_path(listing)
-          %td= listing.street
-          %td= listing.city
-          %td= listing.state
-          %td= listing.property_type
-%hr/
-%section
-  .title
-    %h3 MY
-    %h1 RESERVATIONS
-%section
-  .block
-    %table
-      %thead
-        %tr
-          %th{:width => "200"} RESERVATION ID
-          %th{:width => "200"} CHECK IN
-          %th{:width => "200"} CHECK OUT
-          - @user.reservations.each do |reservation|
-      %tbody
-        %tr
-          %td= link_to reservation.id, listing_reservation_path(@user, reservation)
-          %td= reservation.check_in.strftime("%B %e, %Y" )
-          %td= reservation.check_out.strftime("%B %e, %Y" )
+.content--profile
+  .user-wrapper
+    = image_tag @user.profile_photo, class: "profile"
+    %h4.user.user__name
+      = @user.email
+
+  %p.block
+  %section
+    .heading__home.text-align--center
+      %h3 MY
+      %h1 LISTINGS
+
+  %p.block
+  %section
+    %table.table.table--responsive
+      %thead.table--responsive__head
+        %tr.table--responsive__row
+          %th.table TITLE
+          %th.table STREET
+          %th.table CITY
+          %th.table STATE
+          %th.table PROPERTY TYPE
+      %tbody.table--responsive__body
+        - @user.listings.each do |listing|
+          %tr.table--responsive__row.table--responsive__function-cell
+            %td.table--responsive__cell{label: "Title"}
+              = link_to listing.title, listing_path(listing)
+            %td.table--responsive__cell{label: "Street"}
+              = listing.street
+            %td.table--responsive__cell{label: "City"}
+              = listing.city
+            %td.table--responsive__cell{label: "State"}
+              = listing.state
+            %td.table--responsive__cell{label: "Property Type"}
+              = listing.property_type
+  %hr
+  %section
+    .heading__home.text-align--center
+      %h3 MY
+      %h1 RESERVATIONS
+  %section
+
+  -# %p.block
+  -# %section
+    -# %table.table.table--responsive
+      -# %thead.table--responsive__head
+        -# %tr.table--responsive__row
+          -# %th.table RESERVATION ID
+          -# %th.table CHECK IN
+          -# %th.table CHECK OUT
+      -# %tbody.table--responsive__body
+        -# - @user.reservations.each do |reservation|
+          -# %tr.table--responsive__row.table--responsive__function-cell
+            -# %td.table--responsive__cell{label: "Title"}
+              -# = link_to reservation.id, listing_reservation_path(@user, reservation)
+            -# %td.table--responsive__cell{label: "Check In"}
+              -# = reservation.check_in.strftime("%B %e, %Y" )
+            -# %td.table--responsive__cell{label: "Check Out"}
+              -# = reservation.check_out.strftime("%B %e, %Y" )
