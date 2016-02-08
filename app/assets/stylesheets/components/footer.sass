@@ -224,13 +224,17 @@
       width: 100%
       @media #{$medium-up}
         float: left
-        margin: 0
         width: 33.333333%
+        margin: .8% 0% 0% 0%
+        &:last-child
+          margin: 2.5% 0% 0% 0%
       @media #{$large-up}
         width: 25%
-        margin-right: 8%
+        margin: -1% 8% 0% 20%
         &:last-child
           margin-right: 0
+          margin-left: -1.5em
+          margin-top: -1em
 
     // .nav--secondary__title
     &__title
@@ -244,7 +248,9 @@
       @media #{$medium-up}
       @media #{$large-up}
         &.h3
+          padding-top: 0
           width: 0
+        &.h5
 
     &__subtitle
       color: $color-subaccent
