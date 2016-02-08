@@ -1,13 +1,17 @@
 =notifier-generator
 
+
   .notifier
-    background: 
+    background:
       color: $color-accent
       image: none
     color: dynamic-text-lightness($color-accent)
     display: block
-    padding: $rhythm-vertical 0
-    vertical-align: middle 
+    vertical-align: middle
+    margin-top: 2em
+    text-align: center
+    @media #{$medium-up}
+      padding: $rhythm-vertical 0
 
     // .notifier__text
     &__content
@@ -24,4 +28,4 @@
     @each $name, $color in $all-function-colors
       &--#{$name}
         background-color: $color
-        color: dynamic-text-lightness($color) 
+        color: dynamic-text-lightness($color)

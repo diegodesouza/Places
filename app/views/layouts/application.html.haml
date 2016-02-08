@@ -9,12 +9,11 @@
     = stylesheet_link_tag 'application', media: 'all'
     = csrf_meta_tag
     = favicon_link_tag "p.ico"
-    %title Inventory
   %body
-    = render 'layouts/flash_notice'
     .parallax-wrapper
       %section.wrapper
         = render 'shared/header'
+        = render 'shared/error_messages'
       %main.wrapper.wrapper--main
         %section.content
           = yield

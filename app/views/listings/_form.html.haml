@@ -12,7 +12,7 @@
       .select-wrapper
         = f.select :number_bedroom, 1..25
         %span.bar
-        %label Number of Bedrooms
+        %label Number of Beds
       .select-wrapper
         = f.select :property_type, Listing::PROPERTY_TYPE
         %span.bar
@@ -46,4 +46,8 @@
       %span.bar
       %label Country
     .element-wrapper
+
+    .input--with-button-left
       = f.submit yield(:button_text), class:"button", method: :post
+    .input--with-button
+      = link_to t('actions.cancel'), :back, class:"button"

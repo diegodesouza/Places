@@ -1,8 +1,21 @@
-- if object.errors.any?
-  .alert.alert-error
-    %a.close{"data-dismiss" => "alert"} ×
-    %h4= pluralize(object.errors.count, 'Error')
-    %br/
-    %ul
-      - object.errors.full_messages.each do |message|
-        %li= message
+-# .notifier__content
+  -# - if object.errors.any?
+    -# %a.close{"data-dismiss" => "alert"} ×
+    -# %h4= pluralize(object.errors.count, 'Error')
+    -# %br/
+    -# %ul
+      -# - object.errors.full_messages.each do |message|
+        -# %li= message
+- if @error_object && @error_object.errors.any?
+
+  %div{"data-notifier" => "", class: "notifier notifier--alert"}
+    .notifier__content
+      - @error_object.errors.full_messages.each do |msg|
+        * #{msg}
+      %a.notifier__close &times;
+
+- elsif flash[:notice] || flash[:alert]
+  %div{"data-notifier" => "", class: "notifier #{'notifier--alert' if flash[:alert] }"}
+    .notifier__content
+      = flash[:notice] || flash[:alert]
+      %a.notifier__close &times;

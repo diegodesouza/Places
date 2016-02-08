@@ -44,11 +44,13 @@
   @extend %input-text-styles
 
   // .input--with-button
-  &--with-button
+  &--with-button-left
     border:
       radius: $border-radius 0 0 $border-radius
     float: left
     width: 50%
+    &--with-button-right
+      float: right
 
   // .input--checkbox, .input--radio
   &--checkbox, &--radio
@@ -146,7 +148,7 @@ button, .input[type="button"], .input[type="reset"], .input[type="submit"]
   margin-left: auto
   margin-right: auto
   margin-top: -10em
-  width: 100%
+  width: 95%
   @media #{$medium-up}
     width: 50%
     margin-top: 0
@@ -165,34 +167,34 @@ button, .input[type="button"], .input[type="reset"], .input[type="submit"]
     &__right
       float: right
 
-  input, textarea, select, input[type="file"]
+  input, textarea, select
     border: none
-    border-bottom: 3px solid #34495e
-    padding: 10px 0
+    border-bottom: 3px solid $black
+    padding: .750em 0
     width: 100%
     display: block
     &:focus
       border: none
       outline: none
-      ~ label
-        top: -10px
-        font-size: 12px
-        left: 2px
+      &+ label
+        top: -.625px
+        font-size: .750px
 
   .element-wrapper input:valid ~ label, textarea:valid ~ label, select:valid ~ label, input[type="file"] ~ label
-    top: -10px
+    top: -2em
     font-size: 12px
-    left: 2px
+    @media #{$medium-up}
+      font-size: 1em
 
   label
     position: absolute
     top: 8px
-    left: 5px
-    font-size: 16px
+    font-size: 1.2em
+    transition: 0.3s ease all
 
   .bar
     position: relative
-    width: 400px
+    width: 100%
     display: block
     &:before, &:after
       content: ''
@@ -235,4 +237,5 @@ button, .input[type="button"], .input[type="reset"], .input[type="submit"]
 
 .file-wrapper
   input[type="file"]
-    padding-top: .2em
+    padding-top: 1em
+    border: none
