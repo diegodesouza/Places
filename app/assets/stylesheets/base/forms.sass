@@ -82,6 +82,18 @@ button, .input[type="button"], .input[type="reset"], .input[type="submit"]
     width: 50%
     margin-top: 0
 
+  &--with-button
+    display: inline-block
+    border: none
+    float: left
+    width: 50%
+    margin-left: 3em
+    margin-top: 1em
+    @media #{$medium-up}
+      margin-left: 5em
+    &__right
+      margin-top: 1em
+
   .form-row
     width: 45%
     clear: both

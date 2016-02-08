@@ -45,9 +45,8 @@
       = f.text_field :country, default: "United States"
       %span.bar
       %label Country
-    .element-wrapper
 
-    .input--with-button-left
-      = f.submit yield(:button_text), class:"button", method: :post
-    .input--with-button
-      = link_to t('actions.cancel'), :back, class:"button"
+    .form-wrapper--with-button
+      = link_to yield(:button_text), method: :post
+    .form-wrapper--with-button__right
+      = link_to "Cancel", listing_path(@listing)
