@@ -1,26 +1,84 @@
 ////////////////////
-// Date Objects 
+// Date/Calendar Objects
 ////////////////////
 
-.date
-  display: block
-  margin-bottom: 1em
-  position: relative
-  +clearfix
-  &:before
-    content: ""
-    border: $color-secondary solid 1em
-      left-color: transparent 
-      right-width: 0.5em 
-      left-width: 0.5em
-    display: inline-block
-    float: left
-    margin-top: .35em
+.calendar
+  width: 100%
+  border-radius: 4px
+  overflow: hidden
 
-  &__content
-    background:
-      color: $color-secondary
-    box-shadow: -1px 0 0 rgba(0,0,0,0.09)
-    display: inline-block
-    float: left
-    padding: .25em 2em .25em 1em
+.ui-datepicker-header
+  height: 50px
+  line-height: 50px
+  color: #f26a63
+  margin-bottom: 10px
+
+.ui-datepicker-prev, .ui-datepicker-next
+  width: 20px
+  height: 20px
+  text-indent: 9999px
+  border-radius: 100%
+  cursor: pointer
+  overflow: hidden
+  margin-top: 12px
+
+.ui-datepicker-prev
+  float: left
+  margin-left: 12px
+  &:after
+    transform: rotate(45deg)
+    margin: -43px 0px 0px 8px
+
+.ui-datepicker-next
+  float: right
+  margin-right: 12px
+  &:after
+    transform: rotate(-135deg)
+    margin: -43px 0px 0px 6px
+
+.ui-datepicker-prev:after, .ui-datepicker-next:after
+  content: ''
+  position: absolute
+  display: block
+  width: 4px
+  height: 4px
+  border-left: 2px solid #b0aead
+  border-bottom: 2px solid #b0aead
+
+.ui-datepicker-title
+  text-align: center
+
+.ui-datepicker-calendar
+  width: 100%
+  text-align: center
+  thead tr th span
+    display: block
+    width: 40px
+    color: #f26a63
+    margin-bottom: 5px
+    font-size: 13px
+    text-transform: uppercase
+
+.ui-state-default
+  display: block
+  text-decoration: none
+  color: #f26a63
+  line-height: 40px
+  font-size: 12px
+  &:hover
+    background: #4da036
+    color: #fff
+    border-radius: 20px
+
+.ui-state-highlight
+  color: #4da036
+  font-weight: bold
+
+.ui-state-active
+  background: #4da036
+  color: #fff
+  border-radius: 20px
+
+.ui-datepicker-unselectable .ui-state-default
+  color: #eee
+  border: 2px solid #808080
