@@ -12,7 +12,7 @@
       .element-wrapper
         = f.password_field :password, autocomplete: "off"
         %span.bar
-        %label Current Password
+        %label Password
         %br/
       .element-wrapper
         = f.password_field :password_confirmation, autocomplete: "off"
@@ -20,5 +20,4 @@
         %label Password Confirmation
       .form-wrapper--with-button
         = f.button "SIGN UP"
-      .form-wrapper--with-button__right
-        = render "devise/shared/links"
+      = render "devise/shared/links"
