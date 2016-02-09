@@ -1,7 +1,7 @@
 =button-inverted($inverted-color)
   &--inverted
-    background-color: rgba($inverted-color, 0) 
-    box-shadow: inset 0 0 0 $border-width $inverted-color 
+    background-color: rgba($inverted-color, 0)
+    box-shadow: inset 0 0 0 $border-width $inverted-color
     color: $inverted-color
     &:active:enabled, &:focus:enabled, &:hover:enabled
       box-shadow: inset 0 0 0 $border-width darken($inverted-color, 8%), inset 0 -2.25em 0 0 darken($inverted-color, 8%)
@@ -10,48 +10,44 @@
 =button-generator
 
   .#{$button-name}
-    background: 
-      color: $color-accent
-      image: none
+    background-color: $white
     border: none
-    color: dynamic-text-lightness($color-accent)
+    color: $black
     cursor: pointer
     display: inline-block
-    font:
-      size: 1.125em 
-      weight: $font-weight-light
-    line-height: 1 
+    font: inherit
+    line-height: 1
     margin: 0
     padding: .5em ($rhythm-horizontal * 2)
     text-transform: uppercase
-    vertical-align: middle 
-    transition: background-color $transition-duration $transition-easing, color $transition-duration $transition-easing 
+    vertical-align: middle
+    transition: background-color $transition-duration $transition-easing, color $transition-duration $transition-easing
     &:active:enabled, &:focus:enabled, &:hover:enabled
       background:
         color: darken($color-accent, 10%)
     &--disabled, &:disabled
-      cursor: default 
+      cursor: default
       opacity: .5
     +button-inverted($color-accent)
     &--inline
       float: left
-      margin: 0 
+      margin: 0
       padding: .5em 1em
       width: auto
 
-    $size: 70% 
+    $size: 70%
     @each $button-size in small, medium, large
       &--#{$button-size}
         font-size: $size
-      $size: $size + 30% 
-      
+      $size: $size + 30%
+
 
     @each $name, $color in $all-function-colors
       &--#{$name}
         @if lightness($color) > 90%
           $color: darken($color, 5%)
         background-color: $color
-        color: dynamic-text-lightness($color) 
+        color: dynamic-text-lightness($color)
         &:active:enabled, &:focus:enabled, &:hover:enabled
           background:
             color: darken($color, 10%)

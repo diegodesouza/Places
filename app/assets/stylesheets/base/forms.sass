@@ -45,25 +45,10 @@
 
   // .input--with-button
   &--with-button-left
-    border:
-      radius: $border-radius 0 0 $border-radius
     float: left
     width: 50%
     &--with-button-right
       float: right
-
-////////////////////
-// Buttons
-////////////////////
-
-button, .input[type="button"], .input[type="reset"], .input[type="submit"]
-  appearance: none
-  background: none
-  border: none
-    radius: 0px
-  font-family: inherit
-  font-size: inherit
-  outline: none
 
 ////////////////////
 // Form Styling
@@ -92,8 +77,12 @@ button, .input[type="button"], .input[type="reset"], .input[type="submit"]
     margin-top: 1em
     @media #{$medium-up}
       margin-left: 6em
+    @media #{$large-up}
+      margin-left: 8em
+    @media #{$xlarge-up}
+      margin-left: 10em
     &__right
-      margin-top: 1em
+      margin-top: 1.2em
 
   .form-row
     width: 45%
@@ -175,3 +164,25 @@ button, .input[type="button"], .input[type="reset"], .input[type="submit"]
   input[type="file"]
     padding-top: 1em
     border: none
+
+////////////////////
+// Buttons
+////////////////////
+
+button, .input[type="button"], .input[type="reset"], .input[type="submit"]
+  appearance: none
+  background: none
+  border: none
+    radius: 0px
+  font-family: inherit
+  font-size: inherit
+  outline: none
+
+.button
+  &__cancel-account
+    margin-top: 5em
+    text-align: center
+    margin-left: auto
+    margin-right: auto
+    width: 100%
+    color: grey
