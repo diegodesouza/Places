@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
-gem 'rails', '4.2.0'
+ruby '2.2.3'
+
+gem 'rails'
 gem 'pg'
 gem 'sass-rails'
 gem 'haml-rails', '~> 0.9'
@@ -16,17 +17,20 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-end
-
-group :development, :test do
-  gem 'rspec-rails'
+  gem 'minitest-rails'
+  gem 'minitest-reporters'
+  gem 'mocha', require: false
   gem 'capybara'
+  gem 'capybara-screenshot'
+  gem 'fabrication'
   gem 'launchy'
   gem 'factory_girl'
   gem 'valid_attribute'
   gem 'database_cleaner'
+  gem 'simplecov', require: false
   gem 'dotenv-rails'
   gem 'pry-rails'
+  gem 'pry'
 end
 
 gem 'carrierwave'
