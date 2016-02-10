@@ -6,21 +6,33 @@
   width: 100%
   border-radius: 4px
   overflow: hidden
+  margin-left: 0px
+  left: 15px !important
+
+.ui-datepicker, .ui-widget, .ui-widget-content
+  font-family: sans-serif
+  padding: 0px !important
+  margin-left: auto !important
+  margin-right: auto !important
+  width: 91% !important
+  line-height: 1.8em !important
+  left: 15px !important
 
 .ui-datepicker-header
-  height: 50px
-  line-height: 50px
-  color: #f26a63
-  margin-bottom: 10px
+  height: 3em !important
+  padding-top: .5em !important
+  color: $dark-silver
+  background: $space
 
 .ui-datepicker-prev, .ui-datepicker-next
   width: 20px
   height: 20px
-  text-indent: 9999px
-  border-radius: 100%
+  text-indent: -9999px
   cursor: pointer
-  overflow: hidden
   margin-top: 12px
+  > span
+    margin-top: 1.5em !important
+    position: relative !important
 
 .ui-datepicker-prev
   float: left
@@ -45,6 +57,9 @@
   border-left: 2px solid #b0aead
   border-bottom: 2px solid #b0aead
 
+.ui-datepicker-prev:hover, .ui-datepicker-next:hover, .ui-datepicker-prev:hover:after, .ui-datepicker-next:hover:after
+  border-color: #5ed1cc
+
 .ui-datepicker-title
   text-align: center
 
@@ -54,31 +69,34 @@
   thead tr th span
     display: block
     width: 40px
-    color: #f26a63
+    color: #00a8b2
     margin-bottom: 5px
     font-size: 13px
-    text-transform: uppercase
+  tr
+    background: $white
+  td a
+    margin-right: .8em !important
+  tr:nth-child(even)
+    background: $white
 
 .ui-state-default
   display: block
   text-decoration: none
-  color: #f26a63
+  color: #b5b5b5
   line-height: 40px
   font-size: 12px
   &:hover
-    background: #4da036
-    color: #fff
-    border-radius: 20px
+    background: rgba(0, 0, 0, 0.04)
 
 .ui-state-highlight
-  color: #4da036
-  font-weight: bold
+  color: #8dd391
 
 .ui-state-active
-  background: #4da036
-  color: #fff
-  border-radius: 20px
+  color: #5ed1cc
 
 .ui-datepicker-unselectable .ui-state-default
   color: #eee
-  border: 2px solid #808080
+  border: 2px solid transparent
+
+.ui-icon
+  margin-top: 4em !important
