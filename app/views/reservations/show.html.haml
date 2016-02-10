@@ -1,17 +1,12 @@
-%section
-  .title
-    %h3 Welcome
-%p  
-.row
-  = image_tag @listing.place_photo.url, style: 'margin-left: auto; |
-    margin-right: auto;                                            |
-    width: 100%;                                                   |
-    padding-bottom: 15px;'                                         |
-%section
-  .block
+.center-block
+  .heading__show.text-align--center
+    %h1= @listing.title
+
+  .image.image--fluid.image--show
+    = image_tag @listing.place_photo.url
+
+  .block.block__show
     %p
-      Title: #{@listing.title}
-      %br/
       Description: #{@listing.description}
       %br/
       Property Type: #{@listing.property_type}
@@ -20,10 +15,10 @@
       %br/
       Accommodates: #{@listing.number_accommodate}
       %br/
-      %br/
+    %hr/
+    %h3 Address
+  .block.block__show
     %p
-      Address
-      %br/
       Street: #{@listing.street}
       %br/
       City: #{@listing.city}
@@ -34,12 +29,12 @@
       %br/
       Country: #{@listing.country}
       %br/
-      %br/
+    %hr/
     %p
       Check In: #{@reservation.check_in.strftime("%B %e, %Y" )}
       %br/
       Check Out: #{@reservation.check_out.strftime("%B %e, %Y" )}
-    %ul
-%section
-  .block
+    %hr/
+    %br/
+    %h3 Leave a review!
     = render 'reviews/new_review_form'

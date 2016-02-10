@@ -46,7 +46,7 @@
   .block.block__show
     - if current_user != @listing.user
       = render "reservations/new_reservation_form"
-      -# %hr/
+  .block.block__show.block__review
     - if @listing.reviews.any?
       %p
         = render '/reviews/show_review'
