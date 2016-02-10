@@ -16,7 +16,7 @@
 
     // .footer--primary__nav
     &__nav
-      background: $footer-background
+      background: #CCCCCC
       color: $footer-color-nav
       float: left
       position: relative
@@ -31,12 +31,15 @@
       margin: 0 auto
       transform: translate(0%, 150%)
       letter-spacing: 3em
+      background: $white
+      padding: 0
       @media #{$large-up}
         bottom: auto
         position: absolute
         right: 0
         top: 50%
         transform: translate(50%, -50%)
+        padding: 1em
 
     // .footer--primary__content
     &__contact
@@ -225,12 +228,12 @@
       @media #{$medium-up}
         float: left
         width: 33.333333%
-        margin: .8% 0% 0% 0%
+        margin: 2% 0% 0% 0%
         &:last-child
           margin: 2.5% 0% 0% 0%
       @media #{$large-up}
         width: 25%
-        margin: -1% 8% 0% 20%
+        margin: -2.5% 8% 0% 20%
         &:last-child
           margin-right: 0
           margin-left: -1.5em
