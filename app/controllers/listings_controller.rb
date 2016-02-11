@@ -7,7 +7,7 @@ class ListingsController < ApplicationController
     else
       @listings = Listing.all
     end
-    @listings = @listings.order('created_at DESC').page(params[:page])
+    @listings = @listings.order('created_at DESC').page params[:page]
   end
 
   def show
