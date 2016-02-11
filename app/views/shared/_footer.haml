@@ -2,7 +2,7 @@
   .footer--primary__nav.content.content--footer
     %ul.footer-nav.footer-nav--secondary
       %li.footer-nav--secondary__block
-        %h5.h5.footer-nav--secondary__title Places
+        %h5.footer-nav--secondary__title Places
         %ul
           %li.footer-nav--secondary__item
             = link_to "About", '#', class: "nav__link nav--secondary__link"
@@ -11,10 +11,12 @@
           %li.footer-nav--secondary__item
             = link_to "Join Us", "#", class: "nav__link nav--secondary__link"
       %li.footer-nav--secondary__block
-        %h5.h5.footer-nav--secondary__title Stuff
+        %h5.footer-nav--secondary__title Stuff
         %ul
           %li.footer-nav--secondary__item
             Places
+          %li.footer-nav--secondary__item
+            Stuff
           %li.footer-nav--secondary__item
             Stuff
     .footer--primary__social
@@ -33,8 +35,6 @@
             = inline_svg "youtube.svg", class: "nav--social__icon"
 
   .footer--primary__contact.content.content--footer
-    %p
-      -# = inline_svg "berggruen-institute-logo-stacked.svg", class: "footer--primary__logo"
     %p
       111 Main Street
       %br

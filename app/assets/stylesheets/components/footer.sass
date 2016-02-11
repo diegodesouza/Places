@@ -6,7 +6,8 @@
 
   // .footer--primary
   &--primary
-    background: $footer-background
+    // background: $footer-background
+    background: #DFE7E9
     position: relative
     text-align: center
     width: 100%
@@ -16,7 +17,7 @@
 
     // .footer--primary__nav
     &__nav
-      background: #CCCCCC
+      background: #B2CED2 // light green, footer left side
       color: $footer-color-nav
       float: left
       position: relative
@@ -33,6 +34,8 @@
       letter-spacing: 3em
       background: $white
       padding: 0
+      @media #{$medium-up}
+        margin-left: 70%
       @media #{$large-up}
         bottom: auto
         position: absolute
@@ -51,13 +54,9 @@
       @media #{$xlarge-up}
         padding-left: 7em
 
-    // .footer--primary__logo
-    &__logo
-      height: 2.3em
-
   &--secondary
     background: $footer-background
-    color: $footer-color-secondary
+    color: $grey
     font:
       family: $footer-font-family-secondary
       weight: $font-weight-light
@@ -230,14 +229,16 @@
         width: 33.333333%
         margin: 2% 0% 0% 0%
         &:last-child
-          margin: 2.5% 0% 0% 0%
+          margin: 2% 0% 0% 0%
       @media #{$large-up}
         width: 25%
-        margin: -2.5% 8% 0% 20%
+        margin: -3% 8% 0% 20%
         &:last-child
           margin-right: 0
-          margin-left: -1.5em
+          // margin-left: -1.5em
           margin-top: -1em
+      @media #{$xlarge-up}
+        margin: -2% 8% 0% 20%
 
     // .nav--secondary__title
     &__title
@@ -246,7 +247,7 @@
         family: $font-family
         size: 1.125em
         weight: $font-weight-light
-      margin: 1em 0
+      margin: 0
       text-transform: uppercase
       @media #{$medium-up}
       @media #{$large-up}
