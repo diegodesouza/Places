@@ -1,4 +1,4 @@
 - @listings.each do |listing|
-  .slider-container
+  .block.block__image
     = image_tag listing.photos[0], class: "image image--fluid image--primary"
   = link_to listing.title, listing_path(listing), class: "listings-title"

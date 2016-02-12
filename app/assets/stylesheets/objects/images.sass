@@ -18,7 +18,12 @@
       left: $rhythm-horizontal
     max-height: 5em
   &--primary
-    max-width: 70%
+    max-width: 100%
+    @media #{$medium-up}
+      max-width: 70%
+      display: block
+      margin-left: auto
+      margin-right: auto
 
 .user-wrapper
   @media #{$medium-up}
