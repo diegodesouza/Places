@@ -1,5 +1,5 @@
 ////////////////////
-// Nav Objects 
+// Nav Objects
 ////////////////////
 
 .nav
@@ -11,27 +11,3 @@
   &__item
     display: block
     position: relative
-
-    // .nav__item--horizontal
-    &--horizontal
-      display: inline-block
-      padding: ($rhythm-vertical / 2) ($rhythm-horizontal / 2)
-      float: left
-
-  // .nav__link
-  &__link
-    color: inherit
-    display: inherit
-    &:hover, &:active, &:focus
-      color: $color-accent
-    
-    // .nav__link--pagination
-    &--pagination
-      padding: ($rhythm-vertical / 2) $rhythm-horizontal
-      margin: ($rhythm-vertical / 2) 0
-
-    // .nav__link--current
-    &--current
-      color: $color-accent 
-      &:hover, &:active, &:focus
-        color: darken($color-accent, 5%)
