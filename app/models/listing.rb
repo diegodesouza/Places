@@ -4,12 +4,7 @@ class Listing < ActiveRecord::Base
   has_many :reservations, dependent: :destroy
   has_many :reviews, dependent: :destroy
 
-  mount_uploader :place_photo, PlacePhotoUploader
-  mount_uploader :image_one, ImageOneUploader
-  mount_uploader :image_two, ImageOneUploader
-  mount_uploader :image_three, ImageOneUploader
-  mount_uploader :image_four, ImageOneUploader
-
+  mount_uploaders :photos, PhotoUploader
 
   validates :title, presence: true,
     length: { minimum: 5, maximum: 50 }

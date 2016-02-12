@@ -1,11 +1,11 @@
 .center-block
-  .heading__show.text-align--center
+  .heading__primary.text-align--center
     %h1= @listing.title
 
-  .image.image--fluid.image--show
-    = image_tag @listing.place_photo.url
+  .image.image--fluid
+    = image_tag @listing.photos.url
 
-  .block.block__show
+  .block.block__primary
     %p
       Description: #{@listing.description}
       %br/
@@ -17,7 +17,7 @@
       %br/
     %hr/
     %h3 Address
-  .block.block__show
+  .block.block__primary
     %p
       Street: #{@listing.street}
       %br/

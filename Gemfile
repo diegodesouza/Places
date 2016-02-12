@@ -34,7 +34,7 @@ group :development, :test do
   gem 'pry'
 end
 
-gem 'carrierwave'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem "mini_magick"
 gem 'fog'
 gem 'shoulda-matchers', group: [:development, :test], require: false

@@ -7,19 +7,19 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+puts "seeding..."
+
 100.times do
   password = Faker::Internet.password
 
-  puts "creating users..."
   User.create(
     email: Faker::Internet.email,
     password: password,
     password_confirmation: password
   )
 
-  puts "creating listings..."
-  100.times do
-    Listing.create(
+  10.times do
+   @listing = Listing.create(
       title: Faker::Lorem.words.join(" "),
       description: Faker::Lorem.sentence,
       property_type: "Apartment",
@@ -29,11 +29,13 @@
       city: Faker::Address.city,
       state: Faker::Address.state,
       zipcode: Faker::Address.zip,
-      user_id: User.last.id
+      user_id: User.last.id,
     )
   end
 
-  puts "creating reservations..."
+  # @listing.photos << File.new('./public/fallback/images.jpeg')
+  @listing.photos.store!(File.new('./public/fallback/images.jpeg'))
+
   Reservation.create(
     check_in: Faker::Date.forward(3),
     check_out: Faker::Date.forward(20),
@@ -41,7 +43,6 @@
     listing_id: Listing.last.id
   )
 
-  puts "creating reviews..."
   Review.create(
     title: Faker::Lorem.words.join(" "),
     description: Faker::Lorem.sentence,

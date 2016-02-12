@@ -23,7 +23,7 @@
         %span.bar
         %label Number of Guests
       .file-wrapper
-        = f.file_field :place_photo, class: "file-input"
+        = f.file_field :photos, multiple: true, class: "file-input"
         %label Photo
     .element-wrapper
       = f.text_field :street

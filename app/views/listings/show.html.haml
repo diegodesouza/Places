@@ -1,11 +1,12 @@
 .center-block
-  .heading__show.text-align--center
+  .heading__primary.text-align--center
     %h1= @listing.title
 
-  .image.image--fluid.image--show
-    = image_tag @listing.place_photo.url
+  .slider-container
+    - @listing.photos.each do |photo|
+      = image_tag photo, class: "image image--fluid"
 
-  .block.block__show
+  .block.block__primary
     %p
       Description: #{@listing.description}
       %br/
@@ -17,7 +18,7 @@
       %br/
     %hr/
     %h3 Address
-  .block.block__show
+  .block.block__primary
     %p
       Street: #{@listing.street}
       %br/
@@ -25,6 +26,7 @@
       %br/
       State: #{@listing.state}
       %br/
+
       Zipcode: #{@listing.zipcode}
       %br/
       Country: #{@listing.country}
@@ -43,10 +45,10 @@
     -# .block
       -# .google-maps
         -# %iframe{:width => "400", :frameborder => "0", :height => "250", :src => "https://www.google.com/maps/embed/v1/place?key=AIzaSyB78gzC40H-qt5UH58ogbiKN-SzdY0Hv-0 &q=#{@listing.street}+#{@listing.city}+#{@listing.state} =Google+Maps+Embed+API =http://www.butchartgardens.com/ =comgooglemaps://?daddr=#{@listing.street}+#{@listing.city}+#{@listing.state}"}
-  .block.block__show
+  .block.block__primary
     - if current_user != @listing.user
       = render "reservations/new_reservation_form"
-  .block.block__show.block__review
+  .block.block__primary.block__review
     - if @listing.reviews.any?
       %p
         = render '/reviews/show_review'
