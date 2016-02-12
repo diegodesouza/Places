@@ -22,18 +22,17 @@
     .footer--primary__social
       %ul.footer-nav.footer-nav--social
         %li.footer-nav__item.footer-nav--social__item
-          = link_to "https://www.facebook.com/pages/places", target: "_blank", class: "nav__link" do
-            = inline_svg "facebook.svg", class: "nav--social__icon"
+          = link_to "https://www.facebook.com/pages/places", target: "_blank" do
+            = inline_svg "facebook.svg"
         %li.footer-nav__item.footer-nav--social__item
-          = link_to "https://twitter.com/places", target: "_blank", class: "nav__link" do
-            = inline_svg "twitter.svg", class: "nav--social__icon"
+          = link_to "https://twitter.com/diegotrus7", target: "_blank" do
+            = inline_svg "twitter.svg"
         %li.footer-nav__item.footer-nav--social__item
-          = link_to "https://instagram.com/places", target: "_blank", class: "nav__link" do
-            = inline_svg "instagram.svg", class: "nav--social__icon"
+          = link_to "https://instagram.com/places", target: "_blank" do
+            = inline_svg "instagram.svg"
         %li.footer-nav__item.footer-nav--social__item
-          = link_to "https://www.youtube.com/user/places", target: "_blank", class: "nav__link" do
-            = inline_svg "youtube.svg", class: "nav--social__icon"
-
+          = link_to "https://www.youtube.com/user/places", target: "_blank" do
+            = inline_svg "youtube.svg"
   .footer--primary__contact.content.content--footer
     %p
       111 Main Street
@@ -46,6 +45,6 @@
       Fax
       = link_to "+1 (111) 111-1111", "fax:+1-111-111-1111", class: "link"
     %p
-      = mail_to "your@place.com", nil, class: "link"
+      = mail_to "diegotrus7@gmail.com", nil, class: "link"
 .footer--secondary
   %p Copyright &copy; #{Date.today.year} Places, all rights resesrved.

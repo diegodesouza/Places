@@ -36,6 +36,7 @@
       padding: 0
       @media #{$medium-up}
         margin-left: 70%
+        padding-top:  0.5em
       @media #{$large-up}
         bottom: auto
         position: absolute
@@ -44,7 +45,8 @@
         transform: translate(50%, -50%)
         padding: 1em
 
-    // .footer--primary__content
+    // .footer--primary__contact
+
     &__contact
       width: 100%
       @media #{$large-up}
@@ -54,15 +56,12 @@
       @media #{$xlarge-up}
         padding-left: 7em
 
-  &--secondary
-    background: $footer-background
-    color: $grey
-    font:
-      family: $footer-font-family-secondary
-      weight: $font-weight-light
-    padding: $rhythm-vertical
-    text-align: center
+  ////////////////////
+  // Footer Secondary
+  ////////////////////
 
+  &--secondary
+    text-align: center
 
   ////////////////////
   // Footer Nav
@@ -75,45 +74,7 @@
   // Primary Foooter Nav
   ////////////////////
 
-  // .nav--primary
-  &--primary
-    float: left
-    overflow: visible
-    text-align: center
-    width: inherit
-
-    // .nav--primary__collapse
-    &__collapse
-      background: rgba($header-secondary-background, .95)
-      border:
-        top: 1px solid darken($header-secondary-background, 5%)
-      clear: both
-      max-height: 0
-      overflow: hidden
-      text-align: center
-      transition: max-height 0.5s $transition-easing
-      width: 100%
-      @media #{$large-up}
-        background: $header-secondary-background
-        border-top: none
-        clear: none
-        float: right
-        max-height: none
-        overflow: visible
-        position: relative
-        top: auto
-        width: auto
-      &--active
-        overflow: none
-        max-height: 1200px
-
-
-    // .nav--primary__right
-    &__right
-      @media #{$large-up}
-        float: right
-
-    // .nav--primary__item
+    // .footer-nav__item
     &__item
       color: $color-inverted
       display: block
@@ -133,94 +94,17 @@
           #{$nav}--dropdown
             right: 0
             left: auto
-        &--home
-          margin: 0 ($rhythm-horizontal * 1.2)
-
-      &--toggle
-        display: block
-        vertical-align: middle
-        @media #{$large-up}
-          display: none
-
-      // .nav--primary__item--left
-      &--left
-        display: inline-block
-        float: left
-        text-align: center
-        width: 50%
-        @media #{$large-up}
-          width: auto
-          transition: none
-
-      // .nav--primary__item--logo
-      &--logo
-        margin: 0
-        max-width: 200px
-        width: 100%
-        z-index: 4
-        @media #{$large-up}
-          max-width: 50%
-        &:hover, &:active, &:focus
-          background: none
-
-      &--landing-page-logo
-        @media #{$large-up}
-          float: left
-          margin-left: 25%
-
-    // .nav--primary__link
-    &__link
-      display: inherit
-      padding: $rhythm-vertical $rhythm-horizontal
-      vertical-align: middle
-      &:hover, &:active, &:focus
-        background-color: $header-primary-background-hover
-      @media #{$large-up}
-        &:hover, &:active, &:focus
-          + #{$nav}--dropdown
-            max-height: none
-      @media #{$xlarge-up}
-        padding: $rhythm-vertical ($rhythm-horizontal * 2)
-      &--home
-        @media #{$large-up}
-          padding: $rhythm-vertical ($rhythm-horizontal * 1.2)
-
-
-      // .nav--primary__link--logo
-      &--logo
-        background: asset_url("berggruen-institute-logo-stacked.svg")
-          position: 1em center
-          repeat: no-repeat
-          size: 180px
-        text-indent: -9999px
-        width: 100%
-        &:hover, &:active, &:focus
-          background-color: transparent
-        @media #{$large-up}
-          background:
-            image: asset_url("berggruen-institute-logo.svg")
-            position: center center
-            size: 80%
-          margin-left: 0
-
-      &--user
-        padding: $rhythm
-
-      &--toggle
-        background: $header-secondary-background
-        //font-size: 1.25em
-        //padding: $rhythm
 
   ////////////////////
   // Secondary Nav
   ////////////////////
 
-  // .nav--secondary
+  // .footer-nav--secondary
   &--secondary
     font-size: 1em
     width: 100%
 
-    // .nav--secondary__block
+    // .footer-nav--secondary__block
     &__block
       margin: ($rhythm-vertical * 2) 0
       width: 100%
@@ -240,7 +124,7 @@
       @media #{$xlarge-up}
         margin: -2% 8% 0% 20%
 
-    // .nav--secondary__title
+    // .footer-nav--secondary__title
     &__title
       color: $color-inverted
       font:
@@ -256,30 +140,18 @@
           width: 0
         &.h5
 
-    &__subtitle
-      color: $color-subaccent
-      line-height: 1
-      text-transform: uppercase
-
-    // .nav--secondary__item
+    // .footer-nav--secondary__item
     &__item
       padding: .25em 0
-
-
-    // .nav--secondary__link
-    &__link
-      color: $color-subaccent
-      &:hover, &:active, &:focus
-        color: $color-inverted
 
   ////////////////////
   // Social Nav
   ////////////////////
 
-  // .nav--social
+  // .footer-nav--social
   &--social
 
-    // .nav--social__item
+    // .footer-nav--social__item
     &__item
       display: inline-block
       fill: $silver
@@ -287,11 +159,3 @@
         fill: $color-accent
       @media #{$large-up}
         display: block
-
-    // .nav--social__icon
-    &__icon
-      display: block
-      height: 2em
-      margin: 1em
-      padding: 0.2em
-      width: 2em
