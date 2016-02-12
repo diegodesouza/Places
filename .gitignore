@@ -14,4 +14,5 @@
 .env
 .env.example
 /public/uploads
-.DS_Store
+/.DS_Store
+app/assets/images/.DS_Store

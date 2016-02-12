@@ -1,0 +1,13 @@
+.list__item--form
+  .form-wrapper
+  %h2 Resend confirmation instructions
+
+    = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+      = devise_error_messages!
+      .element-wrapper
+        = f.email_field :email, autofocus: true
+        %span.bar
+        %label Email
+      .form-wrapper--with-button
+        = f.submit "Resend confirmation instructions"
+      = render "devise/shared/links"

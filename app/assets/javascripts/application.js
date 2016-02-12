@@ -12,11 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
-//= require slick
+//= require jquery-ui/datepicker
 //= require_tree .
-
-$(function(){ $(document).foundation(); });
 
 $(function() {
   $("#listings .pagination a").on("click",

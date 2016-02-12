@@ -1,0 +1,50 @@
+%footer.footer--primary
+  .footer--primary__nav.content.content--footer
+    %ul.footer-nav.footer-nav--secondary
+      %li.footer-nav--secondary__block
+        %h5.footer-nav--secondary__title Places
+        %ul
+          %li.footer-nav--secondary__item
+            = link_to "About", '#', class: "nav__link nav--secondary__link"
+          %li.footer-nav--secondary__item
+            = link_to "Team", "#", class: "nav__link nav--secondary__link"
+          %li.footer-nav--secondary__item
+            = link_to "Join Us", "#", class: "nav__link nav--secondary__link"
+      %li.footer-nav--secondary__block
+        %h5.footer-nav--secondary__title Stuff
+        %ul
+          %li.footer-nav--secondary__item
+            Places
+          %li.footer-nav--secondary__item
+            Stuff
+          %li.footer-nav--secondary__item
+            Stuff
+    .footer--primary__social
+      %ul.footer-nav.footer-nav--social
+        %li.footer-nav__item.footer-nav--social__item
+          = link_to "https://www.facebook.com/pages/places", target: "_blank" do
+            = inline_svg "facebook.svg"
+        %li.footer-nav__item.footer-nav--social__item
+          = link_to "https://twitter.com/diegotrus7", target: "_blank" do
+            = inline_svg "twitter.svg"
+        %li.footer-nav__item.footer-nav--social__item
+          = link_to "https://instagram.com/places", target: "_blank" do
+            = inline_svg "instagram.svg"
+        %li.footer-nav__item.footer-nav--social__item
+          = link_to "https://www.youtube.com/user/places", target: "_blank" do
+            = inline_svg "youtube.svg"
+  .footer--primary__contact.content.content--footer
+    %p
+      111 Main Street
+      %br
+      City, CT 06606
+    %p
+      Tel
+      = link_to "+1 (222) 222-2222", "tel:+1-222-222-2222", class: "link"
+      %br
+      Fax
+      = link_to "+1 (111) 111-1111", "fax:+1-111-111-1111", class: "link"
+    %p
+      = mail_to "diegotrus7@gmail.com", nil, class: "link"
+.footer--secondary
+  %p Copyright &copy; #{Date.today.year} Places, all rights resesrved.

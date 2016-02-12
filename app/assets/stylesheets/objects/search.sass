@@ -1,0 +1,40 @@
+////////////////////
+// Search Objects
+////////////////////
+
+.search
+  width: 100%
+  padding: 15vh 0vh 30vh 0vh
+  @media #{$medium-up}
+    width: 75%
+    margin-left: 11%
+  &__input
+    background: transparent
+    display: block
+    float: left
+    margin: 0
+  input
+    width: 80%
+    border-right: 0
+
+  // .search__icon
+  &__icon
+    display: block
+    height: 1.5em
+
+  // .search__button
+  .search__button
+    background-color: transparent
+    color: $white
+    float: right
+    width: 20%
+    height: 3em
+    border: 1px solid $white
+    border-radius: 0 3px 3px 0
+    outline-color: $white
+    outline-width: thin
+    &:hover
+      background-color: $white
+      color: $black
+    @media #{$medium-up}
+      height: 3.4em

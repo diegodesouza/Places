@@ -1,0 +1,19 @@
+.list__item--form
+  .form-wrapper
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .element-wrapper
+        = f.email_field :email, autofocus: true
+        %span.bar
+        %label Email
+      .element-wrapper
+        = f.password_field :password, autocomplete: "off"
+        %span.bar
+        %label Password
+      - if devise_mapping.rememberable?
+        .input--checkbox
+          = f.check_box :remember_me
+
+        %label.remember-me Remember Me
+      .form-wrapper--with-button.form-wrapper--with-button__sign-in
+        = f.button "LOG IN"
+      = render "devise/shared/links"

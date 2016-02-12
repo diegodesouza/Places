@@ -1,0 +1,28 @@
+////////////////////
+// Heading Objects
+////////////////////
+
+.heading
+  text-align: center
+  padding-top: 12em
+  height: 90vh
+  @media #{$medium-up}
+    padding: 4em 0em 2em 0em
+    height: 24vh
+  &__primary
+    margin: 0em 1.1em -10em 0.4em
+    padding-top: 0
+    @media #{$medium-up}
+      padding-top: 7em
+    h1
+      font-size: $h4-size !important
+      padding: 0em 0em 2em .5em
+      word-wrap: break-word
+  &__home
+    h1
+      padding-top: .8em
+      @media #{$medium-up}
+        font-size: 400% !important
+    h3
+      @media #{$medium-up}
+        font-size: 200% !important

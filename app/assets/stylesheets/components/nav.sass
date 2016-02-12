@@ -1,0 +1,82 @@
+////////////////////
+// Mixins
+////////////////////
+
+@mixin base
+  padding: 0px
+  list-style: none
+  line-height: 1
+  box-sizing: border-box
+  position: relative
+  @media #{$medium-up}
+    line-height: 2
+
+////////////////////
+// Nav Components
+////////////////////
+
+.menu-base
+  @include base
+  &.open
+    margin-bottom: 3em
+    @media #{$medium-up}
+      line-height: 2
+
+#dropdown-menu
+  width: 100%
+  font-family: 'Open Sans', sans-serif
+  background: $color-inverted
+  z-index: 2
+  ul
+    display: none
+    @media #{$medium-up}
+      right: 6%
+      margin-top: -1.2em
+      position: absolute
+    @media #{$large-up}
+      right: 4%
+      margin-top: -.9em
+      position: absolute
+    li
+      a
+        display: block
+        padding: 1.5em 1em
+        text-align: center
+        font-size: 14px
+        text-transform: uppercase
+        color: $color-primary
+        transition: color .2s ease
+        @media #{$medium-up}
+          font-size: 13px
+          padding: .5em 1em 0em 0em
+          display: block
+        @media #{$large-up}
+          font-size: 12px
+
+////////////////////
+// Menu Button / Hamburger
+////////////////////
+
+#menu-button
+  @include base
+  margin-top: 2.5em
+  display: block
+  cursor: pointer
+  text-transform: uppercase
+  z-index: 3
+  &:after, &:before
+    content: ''
+    position: absolute
+    right: 20px
+    width: 15px
+  &:after
+    height: 2px
+    background: $color-primary
+  &:before
+    top: 5px
+    background: transparent
+    border-top: 2px solid $color-primary
+    border-bottom: 2px solid $color-primary
+
+.menu-open
+  margin-bottom: -7.5em

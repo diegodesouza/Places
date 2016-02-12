@@ -1,0 +1,22 @@
+////////////////////
+// Media Breakpoints
+////////////////////
+
+$breakpoint-medium: 37.5em !default
+$breakpoint-large: 60em !default
+$breakpoint-xlarge: 90.25em !default
+$breakpoint-xxlarge: 100em !default
+$breakpoint-max-width: $max-width !default
+
+////////////////////
+// Media Queries
+////////////////////
+
+$screen: "only screen"
+
+$small-only: "#{$screen} and (max-width: #{$breakpoint-medium})"
+$medium-up: "#{$screen} and (min-width: #{$breakpoint-medium})"
+$large-up: "#{$screen} and (min-width: #{$breakpoint-large})"
+$xlarge-up: "#{$screen} and (min-width: #{$breakpoint-xlarge})"
+$xxlarge-up: "#{$screen} and (min-width: #{$breakpoint-xxlarge})"
+$max-width-up: "#{$screen} and (min-width: #{$breakpoint-max-width})"

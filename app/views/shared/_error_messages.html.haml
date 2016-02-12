@@ -1,0 +1,13 @@
+- if @error_object && @error_object.errors.any?
+
+  %div{"data-notifier" => "", class: "notifier notifier--alert"}
+    .notifier__content
+      - @error_object.errors.full_messages.each do |msg|
+        * #{msg}
+      %a.notifier__close &times;
+
+- elsif flash[:notice] || flash[:alert]
+  %div{"data-notifier" => "", class: "notifier #{'notifier--alert' if flash[:alert] }"}
+    .notifier__content
+      = flash[:notice] || flash[:alert]
+      %a.notifier__close &times;

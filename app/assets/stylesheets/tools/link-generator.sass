@@ -1,0 +1,15 @@
+=link-generator
+  .link
+    color: $color-accent
+    cursor: pointer
+    display: inline
+    &:hover, &:active, &:focus
+      color: darken($color-accent, 10%)
+      text-decoration: underline
+    @each $name, $color in $all-function-colors
+      &--#{$name}
+        @if lightness($color) > 90%
+          $color: darken($color, 10%)
+        color: $color
+        &:active, &:focus, &:hover
+          color: darken($color, 10%)

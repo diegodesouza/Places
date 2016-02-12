@@ -1,0 +1,161 @@
+////////////////////
+// Primary Footer
+////////////////////
+
+.footer
+
+  // .footer--primary
+  &--primary
+    // background: $footer-background
+    background: #DFE7E9
+    position: relative
+    text-align: center
+    width: 100%
+    +clearfix
+    @media #{$large-up}
+      text-align: left
+
+    // .footer--primary__nav
+    &__nav
+      background: #B2CED2 // light green, footer left side
+      color: $footer-color-nav
+      float: left
+      position: relative
+      @media #{$large-up}
+        bottom: 0
+        left: 0
+        position: absolute
+        top: 0
+        width: 69%
+
+    &__social
+      margin: 0 auto
+      transform: translate(0%, 150%)
+      letter-spacing: 3em
+      background: $white
+      padding: 0
+      @media #{$medium-up}
+        margin-left: 70%
+        padding-top:  0.5em
+      @media #{$large-up}
+        bottom: auto
+        position: absolute
+        right: 0
+        top: 50%
+        transform: translate(50%, -50%)
+        padding: 1em
+
+    // .footer--primary__contact
+
+    &__contact
+      width: 100%
+      @media #{$large-up}
+        float: right
+        padding-left: 5em
+        width: 31%
+      @media #{$xlarge-up}
+        padding-left: 7em
+
+  ////////////////////
+  // Footer Secondary
+  ////////////////////
+
+  &--secondary
+    text-align: center
+
+  ////////////////////
+  // Footer Nav
+  ////////////////////
+
+.footer-nav
+  $nav: &
+
+  ////////////////////
+  // Primary Foooter Nav
+  ////////////////////
+
+    // .footer-nav__item
+    &__item
+      color: $color-inverted
+      display: block
+      overflow: hidden
+      text-align: center
+      width: 100%
+      @media #{$large-up}
+        display: inline-block
+        margin: 0 1%
+        overflow: visible
+        width: auto
+        &:hover, &:active, &:focus
+          background: $header-primary-background-hover
+          color: $color-primary
+          overflow: visible
+        &:last-child
+          #{$nav}--dropdown
+            right: 0
+            left: auto
+
+  ////////////////////
+  // Secondary Nav
+  ////////////////////
+
+  // .footer-nav--secondary
+  &--secondary
+    font-size: 1em
+    width: 100%
+
+    // .footer-nav--secondary__block
+    &__block
+      margin: ($rhythm-vertical * 2) 0
+      width: 100%
+      @media #{$medium-up}
+        float: left
+        width: 33.333333%
+        margin: 2% 0% 0% 0%
+        &:last-child
+          margin: 2% 0% 0% 0%
+      @media #{$large-up}
+        width: 25%
+        margin: -3% 8% 0% 20%
+        &:last-child
+          margin-right: 0
+          // margin-left: -1.5em
+          margin-top: -1em
+      @media #{$xlarge-up}
+        margin: -2% 8% 0% 20%
+
+    // .footer-nav--secondary__title
+    &__title
+      color: $color-inverted
+      font:
+        family: $font-family
+        size: 1.125em
+        weight: $font-weight-light
+      margin: 0
+      text-transform: uppercase
+      @media #{$medium-up}
+      @media #{$large-up}
+        &.h3
+          padding-top: 0
+          width: 0
+        &.h5
+
+    // .footer-nav--secondary__item
+    &__item
+      padding: .25em 0
+
+  ////////////////////
+  // Social Nav
+  ////////////////////
+
+  // .footer-nav--social
+  &--social
+
+    // .footer-nav--social__item
+    &__item
+      display: inline-block
+      fill: $silver
+      &:active, &:focus, &:hover
+        fill: $color-accent
+      @media #{$large-up}
+        display: block

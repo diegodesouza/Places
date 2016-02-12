@@ -7,7 +7,7 @@ class ListingsController < ApplicationController
     else
       @listings = Listing.all
     end
-    @listings = @listings.order('created_at DESC').page(params[:page])
+    @listings = @listings.order('created_at DESC').page params[:page]
   end
 
   def show
@@ -70,15 +70,10 @@ class ListingsController < ApplicationController
       :number_bedroom,
       :property_type,
       :number_accommodate,
-      :place_photo,
-      :image_one,
-      :image_two,
-      :image_three,
-      :image_four,
-      :image_five,
       :user_id,
       :reservation_id,
-      :review_id
+      :review_id,
+      {photos: []}
     )
   end
 

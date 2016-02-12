@@ -1,0 +1,40 @@
+.center-block
+  .heading__primary.text-align--center
+    %h1= @listing.title
+
+  .image.image--fluid
+    = image_tag @listing.photos.url
+
+  .block.block__primary
+    %p
+      Description: #{@listing.description}
+      %br/
+      Property Type: #{@listing.property_type}
+      %br/
+      Number of Bedrooms: #{@listing.number_bedroom}
+      %br/
+      Accommodates: #{@listing.number_accommodate}
+      %br/
+    %hr/
+    %h3 Address
+  .block.block__primary
+    %p
+      Street: #{@listing.street}
+      %br/
+      City: #{@listing.city}
+      %br/
+      State: #{@listing.state}
+      %br/
+      Zipcode: #{@listing.zipcode}
+      %br/
+      Country: #{@listing.country}
+      %br/
+    %hr/
+    %p
+      Check In: #{@reservation.check_in.strftime("%B %e, %Y" )}
+      %br/
+      Check Out: #{@reservation.check_out.strftime("%B %e, %Y" )}
+    %hr/
+    %br/
+    %h3 Leave a review!
+    = render 'reviews/new_review_form'
