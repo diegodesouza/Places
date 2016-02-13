@@ -394,7 +394,6 @@ DEPENDENCIES
   factory_girl
   faker
   fog
-  fog-aws
   haml-rails (~> 0.9)
   inline_svg
   jbuilder (~> 2.0)

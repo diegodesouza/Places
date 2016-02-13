@@ -37,7 +37,6 @@ end
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem "mini_magick"
 gem 'fog'
-gem "fog-aws"
 gem 'shoulda-matchers', group: [:development, :test], require: false
 
 gem 'rails_12factor', group: :production
