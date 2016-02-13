@@ -42,7 +42,7 @@ class ListingsController < ApplicationController
       flash[:notice] = "Listing has been successfully updated."
       redirect_to listing_path(@listing)
     else
-      flash[:alert] = "Please fill out the forms correctly."
+      flash[:alert] = "#{@listings.errors.full_messages}"
       render :edit
     end
   end

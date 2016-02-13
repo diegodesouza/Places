@@ -7,9 +7,9 @@ class Listing < ActiveRecord::Base
   mount_uploaders :photos, PhotoUploader
 
   validates :title, presence: true,
-    length: { minimum: 5, maximum: 50 }
+    length: { minimum: 5 }
   validates :description, presence: true,
-    length: { minimum: 25, maximum: 400 }
+    length: { minimum: 25 }
   validates :street,
             :city,
             :state,
