@@ -2,8 +2,9 @@
   .heading__primary.text-align--center
     %h1= @listing.title
 
-  .image.image--fluid
-    = image_tag @listing.photos.url
+  .slider-container
+    - @listing.photos.each do |photo|
+      = image_tag photo, class: "image image--fluid"
 
   .block.block__primary
     %p

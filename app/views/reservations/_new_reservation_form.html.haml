@@ -3,8 +3,8 @@
 
   = form_for [@listing, @reservation] do |f|
     .date-wrapper
-      = f.text_field :check_in, as: :date_picker, placeholder: "CHECK IN", class: "calendar datepicker-from"
+      = f.text_field :check_in, placeholder: "CHECK IN", class: "calendar datepicker-from"
     .date-wrapper.date-wrapper__right
-      = f.text_field :check_out, as: :date_picker, placeholder: "CHECK OUT", class: "calendar datepicker-to"
+      = f.text_field :check_out, placeholder: "CHECK OUT", class: "calendar datepicker-to"
     .form-wrapper--with-button.form-wrapper--with-button__center
       = f.button "Submit", method: :post

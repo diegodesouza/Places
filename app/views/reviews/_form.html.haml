@@ -11,3 +11,5 @@
         %label Description
       .form-wrapper--with-button
         = f.button yield(:button_text), method: :post
+      .form-wrapper--with-button__right
+        = link_to "Cancel", :back

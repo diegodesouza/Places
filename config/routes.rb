@@ -9,8 +9,4 @@ Rails.application.routes.draw do
     resources :reservations, except: [:index]
     resources :reviews, except: [:index, :show]
   end
-
-  resources :listings do
-    resources :reservations, except: [:index]
-  end
 end

@@ -40,20 +40,20 @@
       %h1 RESERVATIONS
   %section
 
-  -# %p.block
-  -# %section
-    -# %table.table.table--responsive
-      -# %thead.table--responsive__head
-        -# %tr.table--responsive__row
-          -# %th.table RESERVATION ID
-          -# %th.table CHECK IN
-          -# %th.table CHECK OUT
-      -# %tbody.table--responsive__body
-        -# - @user.reservations.each do |reservation|
-          -# %tr.table--responsive__row.table--responsive__function-cell
-            -# %td.table--responsive__cell{label: "Title"}
-              -# = link_to reservation.id, listing_reservation_path(@user, reservation)
-            -# %td.table--responsive__cell{label: "Check In"}
-              -# = reservation.check_in.strftime("%B %e, %Y" )
-            -# %td.table--responsive__cell{label: "Check Out"}
-              -# = reservation.check_out.strftime("%B %e, %Y" )
+  %p.block
+  %section
+    %table.table.table--responsive
+      %thead.table--responsive__head
+        %tr.table--responsive__row
+          %th.table RESERVATION ID
+          %th.table CHECK IN
+          %th.table CHECK OUT
+      %tbody.table--responsive__body
+        - @user.reservations.each do |reservation|
+          %tr.table--responsive__row.table--responsive__function-cell
+            %td.table--responsive__cell{label: "Title"}
+              = link_to reservation.id, listing_reservation_path(@user, reservation)
+            %td.table--responsive__cell{label: "Check In"}
+              = reservation.check_in.strftime("%B %e, %Y" )
+            %td.table--responsive__cell{label: "Check Out"}
+              = reservation.check_out.strftime("%B %e, %Y" )

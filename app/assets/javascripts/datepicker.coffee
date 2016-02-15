@@ -1,4 +1,5 @@
 $('.datepicker-from').datepicker
+  dateFormat: 'yy-mm-dd'
   minDate: 0
   onClose: (selectedDate) ->
     nextDay = new Date(selectedDate)
@@ -6,5 +7,6 @@ $('.datepicker-from').datepicker
     $('.datepicker-to').datepicker 'option', 'minDate', nextDay 
 
 $('.datepicker-to').datepicker
+  dateFormat: 'yy-mm-dd'
   onClose: (selectedDate) ->
     $('.datepicker-from').datepicker 'option', 'maxDate', selectedDate
