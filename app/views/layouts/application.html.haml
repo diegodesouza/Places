@@ -14,6 +14,7 @@
       %section.wrapper
         = render 'shared/header'
         = render 'shared/error_messages'
+        = render "shared/heading" if current_page?(root_path)
       %main.wrapper.wrapper--main
         %section.content
           = yield
