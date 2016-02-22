@@ -177,7 +177,7 @@
         background: $color-secondary
     &:invalid ~ .bar
       &:before, &:after
-        background: #e74c3c
+        background: $green
 
   .select-wrapper
     width: 100%
@@ -186,7 +186,7 @@
       text-transform: uppercase
       font-family: $font-family
       font-size: 12px
-      padding: 0
+      padding: 0em 0em 1em 0em
       margin: 0
       border: 0
       border-bottom: 3px solid $black
@@ -194,6 +194,8 @@
       border-radius: 0
       overflow: hidden
       background: $white
+    // input
+      padding-bottom: 1em
 
 .file-wrapper
   input[type="file"]

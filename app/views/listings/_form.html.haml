@@ -1,11 +1,15 @@
 .form-wrapper
   = form_for @listing do |f|
+    - if @listing.errors.any?
+      %ul
+        - @listing.errors.full_messages.each do |msg|
+          %li= msg
     .element-wrapper
-      = f.text_field :title
+      = f.text_field :title, required: true
       %span.bar
       %label Title
     .element-wrapper
-      = f.text_area :description
+      = f.text_area :description, required: true
       %span.bar
       %label Description
     .form-row.form-row__left
@@ -26,11 +30,11 @@
         = f.file_field :photos, multiple: true, class: "file-input"
         %label Photo
     .element-wrapper
-      = f.text_field :street
+      = f.text_field :street, required: true
       %span.bar
       %label Street
     .element-wrapper
-      = f.text_field :city
+      = f.text_field :city, required: true
       %span.bar
       %label City
     .select-wrapper
@@ -38,7 +42,7 @@
       %span.bar
       %label State
     .element-wrapper
-      = f.text_field :zipcode
+      = f.text_field :zipcode, required: true
       %span.bar
       %label Zipcode
     .element-wrapper
