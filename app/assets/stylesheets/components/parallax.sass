@@ -40,17 +40,15 @@
     @media #{$large-up}
       max-width: 97vw
 
+.parallax-container
+  max-width: 100%
   .parallax--content
     overflow: hidden
-    width: 100%
     background-image: image-url("project_crop.jpg")
     background-attachment: fixed
+    background-size: cover
     background-position: top center
-    background-repeat: no-repeat
-    background-size: 100%
-    margin: 0 auto
     @media #{$medium-up}
-      background-size: cover
       background-image: image-url("project.jpg")
 
 .section-title
