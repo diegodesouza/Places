@@ -1,0 +1,2799 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300);
+@import url(http://fonts.googleapis.com/css?family=Rokkitt:400,700|Source+Sans+Pro:300,400,600,700,800);
+/* line 4, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/generic/reset.sass */
+* {
+  box-sizing: border-box;
+}
+
+/* line 7, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/generic/reset.sass */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  vertical-align: baseline;
+}
+
+/* line 17, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/generic/reset.sass */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 20, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/generic/reset.sass */
+body {
+  line-height: 1;
+}
+
+/* line 23, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/generic/reset.sass */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/generic/reset.sass */
+blockquote, q {
+  quotes: none;
+}
+/* line 28, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/generic/reset.sass */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/generic/reset.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: transparent;
+  border: 1px solid #dfdfdf;
+  border-radius: 4px;
+  box-shadow: none;
+  cursor: text;
+  display: inline-block;
+  font-family: "Oswald", "Source Sans Pro", Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-size: inherit;
+  line-height: 1.5;
+  padding: 0.375em;
+  vertical-align: middle;
+  width: 100%;
+  color: white;
+}
+@media only screen and (min-width: 60em) {
+  /* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+  .input {
+    width: 50%;
+  }
+}
+/* line 23, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.input:active, .input:focus, .input:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  outline-width: 0;
+}
+/* line 2, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/placeholder.sass */
+.input:-moz-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* line 4, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/placeholder.sass */
+.input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 47, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.input--with-button-left {
+  float: left;
+  width: 50%;
+}
+/* line 50, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.input--with-button-left--with-button-right {
+  float: right;
+}
+/* line 54, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.input--checkbox, .input--radio {
+  cursor: pointer;
+  width: auto;
+}
+/* line 57, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.input--checkbox:before, .input--radio:before {
+  content: "";
+  display: block;
+  height: 1.1em;
+  line-height: 1.3;
+  width: 1.1em;
+}
+/* line 63, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.input--checkbox:checked:before, .input--radio:checked:before {
+  content: url(/assets/check-8854d079f5266eae8137860271a6d1b624ba94dc5041e37d3194a16e74e7ccdd.svg);
+}
+
+/* line 71, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper {
+  font-family: inherit;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -10em;
+  width: 95%;
+}
+/* line 77, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper .element-wrapper, .form-wrapper .select-wrapper, .form-wrapper .file-wrapper {
+  position: relative;
+  margin-top: 3em;
+  width: 100%;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 71, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+  .form-wrapper {
+    width: 50%;
+    margin-top: 0;
+  }
+}
+/* line 85, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper--with-button {
+  display: inline-block;
+  border: none;
+  float: left;
+  width: 50%;
+  margin-left: 3em;
+  margin-top: 1em;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 85, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+  .form-wrapper--with-button {
+    margin-left: 6em;
+  }
+}
+@media only screen and (min-width: 60em) {
+  /* line 85, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+  .form-wrapper--with-button {
+    margin-left: 8em;
+  }
+}
+@media only screen and (min-width: 90.25em) {
+  /* line 85, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+  .form-wrapper--with-button {
+    margin-left: 10em;
+  }
+}
+/* line 98, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper--with-button__right {
+  margin-top: 1.2em;
+}
+/* line 100, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper--with-button__sign-in {
+  width: 45%;
+  margin-left: 0;
+  margin-top: 1em;
+}
+/* line 104, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper--with-button__center {
+  margin: 1em 0em 0em 0em;
+  text-align: center;
+  width: 100%;
+}
+/* line 109, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper__datepicker {
+  margin-top: 1em;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 71, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+  .form-wrapper {
+    width: 55%;
+  }
+}
+@media only screen and (min-width: 60em) {
+  /* line 71, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+  .form-wrapper {
+    width: 60%;
+  }
+}
+/* line 116, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper .form-row {
+  width: 45%;
+  clear: both;
+  display: inline-block;
+  margin: 1em 0;
+}
+/* line 121, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper .form-row__left {
+  margin-left: -1px;
+}
+/* line 123, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper .form-row__right {
+  float: right;
+}
+/* line 126, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper input, .form-wrapper textarea, .form-wrapper select {
+  border: none;
+  border-bottom: 3px solid black;
+  padding: 0.75em 0;
+  width: 100%;
+  display: block;
+  font-size: 1em;
+}
+/* line 133, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper input:focus, .form-wrapper textarea:focus, .form-wrapper select:focus {
+  border: none;
+  outline: none;
+}
+/* line 137, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper .element-wrapper input:valid ~ label, .form-wrapper textarea:valid ~ label, .form-wrapper select:valid ~ label, .form-wrapper input[type="file"] ~ label {
+  top: -2em;
+  font-size: 12px;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 137, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+  .form-wrapper .element-wrapper input:valid ~ label, .form-wrapper textarea:valid ~ label, .form-wrapper select:valid ~ label, .form-wrapper input[type="file"] ~ label {
+    font-size: 1em;
+  }
+}
+/* line 143, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper label {
+  position: absolute;
+  top: 8px;
+  font-size: 1.2em;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+}
+/* line 148, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper label.remember-me {
+  font-size: inherit;
+  margin: 16.3em 0 0 2em;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 148, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+  .form-wrapper label.remember-me {
+    margin: 26.1em 0 0 2em;
+  }
+}
+/* line 155, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper .bar {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+/* line 159, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper .bar:before, .form-wrapper .bar:after {
+  content: "";
+  height: 3px;
+  width: 0%;
+  bottom: 1px;
+  position: absolute;
+  -webkit-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+/* line 166, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper .bar:before {
+  left: 50%;
+}
+/* line 168, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper .bar:after {
+  right: 50%;
+}
+/* line 173, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper input:focus ~ .bar:before, .form-wrapper input:focus ~ .bar:after, .form-wrapper textarea:focus ~ .bar:before, .form-wrapper textarea:focus ~ .bar:after {
+  width: 50%;
+}
+/* line 176, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper input:valid ~ .bar:before, .form-wrapper input:valid ~ .bar:after, .form-wrapper textarea:valid ~ .bar:before, .form-wrapper textarea:valid ~ .bar:after {
+  background: #757575;
+}
+/* line 179, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper input:invalid ~ .bar:before, .form-wrapper input:invalid ~ .bar:after, .form-wrapper textarea:invalid ~ .bar:before, .form-wrapper textarea:invalid ~ .bar:after {
+  background: #A5E4CD;
+}
+/* line 182, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper .select-wrapper {
+  width: 100%;
+  padding-top: 1em;
+}
+/* line 185, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.form-wrapper .select-wrapper select {
+  text-transform: uppercase;
+  font-family: "Oswald", "Source Sans Pro", Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  padding: 0em 0em 1em 0em;
+  margin: 0;
+  border: 0;
+  border-bottom: 3px solid black;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0;
+  overflow: hidden;
+  background: white;
+}
+
+/* line 201, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.file-wrapper input[type="file"] {
+  padding-top: 1em;
+  border: none;
+}
+
+/* line 209, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+button, .input[type="button"], .input[type="reset"], .input[type="submit"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  border: none;
+  border-radius: 0px;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+/* line 219, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.button__cancel-account {
+  margin-top: 5em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  color: #757575;
+}
+
+/* line 227, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.date-wrapper {
+  width: 50%;
+  display: inline-block;
+  border: 0.5px solid black;
+  margin: 1em -0.5em 0em -0.5em;
+}
+/* line 232, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.date-wrapper__right {
+  float: right;
+}
+/* line 234, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.date-wrapper input {
+  border-bottom: 0;
+  text-align: center;
+}
+/* line 237, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/forms.sass */
+.date-wrapper p {
+  letter-spacing: -0.01em;
+}
+
+/* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/layout.sass */
+body {
+  background-color: white;
+}
+
+/* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/lists.sass */
+.ol, .ul, .dl {
+  margin: 1.5em 0;
+  list-style-position: inside;
+}
+/* line 8, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/lists.sass */
+.ol .ol, .ol .ul, .ol .dl, .ul .ol, .ul .ul, .ul .dl, .dl .ol, .dl .ul, .dl .dl {
+  margin: 0 0 0 1.125em;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/lists.sass */
+.ol {
+  list-style-type: decimal;
+}
+/* line 12, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/lists.sass */
+.ol--roman {
+  list-style-type: upper-roman;
+}
+/* line 14, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/lists.sass */
+.ol--alpha {
+  list-style-type: upper-alpha;
+}
+
+/* line 17, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/lists.sass */
+.ul {
+  list-style-type: disc;
+}
+
+/* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/scale.sass */
+html {
+  font-size: 14px;
+}
+@media only screen and (min-width: 60em) {
+  /* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/scale.sass */
+  html {
+    font-size: 16px;
+  }
+}
+
+/* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/svg.sass */
+svg, .svg {
+  display: inline-block;
+  fill: currentColor;
+  height: 1.5em;
+  width: auto;
+}
+/* line 11, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/svg.sass */
+svg--font-size, .svg--font-size {
+  height: 1.1em;
+}
+/* line 15, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/svg.sass */
+svg--white path, .svg--white path {
+  fill: white !important;
+}
+/* line 19, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/svg.sass */
+svg--primary path, .svg--primary path {
+  fill: black !important;
+}
+/* line 22, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/svg.sass */
+svg--vertical-align, .svg--vertical-align {
+  vertical-align: middle;
+}
+
+/* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/tables.sass */
+table {
+  border-collapse: collapse;
+  border-color: none;
+  border-width: 0;
+  cell-spacing: 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* line 18, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/tables.sass */
+thead tr, tfoot tr {
+  background: #757575;
+  color: white;
+}
+
+/* line 22, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/tables.sass */
+tr {
+  background: white;
+  text-align: left;
+}
+/* line 25, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/tables.sass */
+tr:nth-child(even) {
+  background: #e8e8e8;
+}
+
+/* line 28, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/tables.sass */
+td, th {
+  padding: 1.5em 1.125em;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+body {
+  color: black;
+  font-family: "Oswald", "Source Sans Pro", Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-size: 100%;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* line 21, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+h1, .h1 {
+  font-size: 300%;
+}
+
+/* line 24, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+h2, .h2 {
+  font-size: 187.5%;
+}
+
+/* line 27, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+h3, .h3 {
+  font-size: 150%;
+}
+
+/* line 30, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+h4, .h4 {
+  font-size: 125%;
+}
+
+/* line 33, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+h5, .h5 {
+  font-size: 100%;
+}
+
+/* line 36, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+h6, .h6 {
+  font-size: 87.5%;
+}
+
+/* line 39, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+p, .p {
+  line-height: 1.75;
+  margin: 1.5em 0;
+}
+/* line 42, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+p--no-margin, .p--no-margin {
+  margin: 0;
+}
+/* line 44, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+p--no-margin-top, .p--no-margin-top {
+  margin-top: 0;
+}
+
+/* line 47, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+a {
+  color: inherit;
+  cursor: pointer;
+}
+
+/* line 55, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+b, strong, .strong {
+  font-weight: 700;
+}
+
+/* line 58, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+i, em {
+  font-style: italic;
+}
+
+/* line 61, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+u {
+  text-decoration: underline;
+}
+
+/* line 64, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+strike, del {
+  text-decoration: line-through;
+}
+
+/* line 67, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+sup, sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 73, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+sup {
+  top: -0.5em;
+}
+
+/* line 76, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 79, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+small {
+  font-size: 75%;
+}
+
+/* line 82, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+abbr {
+  border-bottom: 2px dotted currentColor;
+  cursor: help;
+}
+
+/* line 86, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+kbd, var {
+  background: white;
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+}
+
+/* line 91, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+q:before, q:after {
+  content: '"';
+}
+
+/* line 94, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+blockquote {
+  background: white;
+  border-left: 2px solid currentColor;
+  padding-left: 6px;
+}
+
+/* line 100, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+cite:before {
+  content: "–";
+}
+
+/* line 105, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/base/type.sass */
+mark {
+  font-style: italic;
+}
+
+/* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/avatar.sass */
+.avatar {
+  border-radius: 2000px;
+  height: 3em;
+  vertical-align: middle;
+  width: 3em;
+}
+
+/* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.calendar {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-left: 0px;
+  left: 15px !important;
+}
+
+/* line 12, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-datepicker, .ui-widget, .ui-widget-content {
+  font-family: sans-serif;
+  padding: 0px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 93% !important;
+  line-height: 1.8em !important;
+  left: 50% !important;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 12, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+  .ui-datepicker, .ui-widget, .ui-widget-content {
+    width: 35% !important;
+    left: 50% !important;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+/* line 26, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-datepicker-header {
+  height: 3em !important;
+  padding-top: 0.5em !important;
+  color: #959595;
+  background: #e9e5e3;
+}
+
+/* line 32, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-datepicker-prev, .ui-datepicker-next {
+  width: 20px;
+  height: 20px;
+  text-indent: -9999px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+/* line 38, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-datepicker-prev > span, .ui-datepicker-next > span {
+  margin-top: 1.5em !important;
+  position: relative !important;
+}
+
+/* line 42, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-datepicker-prev {
+  float: left;
+  margin-left: 12px;
+}
+/* line 45, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-datepicker-prev:after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin: -43px 0px 0px 8px;
+}
+
+/* line 49, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-datepicker-next {
+  float: right;
+  margin-right: 12px;
+}
+/* line 52, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-datepicker-next:after {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  margin: -43px 0px 0px 6px;
+}
+
+/* line 56, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-datepicker-prev:after, .ui-datepicker-next:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-left: 2px solid #b0aead;
+  border-bottom: 2px solid #b0aead;
+}
+
+/* line 65, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-datepicker-prev:hover, .ui-datepicker-next:hover, .ui-datepicker-prev:hover:after, .ui-datepicker-next:hover:after {
+  border-color: #5ed1cc;
+}
+
+/* line 68, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-datepicker-title {
+  text-align: center;
+}
+
+/* line 71, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-datepicker-calendar {
+  width: 100%;
+  text-align: center;
+}
+/* line 74, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-datepicker-calendar thead tr th span {
+  display: block;
+  width: 40px;
+  color: #00a8b2;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+/* line 80, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-datepicker-calendar tr {
+  background: white;
+}
+/* line 82, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-datepicker-calendar td a {
+  margin-right: 0.8em !important;
+}
+/* line 84, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-datepicker-calendar tr:nth-child(even) {
+  background: white;
+}
+
+/* line 87, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-state-default {
+  display: block;
+  text-decoration: none;
+  color: #b5b5b5;
+  line-height: 40px;
+  font-size: 12px;
+}
+/* line 93, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-state-default:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* line 96, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-state-highlight {
+  color: #8dd391;
+}
+
+/* line 99, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-state-active {
+  color: #5ed1cc;
+}
+
+/* line 102, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-datepicker-unselectable .ui-state-default {
+  color: #eee;
+  border: 2px solid transparent;
+}
+
+/* line 106, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/dates.sass */
+.ui-icon {
+  margin-top: 4em !important;
+}
+
+/* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/headings.sass */
+.heading {
+  text-align: center;
+  padding-top: 12em;
+  height: 90vh;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/headings.sass */
+  .heading {
+    padding: 4em 0em 2em 0em;
+    height: 24vh;
+  }
+}
+/* line 12, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/headings.sass */
+.heading__primary {
+  margin: 0em 1.1em -10em 0.4em;
+  padding-top: 0;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 12, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/headings.sass */
+  .heading__primary {
+    padding-top: 7em;
+  }
+}
+/* line 17, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/headings.sass */
+.heading__primary h1 {
+  font-size: 125% !important;
+  padding: 0em 0em 2em 0.5em;
+  word-wrap: break-word;
+}
+/* line 22, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/headings.sass */
+.heading__home h1 {
+  padding-top: 0.8em;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 22, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/headings.sass */
+  .heading__home h1 {
+    font-size: 400% !important;
+  }
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 26, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/headings.sass */
+  .heading__home h3 {
+    font-size: 200% !important;
+  }
+}
+
+/* line 6, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/images.sass */
+.image img {
+  width: 100%;
+}
+/* line 13, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/images.sass */
+.image--fluid {
+  max-width: 100%;
+}
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/images.sass */
+.image--preview {
+  margin-left: 1.125em;
+  max-height: 5em;
+}
+/* line 20, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/images.sass */
+.image--primary {
+  max-width: 100%;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 20, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/images.sass */
+  .image--primary {
+    max-width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (min-width: 37.5em) {
+  /* line 28, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/images.sass */
+  .user-wrapper {
+    float: left;
+    width: 50%;
+    margin: -5.79% -30% 0% -14.5%;
+  }
+}
+/* line 33, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/images.sass */
+.user-wrapper .profile {
+  width: 70%;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 33, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/images.sass */
+  .user-wrapper .profile {
+    width: 30%;
+  }
+}
+
+/* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/layout.sass */
+.wrapper, .notifier__content {
+  display: block;
+  max-width: 120.5rem;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
+/* line 2, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/clearfix.sass */
+.wrapper:after, .notifier__content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 14, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/layout.sass */
+.wrapper--wide {
+  max-width: 100%;
+}
+/* line 17, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/layout.sass */
+.wrapper--main {
+  background: white;
+  padding: 2em 0;
+}
+
+/* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/lists.sass */
+.list {
+  margin: 0;
+}
+/* line 9, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/lists.sass */
+.list--unstyled {
+  list-style-type: none;
+  margin: 0;
+}
+/* line 14, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/lists.sass */
+.list__item {
+  display: block;
+  padding: 1.5em 1.125em;
+}
+/* line 18, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/lists.sass */
+.list__item--form {
+  padding: 10em 1em 0em 1em;
+}
+
+/* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/nav.sass */
+.nav {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+}
+/* line 11, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/nav.sass */
+.nav__item {
+  display: block;
+  position: relative;
+}
+
+/* line 1, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/pagination.sass */
+.pagination {
+  font-weight: 300;
+  letter-spacing: 0.7em;
+  background: white;
+  text-align: center;
+  padding-top: 1em;
+}
+
+/* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/search.sass */
+.search {
+  width: 100%;
+  padding: 15vh 0vh 30vh 0vh;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/search.sass */
+  .search {
+    width: 75%;
+    margin-left: 11%;
+  }
+}
+/* line 11, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/search.sass */
+.search__input {
+  background: transparent;
+  display: block;
+  float: left;
+  margin: 0;
+}
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/search.sass */
+.search input {
+  width: 80%;
+  border-right: 0;
+}
+/* line 21, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/search.sass */
+.search__icon {
+  display: block;
+  height: 1.5em;
+}
+/* line 26, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/search.sass */
+.search .search__button {
+  background-color: transparent;
+  color: white;
+  float: right;
+  width: 20%;
+  height: 3em;
+  border: 1px solid white;
+  border-radius: 0 3px 3px 0;
+  outline-color: white;
+  outline-width: thin;
+}
+/* line 36, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/search.sass */
+.search .search__button:hover {
+  background-color: white;
+  color: black;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 26, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/search.sass */
+  .search .search__button {
+    height: 3.4em;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  /* line 9, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/tables.sass */
+  .table--responsive {
+    border-top: 2px solid #757575;
+    display: block;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  /* line 15, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/tables.sass */
+  .table--responsive__head, .table--responsive__foot {
+    display: block;
+    position: absolute;
+    left: -9999px;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  /* line 22, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/tables.sass */
+  .table--responsive__body {
+    display: block;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  /* line 27, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/tables.sass */
+  .table--responsive__row {
+    display: block;
+  }
+}
+/* line 32, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/tables.sass */
+.table--responsive__cell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 35, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/tables.sass */
+  .table--responsive__cell:hover {
+    font-weight: bold;
+    position: relative;
+    overflow: visible;
+    text-shadow: 0 0 20px white, 0 0 20px white, 0 0 20px white, 0 0 20px white, 0 0 20px white, 0 0 20px white, 0 0 20px white, 0 0 20px white, 0 0 20px white, 0 0 20px white, 0 0 20px white, 0 0 20px white, 0 0 20px white;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  /* line 32, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/tables.sass */
+  .table--responsive__cell {
+    border-bottom: 1px solid rgba(117, 117, 117, 0.2);
+    display: block;
+  }
+  /* line 43, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/tables.sass */
+  .table--responsive__cell:first-child {
+    width: auto;
+  }
+  /* line 45, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/tables.sass */
+  .table--responsive__cell:before {
+    content: attr(label);
+    display: inline-block;
+    padding-right: 1.125em;
+    width: 45%;
+  }
+}
+/* line 53, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/tables.sass */
+.table--responsive__function-cell {
+  width: 4em;
+  padding: 0.375em;
+}
+@media only screen and (max-width: 37.5em) {
+  /* line 53, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/tables.sass */
+  .table--responsive__function-cell {
+    display: inline-block;
+    padding: 1.5em 0.375em;
+    width: auto;
+  }
+  /* line 60, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/tables.sass */
+  .table--responsive__function-cell:before {
+    display: none;
+  }
+}
+/* line 63, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/tables.sass */
+.table__link {
+  color: inherit;
+}
+/* line 65, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/tables.sass */
+.table__link:hover {
+  border-bottom: 2px solid currentColor;
+  color: black;
+  fill: currentColor;
+}
+
+/* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/titles.sass */
+.title-bar {
+  box-shadow: inset 0 -2px 0 0 black;
+  color: black;
+  display: block;
+  padding: 1em 0;
+  text-align: right;
+  text-transform: uppercase;
+  width: 100%;
+}
+/* line 2, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/clearfix.sass */
+.title-bar:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 17, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/titles.sass */
+.title-bar__text {
+  clear: right;
+  display: block;
+  font-size: 1.7em;
+  font-weight: 600;
+  text-align: left;
+}
+@media only screen and (min-width: 60em) {
+  /* line 17, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/titles.sass */
+  .title-bar__text {
+    clear: none;
+    display: inline-block;
+    float: left;
+  }
+}
+/* line 30, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/titles.sass */
+.title-bar__action {
+  float: left;
+  line-height: 2.5em;
+  margin-left: 0;
+  margin-right: 1.125em;
+}
+@media only screen and (min-width: 60em) {
+  /* line 30, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/titles.sass */
+  .title-bar__action {
+    float: none;
+    margin-left: 1.125em;
+    margin-right: 0;
+  }
+}
+/* line 41, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/titles.sass */
+.title-bar__action:hover {
+  color: #757575;
+}
+/* line 46, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/objects/titles.sass */
+.title-bar__action--add:after {
+  content: " +";
+}
+
+/* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/content.sass */
+.content {
+  float: left;
+  padding-top: 2em;
+  width: 100%;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/content.sass */
+  .content {
+    padding-top: -2em;
+  }
+}
+/* line 12, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/content.sass */
+.content--without-padding {
+  padding: 0;
+}
+/* line 15, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/content.sass */
+.content--padding-top-2 {
+  padding-top: 2em;
+}
+@media only screen and (min-width: 60em) {
+  /* line 18, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/content.sass */
+  .content--with-border-left {
+    border-left: 2px solid #757575;
+  }
+}
+/* line 22, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/content.sass */
+.content--footer {
+  padding: 2.8em 1.125em;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 22, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/content.sass */
+  .content--footer {
+    padding: 4.8em 1.125em;
+  }
+}
+@media only screen and (min-width: 60em) {
+  /* line 22, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/content.sass */
+  .content--footer {
+    padding: 4.8em 3.375em;
+  }
+}
+@media only screen and (min-width: 90.25em) {
+  /* line 22, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/content.sass */
+  .content--footer {
+    padding: 4.8em 6.75em;
+  }
+}
+
+/* line 37, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/content.sass */
+.content--profile h4 {
+  padding-bottom: 3em;
+}
+
+/* line 8, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+.footer--primary {
+  background: #DFE7E9;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+/* line 2, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/clearfix.sass */
+.footer--primary:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media only screen and (min-width: 60em) {
+  /* line 8, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+  .footer--primary {
+    text-align: left;
+  }
+}
+/* line 19, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+.footer--primary__nav {
+  background: #B2CED2;
+  color: #757575;
+  float: left;
+  position: relative;
+}
+@media only screen and (min-width: 60em) {
+  /* line 19, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+  .footer--primary__nav {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 69%;
+  }
+}
+/* line 31, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+.footer--primary__social {
+  margin: 0 auto;
+  -webkit-transform: translate(0%, 150%);
+          transform: translate(0%, 150%);
+  letter-spacing: 3em;
+  background: white;
+  padding: 0;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 31, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+  .footer--primary__social {
+    margin-left: 70%;
+    padding-top: 0.5em;
+  }
+}
+@media only screen and (min-width: 60em) {
+  /* line 31, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+  .footer--primary__social {
+    bottom: auto;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translate(50%, -50%);
+            transform: translate(50%, -50%);
+    padding: 1em;
+  }
+}
+/* line 50, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+.footer--primary__contact {
+  width: 100%;
+}
+@media only screen and (min-width: 60em) {
+  /* line 50, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+  .footer--primary__contact {
+    float: right;
+    padding-left: 5em;
+    width: 31%;
+  }
+}
+@media only screen and (min-width: 90.25em) {
+  /* line 50, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+  .footer--primary__contact {
+    padding-left: 7em;
+  }
+}
+/* line 63, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+.footer--secondary {
+  text-align: center;
+}
+
+/* line 103, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+.footer-nav--secondary {
+  font-size: 1em;
+  width: 100%;
+}
+/* line 108, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+.footer-nav--secondary__block {
+  margin: 3em 0;
+  width: 100%;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 108, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+  .footer-nav--secondary__block {
+    float: left;
+    width: 33.33333%;
+    margin: 2% 0% 0% 0%;
+  }
+  /* line 115, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+  .footer-nav--secondary__block:last-child {
+    margin: 2% 0% 0% 0%;
+  }
+}
+@media only screen and (min-width: 60em) {
+  /* line 108, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+  .footer-nav--secondary__block {
+    width: 25%;
+    margin: -3% 8% 0% 20%;
+  }
+  /* line 120, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+  .footer-nav--secondary__block:last-child {
+    margin-right: 0;
+    margin-top: -1em;
+  }
+}
+@media only screen and (min-width: 90.25em) {
+  /* line 108, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+  .footer-nav--secondary__block {
+    margin: -2% 8% 0% 20%;
+  }
+}
+/* line 128, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+.footer-nav--secondary__title {
+  color: white;
+  font-family: "Oswald", "Source Sans Pro", Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.125em;
+  font-weight: 300;
+  margin: 0;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 60em) {
+  /* line 138, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+  .footer-nav--secondary__title.h3 {
+    padding-top: 0;
+    width: 0;
+  }
+}
+/* line 144, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+.footer-nav--secondary__item {
+  padding: 0.25em 0;
+}
+/* line 155, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+.footer-nav--social__item {
+  display: inline-block;
+  fill: #c7c7c7;
+}
+/* line 158, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+.footer-nav--social__item:active, .footer-nav--social__item:focus, .footer-nav--social__item:hover {
+  fill: #757575;
+}
+@media only screen and (min-width: 60em) {
+  /* line 155, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/footer.sass */
+  .footer-nav--social__item {
+    display: block;
+  }
+}
+
+/* line 12, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button {
+  background-color: white;
+  border: none;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  line-height: 1;
+  margin: 0;
+  padding: 0.5em 2.25em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+/* line 25, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button:active:enabled, .button:focus:enabled, .button:hover:enabled {
+  background-color: #5c5c5c;
+}
+/* line 28, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--disabled, .button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+/* line 2, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--inverted {
+  background-color: rgba(117, 117, 117, 0);
+  box-shadow: inset 0 0 0 2px #757575;
+  color: #757575;
+}
+/* line 6, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--inverted:active:enabled, .button--inverted:focus:enabled, .button--inverted:hover:enabled {
+  box-shadow: inset 0 0 0 2px #616161, inset 0 -2.25em 0 0 #616161;
+  color: white;
+}
+/* line 32, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--inline {
+  float: left;
+  margin: 0;
+  padding: 0.5em 1em;
+  width: auto;
+}
+/* line 40, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--small {
+  font-size: 70%;
+}
+/* line 40, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--medium {
+  font-size: 100%;
+}
+/* line 40, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--large {
+  font-size: 130%;
+}
+/* line 46, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--primary {
+  background-color: black;
+  color: white;
+}
+/* line 51, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--primary:active:enabled, .button--primary:focus:enabled, .button--primary:hover:enabled {
+  background-color: black;
+}
+/* line 2, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--primary--inverted {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px black;
+  color: black;
+}
+/* line 6, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--primary--inverted:active:enabled, .button--primary--inverted:focus:enabled, .button--primary--inverted:hover:enabled {
+  box-shadow: inset 0 0 0 2px black, inset 0 -2.25em 0 0 black;
+  color: white;
+}
+/* line 46, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--secondary {
+  background-color: #757575;
+  color: white;
+}
+/* line 51, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--secondary:active:enabled, .button--secondary:focus:enabled, .button--secondary:hover:enabled {
+  background-color: #5c5c5c;
+}
+/* line 2, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--secondary--inverted {
+  background-color: rgba(117, 117, 117, 0);
+  box-shadow: inset 0 0 0 2px #757575;
+  color: #757575;
+}
+/* line 6, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--secondary--inverted:active:enabled, .button--secondary--inverted:focus:enabled, .button--secondary--inverted:hover:enabled {
+  box-shadow: inset 0 0 0 2px #616161, inset 0 -2.25em 0 0 #616161;
+  color: white;
+}
+/* line 46, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--accent {
+  background-color: #757575;
+  color: white;
+}
+/* line 51, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--accent:active:enabled, .button--accent:focus:enabled, .button--accent:hover:enabled {
+  background-color: #5c5c5c;
+}
+/* line 2, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--accent--inverted {
+  background-color: rgba(117, 117, 117, 0);
+  box-shadow: inset 0 0 0 2px #757575;
+  color: #757575;
+}
+/* line 6, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--accent--inverted:active:enabled, .button--accent--inverted:focus:enabled, .button--accent--inverted:hover:enabled {
+  box-shadow: inset 0 0 0 2px #616161, inset 0 -2.25em 0 0 #616161;
+  color: white;
+}
+/* line 46, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--subaccent {
+  background-color: #c7c7c7;
+  color: black;
+}
+/* line 51, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--subaccent:active:enabled, .button--subaccent:focus:enabled, .button--subaccent:hover:enabled {
+  background-color: #aeaeae;
+}
+/* line 2, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--subaccent--inverted {
+  background-color: rgba(199, 199, 199, 0);
+  box-shadow: inset 0 0 0 2px #c7c7c7;
+  color: #c7c7c7;
+}
+/* line 6, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--subaccent--inverted:active:enabled, .button--subaccent--inverted:focus:enabled, .button--subaccent--inverted:hover:enabled {
+  box-shadow: inset 0 0 0 2px #b3b3b3, inset 0 -2.25em 0 0 #b3b3b3;
+  color: white;
+}
+/* line 46, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--function {
+  background-color: black;
+  color: white;
+}
+/* line 51, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--function:active:enabled, .button--function:focus:enabled, .button--function:hover:enabled {
+  background-color: black;
+}
+/* line 2, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--function--inverted {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px black;
+  color: black;
+}
+/* line 6, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--function--inverted:active:enabled, .button--function--inverted:focus:enabled, .button--function--inverted:hover:enabled {
+  box-shadow: inset 0 0 0 2px black, inset 0 -2.25em 0 0 black;
+  color: white;
+}
+/* line 46, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--alert {
+  background-color: #d75f5f;
+  color: white;
+}
+/* line 51, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--alert:active:enabled, .button--alert:focus:enabled, .button--alert:hover:enabled {
+  background-color: #cd3636;
+}
+/* line 2, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--alert--inverted {
+  background-color: rgba(215, 95, 95, 0);
+  box-shadow: inset 0 0 0 2px #d75f5f;
+  color: #d75f5f;
+}
+/* line 6, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--alert--inverted:active:enabled, .button--alert--inverted:focus:enabled, .button--alert--inverted:hover:enabled {
+  box-shadow: inset 0 0 0 2px #cf3e3e, inset 0 -2.25em 0 0 #cf3e3e;
+  color: white;
+}
+/* line 46, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--success {
+  background-color: #A5E4CD;
+  color: black;
+}
+/* line 51, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--success:active:enabled, .button--success:focus:enabled, .button--success:hover:enabled {
+  background-color: #7ed8b7;
+}
+/* line 2, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--success--inverted {
+  background-color: rgba(165, 228, 205, 0);
+  box-shadow: inset 0 0 0 2px #A5E4CD;
+  color: #A5E4CD;
+}
+/* line 6, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--success--inverted:active:enabled, .button--success--inverted:focus:enabled, .button--success--inverted:hover:enabled {
+  box-shadow: inset 0 0 0 2px #86dbbc, inset 0 -2.25em 0 0 #86dbbc;
+  color: white;
+}
+/* line 46, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--warning {
+  background-color: #f7c52a;
+  color: white;
+}
+/* line 51, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--warning:active:enabled, .button--warning:focus:enabled, .button--warning:hover:enabled {
+  background-color: #e5b009;
+}
+/* line 2, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--warning--inverted {
+  background-color: rgba(247, 197, 42, 0);
+  box-shadow: inset 0 0 0 2px #f7c52a;
+  color: #f7c52a;
+}
+/* line 6, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--warning--inverted:active:enabled, .button--warning--inverted:focus:enabled, .button--warning--inverted:hover:enabled {
+  box-shadow: inset 0 0 0 2px #efb709, inset 0 -2.25em 0 0 #efb709;
+  color: white;
+}
+/* line 46, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--secure {
+  background-color: #ff8700;
+  color: white;
+}
+/* line 51, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--secure:active:enabled, .button--secure:focus:enabled, .button--secure:hover:enabled {
+  background-color: #cc6c00;
+}
+/* line 2, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--secure--inverted {
+  background-color: rgba(255, 135, 0, 0);
+  box-shadow: inset 0 0 0 2px #ff8700;
+  color: #ff8700;
+}
+/* line 6, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/button-generator.sass */
+.button--secure--inverted:active:enabled, .button--secure--inverted:focus:enabled, .button--secure--inverted:hover:enabled {
+  box-shadow: inset 0 0 0 2px #d67100, inset 0 -2.25em 0 0 #d67100;
+  color: white;
+}
+
+/* line 8, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/header.sass */
+.header--primary {
+  background: white;
+  color: black;
+  font-size: 0.875em;
+  position: relative;
+  width: 100%;
+  z-index: 4;
+}
+/* line 2, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/clearfix.sass */
+.header--primary:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 19, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/header.sass */
+.header--primary__nav {
+  display: inline-block;
+  float: left;
+  width: inherit;
+}
+
+/* line 2, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link {
+  color: #757575;
+  cursor: pointer;
+  display: inline;
+}
+/* line 6, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link:hover, .link:active, .link:focus {
+  color: #5c5c5c;
+  text-decoration: underline;
+}
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link--primary {
+  color: black;
+}
+/* line 14, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link--primary:active, .link--primary:focus, .link--primary:hover {
+  color: black;
+}
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link--secondary {
+  color: #757575;
+}
+/* line 14, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link--secondary:active, .link--secondary:focus, .link--secondary:hover {
+  color: #5c5c5c;
+}
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link--accent {
+  color: #757575;
+}
+/* line 14, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link--accent:active, .link--accent:focus, .link--accent:hover {
+  color: #5c5c5c;
+}
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link--subaccent {
+  color: #c7c7c7;
+}
+/* line 14, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link--subaccent:active, .link--subaccent:focus, .link--subaccent:hover {
+  color: #aeaeae;
+}
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link--function {
+  color: black;
+}
+/* line 14, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link--function:active, .link--function:focus, .link--function:hover {
+  color: black;
+}
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link--alert {
+  color: #d75f5f;
+}
+/* line 14, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link--alert:active, .link--alert:focus, .link--alert:hover {
+  color: #cd3636;
+}
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link--success {
+  color: #A5E4CD;
+}
+/* line 14, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link--success:active, .link--success:focus, .link--success:hover {
+  color: #7ed8b7;
+}
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link--warning {
+  color: #f7c52a;
+}
+/* line 14, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link--warning:active, .link--warning:focus, .link--warning:hover {
+  color: #e5b009;
+}
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link--secure {
+  color: #ff8700;
+}
+/* line 14, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/link-generator.sass */
+.link--secure:active, .link--secure:focus, .link--secure:hover {
+  color: #cc6c00;
+}
+
+/* line 18, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/nav.sass */
+.menu-base {
+  padding: 0px;
+  list-style: none;
+  line-height: 1;
+  box-sizing: border-box;
+  position: relative;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 18, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/nav.sass */
+  .menu-base {
+    line-height: 2;
+  }
+}
+/* line 20, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/nav.sass */
+.menu-base.open {
+  margin-bottom: 3em;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 20, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/nav.sass */
+  .menu-base.open {
+    line-height: 2;
+  }
+}
+
+/* line 25, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/nav.sass */
+#dropdown-menu {
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  background: white;
+  z-index: 2;
+}
+/* line 30, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/nav.sass */
+#dropdown-menu ul {
+  display: none;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 30, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/nav.sass */
+  #dropdown-menu ul {
+    right: 6%;
+    margin-top: -1.2em;
+    position: absolute;
+  }
+}
+@media only screen and (min-width: 60em) {
+  /* line 30, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/nav.sass */
+  #dropdown-menu ul {
+    right: 4%;
+    margin-top: -0.9em;
+    position: absolute;
+  }
+}
+/* line 41, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/nav.sass */
+#dropdown-menu ul li a {
+  display: block;
+  padding: 1.5em 1em;
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: black;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 41, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/nav.sass */
+  #dropdown-menu ul li a {
+    font-size: 13px;
+    padding: 0.5em 1em 0em 0em;
+    display: block;
+  }
+}
+@media only screen and (min-width: 60em) {
+  /* line 41, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/nav.sass */
+  #dropdown-menu ul li a {
+    font-size: 12px;
+  }
+}
+
+/* line 60, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/nav.sass */
+#menu-button {
+  padding: 0px;
+  list-style: none;
+  line-height: 1;
+  box-sizing: border-box;
+  position: relative;
+  margin-top: 2.5em;
+  display: block;
+  cursor: pointer;
+  text-transform: uppercase;
+  z-index: 3;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 60, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/nav.sass */
+  #menu-button {
+    line-height: 2;
+  }
+}
+/* line 67, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/nav.sass */
+#menu-button:after, #menu-button:before {
+  content: "";
+  position: absolute;
+  right: 20px;
+  width: 15px;
+}
+/* line 72, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/nav.sass */
+#menu-button:after {
+  height: 2px;
+  background: black;
+}
+/* line 75, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/nav.sass */
+#menu-button:before {
+  top: 5px;
+  background: transparent;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+/* line 81, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/nav.sass */
+.menu-open {
+  margin-bottom: -7.5em;
+}
+
+/* line 4, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/notifier-generator.sass */
+.notifier {
+  background-color: #A5E4CD;
+  background-image: none;
+  color: white;
+  display: block;
+  vertical-align: middle;
+  margin-top: 2em;
+  text-align: center;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 4, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/notifier-generator.sass */
+  .notifier {
+    padding: 1.5em 0;
+  }
+}
+/* line 17, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/notifier-generator.sass */
+.notifier__content {
+  padding: 0 1.125em;
+}
+/* line 22, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/notifier-generator.sass */
+.notifier__close {
+  float: right;
+  padding: 0 1.125em;
+}
+/* line 25, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/notifier-generator.sass */
+.notifier__close:hover {
+  text-decoration: underline;
+}
+/* line 29, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/notifier-generator.sass */
+.notifier--primary {
+  background-color: black;
+  color: white;
+}
+/* line 29, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/notifier-generator.sass */
+.notifier--secondary {
+  background-color: #757575;
+  color: white;
+}
+/* line 29, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/notifier-generator.sass */
+.notifier--accent {
+  background-color: #757575;
+  color: white;
+}
+/* line 29, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/notifier-generator.sass */
+.notifier--subaccent {
+  background-color: #c7c7c7;
+  color: black;
+}
+/* line 29, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/notifier-generator.sass */
+.notifier--function {
+  background-color: black;
+  color: white;
+}
+/* line 29, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/notifier-generator.sass */
+.notifier--alert {
+  background-color: #d75f5f;
+  color: white;
+}
+/* line 29, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/notifier-generator.sass */
+.notifier--success {
+  background-color: #A5E4CD;
+  color: black;
+}
+/* line 29, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/notifier-generator.sass */
+.notifier--warning {
+  background-color: #f7c52a;
+  color: white;
+}
+/* line 29, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/notifier-generator.sass */
+.notifier--secure {
+  background-color: #ff8700;
+  color: white;
+}
+
+/* line 7, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/notifier.sass */
+#error_explanation {
+  background-color: #d75f5f;
+  letter-spacing: 0.1em;
+  padding: 1em;
+  margin-top: -13em;
+  margin-bottom: 10em;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 7, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/notifier.sass */
+  #error_explanation {
+    width: 100%;
+    margin-top: -10em;
+    margin-bottom: 10em;
+  }
+}
+/* line 17, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/notifier.sass */
+#error_explanation h2 {
+  font-size: 87%;
+  letter-spacing: 0.1em;
+}
+
+/* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+.parallax-wrapper {
+  font-weight: 400;
+  font-family: "Oswald", "Source Sans Pro", Helvetica, "Helvetica Neue", Arial, sans-serif;
+  text-transform: uppercase;
+}
+/* line 9, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+.parallax-wrapper h1 {
+  font-size: 300%;
+  letter-spacing: 6px;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 9, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+  .parallax-wrapper h1 {
+    letter-spacing: 8px;
+  }
+}
+/* line 14, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+.parallax-wrapper h2 {
+  letter-spacing: 10px;
+  opacity: 0.8;
+}
+/* line 17, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+.parallax-wrapper h3 {
+  font-size: 150%;
+  line-height: 0;
+  letter-spacing: 7px;
+  font-weight: 350;
+  text-transform: uppercase;
+  padding-top: 1em;
+  text-align: center;
+}
+/* line 25, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+.parallax-wrapper h5 {
+  letter-spacing: 7px;
+}
+/* line 27, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+.parallax-wrapper p {
+  font-family: "Source Sans Pro", "Rokkitt", Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-size: 87.5%;
+  line-height: 24px;
+  display: block;
+  margin: auto;
+}
+/* line 33, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+.parallax-wrapper hr {
+  max-width: 90vw;
+  margin-left: 0;
+  margin-right: 0;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 33, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+  .parallax-wrapper hr {
+    max-width: 96vw;
+  }
+}
+@media only screen and (min-width: 60em) {
+  /* line 33, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+  .parallax-wrapper hr {
+    max-width: 97vw;
+  }
+}
+
+/* line 42, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+.parallax--content {
+  overflow: hidden;
+  max-width: 100%;
+  max-height: auto;
+  background-image: url(/assets/project-d2db87b815560da57a2c5e477d5fdce47aabf88d0ba4679098d7832f3300a466.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top center;
+  margin-top: 2em;
+}
+
+/* line 52, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+.section-title {
+  line-height: 4em;
+  background: white;
+}
+
+@media only screen and (min-width: 37.5em) {
+  /* line 56, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+  .center-block {
+    width: 60%;
+    margin-left: 20%;
+  }
+}
+
+/* line 61, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+.block {
+  background: white;
+  margin: 2em 1em 2em 1em;
+  max-width: 100%;
+  text-align: justify;
+}
+/* line 66, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+.block__primary {
+  font-size: 1.1em;
+}
+/* line 68, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+.block__review {
+  margin: 5em 0em 10em 0em;
+}
+/* line 70, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+.block__link-button {
+  display: inline-block;
+}
+/* line 72, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+.block__link-button__left {
+  margin-right: 2.5em;
+}
+/* line 74, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+.block__image {
+  margin: 2em 0em -1em 0em;
+}
+
+/* line 83, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+.listings-content, .content--profile {
+  background: white;
+  padding: 0.1em 1em 0em 1em;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-align: center;
+}
+/* line 89, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+.listings-content .listings-title, .content--profile .listings-title {
+  line-height: 6em;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 89, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/parallax.sass */
+  .listings-content .listings-title, .content--profile .listings-title {
+    line-height: 7em;
+  }
+}
+
+/* line 1, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/slider.sass */
+.slider-container {
+  margin-top: 10em;
+}
+@media only screen and (min-width: 37.5em) {
+  /* line 1, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/slider.sass */
+  .slider-container {
+    margin-top: 5em;
+  }
+}
+
+/* line 6, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/user.sass */
+.user .user__name {
+  display: inline;
+  vertical-align: middle;
+}
+/* line 9, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/components/user.sass */
+.user .user__avatar {
+  display: inline;
+  margin-left: 0.5625em;
+}
+
+/* line 6, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/overrides/colors.sass */
+.color--accent {
+  color: #757575 !important;
+}
+/* line 9, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/overrides/colors.sass */
+.color--error, .color--alert {
+  color: #d75f5f !important;
+}
+
+/* line 7, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space--none {
+  margin: 0;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-top--none {
+  margin-top: 0;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-left--none {
+  margin-left: 0;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-bottom--none {
+  margin-bottom: 0;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-right--none {
+  margin-right: 0;
+}
+
+/* line 13, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--none {
+  padding: 0;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--top--none {
+  padding-top: 0;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--left--none {
+  padding-left: 0;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--bottom--none {
+  padding-bottom: 0;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--right--none {
+  padding-right: 0;
+}
+
+/* line 7, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space--small {
+  margin: 0.75em;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-top--small {
+  margin-top: 0.75em;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-left--small {
+  margin-left: 0.75em;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-bottom--small {
+  margin-bottom: 0.75em;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-right--small {
+  margin-right: 0.75em;
+}
+
+/* line 13, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--small {
+  padding: 0.75em;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--top--small {
+  padding-top: 0.75em;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--left--small {
+  padding-left: 0.75em;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--bottom--small {
+  padding-bottom: 0.75em;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--right--small {
+  padding-right: 0.75em;
+}
+
+/* line 7, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space--medium {
+  margin: 1.5em;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-top--medium {
+  margin-top: 1.5em;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-left--medium {
+  margin-left: 1.5em;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-bottom--medium {
+  margin-bottom: 1.5em;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-right--medium {
+  margin-right: 1.5em;
+}
+
+/* line 13, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--medium {
+  padding: 1.5em;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--top--medium {
+  padding-top: 1.5em;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--left--medium {
+  padding-left: 1.5em;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--bottom--medium {
+  padding-bottom: 1.5em;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--right--medium {
+  padding-right: 1.5em;
+}
+
+/* line 7, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space--large {
+  margin: 3em;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-top--large {
+  margin-top: 3em;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-left--large {
+  margin-left: 3em;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-bottom--large {
+  margin-bottom: 3em;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-right--large {
+  margin-right: 3em;
+}
+
+/* line 13, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--large {
+  padding: 3em;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--top--large {
+  padding-top: 3em;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--left--large {
+  padding-left: 3em;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--bottom--large {
+  padding-bottom: 3em;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--right--large {
+  padding-right: 3em;
+}
+
+/* line 7, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space--xlarge {
+  margin: 6em;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-top--xlarge {
+  margin-top: 6em;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-left--xlarge {
+  margin-left: 6em;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-bottom--xlarge {
+  margin-bottom: 6em;
+}
+
+/* line 10, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-right--xlarge {
+  margin-right: 6em;
+}
+
+/* line 13, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--xlarge {
+  padding: 6em;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--top--xlarge {
+  padding-top: 6em;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--left--xlarge {
+  padding-left: 6em;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--bottom--xlarge {
+  padding-bottom: 6em;
+}
+
+/* line 16, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/tools/space-generator.sass */
+.space-inner--right--xlarge {
+  padding-right: 6em;
+}
+
+/* line 8, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/overrides/type.sass */
+.font-weight--semi-bold {
+  font-weight: 600;
+}
+/* line 12, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/overrides/type.sass */
+.font-weight--bold {
+  font-weight: 700;
+}
+
+/* line 18, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/overrides/type.sass */
+.font-style--italic {
+  font-style: italic;
+}
+
+/* line 24, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/overrides/type.sass */
+.text-transform--none {
+  text-transform: none;
+}
+/* line 28, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/overrides/type.sass */
+.text-transform--uppercase {
+  text-transform: uppercase;
+}
+/* line 32, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/overrides/type.sass */
+.text-transform--capitalize {
+  text-transform: capitalize;
+}
+
+/* line 38, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/overrides/type.sass */
+.text-align--center {
+  text-align: center;
+}
+/* line 42, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/overrides/type.sass */
+.text-align--left {
+  text-align: left;
+}
+/* line 46, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/overrides/type.sass */
+.text-align--right {
+  text-align: right;
+}
+
+/* line 52, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/overrides/type.sass */
+.no--margin-bottom {
+  margin-bottom: 0;
+}
+/* line 55, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/overrides/type.sass */
+.no--margin-bottom-minus-one-em {
+  margin-bottom: -1em;
+}
+
+/*!
+ * jQuery UI Datepicker 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/datepicker/#theming
+ */
+/*
+ *= require jquery-ui/core
+ *= require jquery-ui/theme
+ */
+/* line 15, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker {
+  width: 17em;
+  padding: .2em .2em 0;
+  display: none;
+}
+
+/* line 20, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker .ui-datepicker-header {
+  position: relative;
+  padding: .2em 0;
+}
+
+/* line 24, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  position: absolute;
+  top: 2px;
+  width: 1.8em;
+  height: 1.8em;
+}
+
+/* line 31, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+  top: 1px;
+}
+
+/* line 35, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker .ui-datepicker-prev {
+  left: 2px;
+}
+
+/* line 38, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker .ui-datepicker-next {
+  right: 2px;
+}
+
+/* line 41, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker .ui-datepicker-prev-hover {
+  left: 1px;
+}
+
+/* line 44, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker .ui-datepicker-next-hover {
+  right: 1px;
+}
+
+/* line 47, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -8px;
+  top: 50%;
+  margin-top: -8px;
+}
+
+/* line 56, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker .ui-datepicker-title {
+  margin: 0 2.3em;
+  line-height: 1.8em;
+  text-align: center;
+}
+
+/* line 61, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker .ui-datepicker-title select {
+  font-size: 1em;
+  margin: 1px 0;
+}
+
+/* line 65, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+  width: 45%;
+}
+
+/* line 69, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker table {
+  width: 100%;
+  font-size: .9em;
+  border-collapse: collapse;
+  margin: 0 0 .4em;
+}
+
+/* line 75, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker th {
+  padding: .7em .3em;
+  text-align: center;
+  font-weight: bold;
+  border: 0;
+}
+
+/* line 81, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker td {
+  border: 0;
+  padding: 1px;
+}
+
+/* line 85, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker td span,
+.ui-datepicker td a {
+  display: block;
+  padding: .2em;
+  text-align: right;
+  text-decoration: none;
+}
+
+/* line 92, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker .ui-datepicker-buttonpane {
+  background-image: none;
+  margin: .7em 0 0 0;
+  padding: 0 .2em;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+/* line 100, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker .ui-datepicker-buttonpane button {
+  float: right;
+  margin: .5em .2em .4em;
+  cursor: pointer;
+  padding: .2em .6em .3em .6em;
+  width: auto;
+  overflow: visible;
+}
+
+/* line 108, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+  float: left;
+}
+
+/* with multiple calendars */
+/* line 113, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker.ui-datepicker-multi {
+  width: auto;
+}
+
+/* line 116, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker-multi .ui-datepicker-group {
+  float: left;
+}
+
+/* line 119, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker-multi .ui-datepicker-group table {
+  width: 95%;
+  margin: 0 auto .4em;
+}
+
+/* line 123, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker-multi-2 .ui-datepicker-group {
+  width: 50%;
+}
+
+/* line 126, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker-multi-3 .ui-datepicker-group {
+  width: 33.3%;
+}
+
+/* line 129, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker-multi-4 .ui-datepicker-group {
+  width: 25%;
+}
+
+/* line 132, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+  border-left-width: 0;
+}
+
+/* line 136, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+  clear: left;
+}
+
+/* line 139, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker-row-break {
+  clear: both;
+  width: 100%;
+  font-size: 0;
+}
+
+/* RTL support */
+/* line 146, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker-rtl {
+  direction: rtl;
+}
+
+/* line 149, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker-rtl .ui-datepicker-prev {
+  right: 2px;
+  left: auto;
+}
+
+/* line 153, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker-rtl .ui-datepicker-next {
+  left: 2px;
+  right: auto;
+}
+
+/* line 157, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker-rtl .ui-datepicker-prev:hover {
+  right: 1px;
+  left: auto;
+}
+
+/* line 161, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker-rtl .ui-datepicker-next:hover {
+  left: 1px;
+  right: auto;
+}
+
+/* line 165, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker-rtl .ui-datepicker-buttonpane {
+  clear: right;
+}
+
+/* line 168, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker-rtl .ui-datepicker-buttonpane button {
+  float: left;
+}
+
+/* line 171, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current,
+.ui-datepicker-rtl .ui-datepicker-group {
+  float: right;
+}
+
+/* line 175, /usr/local/var/rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets/jquery-ui/datepicker.css */
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
+  border-right-width: 0;
+  border-left-width: 1px;
+}
+
+/*! Flickity v1.1.1
+http://flickity.metafizzy.co
+---------------------------------------------- */
+/* line 5, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-enabled {
+  position: relative;
+}
+
+/* line 9, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-enabled:focus {
+  outline: none;
+}
+
+/* line 11, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+/* line 17, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* draggable */
+/* line 25, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-enabled.is-draggable {
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 34, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-enabled.is-draggable .flickity-viewport {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+/* line 40, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+/* ---- previous/next buttons ---- */
+/* line 47, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-prev-next-button {
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  background: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  /* vertically center */
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* line 63, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-prev-next-button:hover {
+  background: white;
+}
+
+/* line 65, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-prev-next-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px #09F;
+}
+
+/* line 70, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-prev-next-button:active {
+  filter: alpha(opacity=60);
+  /* IE8 */
+  opacity: 0.6;
+}
+
+/* line 75, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-prev-next-button.previous {
+  left: 10px;
+}
+
+/* line 76, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-prev-next-button.next {
+  right: 10px;
+}
+
+/* right to left */
+/* line 78, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-rtl .flickity-prev-next-button.previous {
+  left: auto;
+  right: 10px;
+}
+
+/* line 82, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-rtl .flickity-prev-next-button.next {
+  right: auto;
+  left: 10px;
+}
+
+/* line 87, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-prev-next-button:disabled {
+  filter: alpha(opacity=30);
+  /* IE8 */
+  opacity: 0.3;
+  cursor: auto;
+}
+
+/* line 93, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-prev-next-button svg {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 60%;
+  height: 60%;
+}
+
+/* line 101, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-prev-next-button .arrow {
+  fill: #333;
+}
+
+/* color & size if no SVG - IE8 and Android 2.3 */
+/* line 106, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-prev-next-button.no-svg {
+  color: #333;
+  font-size: 26px;
+}
+
+/* ---- page dots ---- */
+/* line 113, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-page-dots {
+  position: absolute;
+  width: 100%;
+  bottom: -25px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  line-height: 1;
+}
+
+/* line 124, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-rtl .flickity-page-dots {
+  direction: rtl;
+}
+
+/* line 126, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-page-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 8px;
+  background: #333;
+  border-radius: 50%;
+  filter: alpha(opacity=25);
+  /* IE8 */
+  opacity: 0.25;
+  cursor: pointer;
+}
+
+/* line 138, /Users/diegodesouza/Documents/Code/Projects/Places/app/assets/stylesheets/flickity.css */
+.flickity-page-dots .dot.is-selected {
+  filter: alpha(opacity=100);
+  /* IE8 */
+  opacity: 1;
+}

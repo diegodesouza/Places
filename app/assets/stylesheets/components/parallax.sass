@@ -6,6 +6,7 @@
   font-weight: 400
   font-family: $font-family
   text-transform: uppercase
+  max-width: 100%
   h1
     font-size: 300%
     letter-spacing: 6px
@@ -39,15 +40,17 @@
     @media #{$large-up}
       max-width: 97vw
 
-.parallax--content
-  overflow: hidden
+.parallax-container
   max-width: 100%
-  max-height: auto
-  background-image: image-url("project.jpg")
-  background-attachment: fixed
-  background-size: cover
-  background-position: top center
-  margin-top: 2em
+  .parallax--content
+    overflow: hidden
+    width: 100%
+    background-image: image-url("project.jpg")
+    background-attachment: fixed
+    background-size: cover
+    background-position: top center
+    margin: 0 auto
+
 
 .section-title
   line-height: 4em

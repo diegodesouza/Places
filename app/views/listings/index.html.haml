@@ -1,14 +1,13 @@
-.parallax--content
-  .search
-    = render "search/search_form"
+.parallax-container
+  .parallax--content
+    .search
+      = render "search/search_form"
 
-  %p.block  
-  %h3.section-title Listings
-  %p.block  
+    %p.block  
+    %h3.section-title Listings
 
-  .listings-content
-    = render 'listings'
+    .listings-content
+      = render 'listings'
 
-  .pagination
-    = paginate @listings, remote: true
-
+    .pagination
+      = paginate @listings, remote: true
