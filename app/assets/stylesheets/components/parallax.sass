@@ -42,11 +42,15 @@
 
 .parallax-container
   max-width: 100%
+  display: flex
   .parallax--content
+    align-content: center
+    justify-content: center
     overflow: hidden
     background-image: image-url("project_crop.jpg")
     background-attachment: fixed
-    background-size: cover
+    background-size: contain
+    background-repeat: no-repeat
     background-position: top center
     @media #{$medium-up}
       background-image: image-url("project.jpg")
