@@ -39,12 +39,12 @@
         .block__link-button.block__link-button__right
           = link_to "Delete Listing", listing_path(@listing), method: :delete, |
             data: { confirm: "Are you sure?" }                                                     |
-      -# %br/
-      -# %hr/
-  -# %section
-    -# .block
-      -# .google-maps
-        -# %iframe{:width => "400", :frameborder => "0", :height => "250", :src => "https://www.google.com/maps/embed/v1/place?key=AIzaSyB78gzC40H-qt5UH58ogbiKN-SzdY0Hv-0 &q=#{@listing.street}+#{@listing.city}+#{@listing.state} =Google+Maps+Embed+API =http://www.butchartgardens.com/ =comgooglemaps://?daddr=#{@listing.street}+#{@listing.city}+#{@listing.state}"}
+      %br/
+      %hr/
+  %section
+    .block
+      .google-maps
+        %iframe{:width => "100%", :height => "250", :frameborder => "0", :src => "https://www.google.com/maps/embed/v1/place?key=AIzaSyB78gzC40H-qt5UH58ogbiKN-SzdY0Hv-0 &q=#{@listing.street}+#{@listing.city},+#{@listing.state}"}
   .block.block__primary
     - if current_user != @listing.user
       = render "reservations/new_reservation_form"
