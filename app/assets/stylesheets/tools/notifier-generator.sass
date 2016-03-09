@@ -13,10 +13,12 @@
     @media #{$medium-up}
       padding: $rhythm-vertical 0
 
-    // .notifier__text
+    // .notifier__content
     &__content
       @extend .wrapper
-      padding: 2 $rhythm-horizontal
+      padding: $rhythm-horizontal
+      @media #{$medium-up}
+        padding: 2 $rhythm-horizontal
 
     // .notifier__close
     &__close

@@ -72,7 +72,7 @@
   font-family: inherit
   margin-left: auto
   margin-right: auto
-  margin-top: -10em
+  // margin-top: -10em
   width: 95%
   .element-wrapper, .select-wrapper, .file-wrapper
     position: relative
@@ -147,10 +147,9 @@
     transition: 0.3s ease all
     &.remember-me
       font-size: inherit
-      margin: 16.3em 0 0 2em
+      margin: 24.1em 0 0 2em
       @media #{$medium-up}
-        margin: 26.1em 0 0 2em
-      @media #{$large-up}
+        margin: 20.75em 0 0 2em
 
   .bar
     position: relative
@@ -201,6 +200,13 @@
   input[type="file"]
     padding-top: 1em
     border: none
+
+.form-position
+  margin: 15em 0em 10em 0em
+  @media #{$medium-up}
+    margin: 9.8em 0em 14em 0em
+    &__signin
+      margin: 9.8em 0em 18em 0em
 
 ////////////////////
 // Buttons

@@ -9,6 +9,12 @@
 
 puts "seeding..."
 
+User.create!(
+  email: "user@example.com",
+  password: "password",
+  password_confirmation: "password",
+)
+
 100.times do
   password = Faker::Internet.password
 
@@ -34,7 +40,9 @@ puts "seeding..."
   end
 
   # @listing.photos << File.new('./public/fallback/images.jpeg')
-  @listing.photos.store!(File.new('./public/fallback/images.jpeg'))
+  @listing.photos.each do |photo|
+    photo.store!(File.new('./public/fallback/images.jpeg'))
+  end
 
   Reservation.create(
     check_in: Faker::Date.forward(3),

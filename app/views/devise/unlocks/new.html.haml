@@ -1,5 +1,5 @@
-.list__item--form
-  .form-wrapper
+.form-wrapper
+  .form-position
     %h2 Resend unlock instructions
 
     = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|

@@ -1,5 +1,5 @@
-.list__item--form
-  .form-wrapper
+.form-wrapper
+  .form-position.form-position__signin
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .element-wrapper
         = f.email_field :email, autofocus: true

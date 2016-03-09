@@ -21,10 +21,8 @@
     letter-spacing: 7px
     font-weight: 350
     text-transform: uppercase
-    padding-top: 1em
+    padding-top: 3em
     text-align: center
-    @media #{$medium-up}
-      padding-top: 3em
   h5
     letter-spacing: 7px
   p
@@ -45,10 +43,10 @@
 .parallax-container
   max-width: 100%
   .parallax--content
-    background-image: asset-url("project1.jpg")
+    background-image: image-url("project1.jpg")
     background-attachment: fixed
     background-size: cover
-    background-position: center
+    background-position: top center
     @media #{$medium-up}
       background-image: image-url("project.jpg")
     @media #{$large-up}
