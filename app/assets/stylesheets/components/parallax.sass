@@ -23,6 +23,8 @@
     text-transform: uppercase
     padding-top: 1em
     text-align: center
+    @media #{$medium-up}
+      padding-top: 3em
   h5
     letter-spacing: 7px
   p
@@ -30,7 +32,7 @@
     font-size: 87.5%
     line-height: 24px
     display: block
-    margin: 13em 0em 0em 0em
+    margin: 0
   hr
     max-width: 90vw
     margin-left: 0
@@ -43,24 +45,19 @@
 .parallax-container
   max-width: 100%
   .parallax--content
-    overflow: hidden
     background-image: asset-url("project1.jpg")
     background-attachment: fixed
-    background-size: contain
-    background-repeat: no-repeat
+    background-size: cover
     background-position: center
     @media #{$medium-up}
-      max-height: auto
       background-image: image-url("project.jpg")
-      background-attachment: fixed
-      background-size: cover
-      background-position: top center
     @media #{$large-up}
       margin-top: 2em
 
 .section-title
   line-height: 4em
   background: $white
+  padding: 2em 0em 1em 0em
 
 .center-block
   @media #{$medium-up}
@@ -81,7 +78,9 @@
     &__left
       margin-right: 2.5em
   &__image
-    margin: 2em 0em -1em 0em
+    margin: -2em 0em 2em 0em
+  &__home
+    margin-top: 4em !important
 
 
 
