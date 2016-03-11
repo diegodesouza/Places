@@ -1,0 +1,10 @@
+=panel-generator
+  .panel
+    display: block
+    font-family: $font-family-secondary
+    padding: $rhythm
+    text-align: center
+    @each $name, $color in $all-function-colors
+      &--#{$name}
+        background-color: $color
+        color: dynamic-text-lightness($color) 

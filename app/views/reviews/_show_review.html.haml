@@ -1,0 +1,20 @@
+.center-block
+  .heading__primary.text-align--center
+    %h3 Reviews
+    .block.block__primary
+      - @reviews.each do |review|
+        %p
+          Title: #{review.title}
+          %br/
+          Description: #{review.description}
+          %br/
+        - if current_user == review.user
+          .text-align--center.no--margin-bottom-minus-one-em
+            %br/
+            .block__link-button.block__link-button__left
+              = link_to "Edit Review", edit_listing_review_path(@listing, review)
+            .block__link-button.block__link-button__right
+              = link_to "Delete Review", listing_review_path(@listing, review), method: :delete, |
+                data: { confirm: "Are you sure?" }                                               |
+          %br/
+          %hr/

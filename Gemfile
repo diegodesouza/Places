@@ -1,52 +1,46 @@
 source 'https://rubygems.org'
+ruby '2.2.3'
 
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
-# Use postgresql as the database for Active Record
+gem 'rails'
 gem 'pg'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
+gem 'sass-rails'
+gem 'haml-rails', '~> 0.9'
+gem 'inline_svg'
+gem "autoprefixer-rails"
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jquery-ui-rails'
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'minitest-rails'
+  gem 'minitest-reporters'
+  gem 'mocha', require: false
+  gem 'capybara'
+  gem 'capybara-screenshot'
+  gem 'fabrication'
+  gem 'launchy'
+  gem 'factory_girl'
+  gem 'valid_attribute'
+  gem 'database_cleaner'
+  gem 'simplecov', require: false
+  gem 'dotenv-rails'
+  gem 'pry-rails'
+  gem 'pry'
 end
 
-
-gem 'rspec-rails', group: [:development, :test]
-gem 'capybara', group: [:development, :test]
-gem 'launchy', group: [:development, :test]
-gem 'factory_girl', group: [:development, :test]
-gem 'valid_attribute', group: [:development, :test]
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem "mini_magick"
+gem 'fog-aws'
 gem 'shoulda-matchers', group: [:development, :test], require: false
+
+gem 'rails_12factor', group: :production
+gem 'unicorn', group: :production
 gem 'devise'
-gem 'foundation-rails'
+gem 'faker'
+gem 'kaminari'

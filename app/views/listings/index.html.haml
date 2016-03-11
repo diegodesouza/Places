@@ -1,0 +1,13 @@
+.parallax-container
+  .parallax--content
+    .search
+      = render "search/search_form"
+
+    %p.block.block__home
+    %h3.section-title Listings
+
+    .listings-content
+      = render 'listings'
+
+    .pagination
+      = paginate @listings, remote: true

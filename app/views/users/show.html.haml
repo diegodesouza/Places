@@ -1,0 +1,59 @@
+.content--profile
+  .user-wrapper
+    = image_tag @user.profile_photo, class: "profile"
+    %h4.user.user__name
+      = @user.email
+
+  %p.block
+  %section
+    .heading__home.text-align--center
+      %h3 MY
+      %h1 LISTINGS
+
+  %p.block
+  %section
+    %table.table.table--responsive
+      %thead.table--responsive__head
+        %tr.table--responsive__row
+          %th.table TITLE
+          %th.table STREET
+          %th.table CITY
+          %th.table STATE
+          %th.table PROPERTY TYPE
+      %tbody.table--responsive__body
+        - @user.listings.each do |listing|
+          %tr.table--responsive__row.table--responsive__function-cell
+            %td.table--responsive__cell{label: "Title"}
+              = link_to listing.title, listing_path(listing)
+            %td.table--responsive__cell{label: "Street"}
+              = listing.street
+            %td.table--responsive__cell{label: "City"}
+              = listing.city
+            %td.table--responsive__cell{label: "State"}
+              = listing.state
+            %td.table--responsive__cell{label: "Property Type"}
+              = listing.property_type
+  %hr
+  %section
+    .heading__home.text-align--center
+      %h3 MY
+      %h1 RESERVATIONS
+  %section
+
+  %p.block
+  %section
+    %table.table.table--responsive
+      %thead.table--responsive__head
+        %tr.table--responsive__row
+          %th.table RESERVATION ID
+          %th.table CHECK IN
+          %th.table CHECK OUT
+      %tbody.table--responsive__body
+        - @user.reservations.each do |reservation|
+          %tr.table--responsive__row.table--responsive__function-cell
+            %td.table--responsive__cell{label: "Title"}
+              = link_to reservation.id, listing_reservation_path(@user, reservation)
+            %td.table--responsive__cell{label: "Check In"}
+              = reservation.check_in.strftime("%B %e, %Y" )
+            %td.table--responsive__cell{label: "Check Out"}
+              = reservation.check_out.strftime("%B %e, %Y" )

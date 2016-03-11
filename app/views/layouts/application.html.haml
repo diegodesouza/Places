@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Places
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tag
+    = favicon_link_tag "p.ico"
+  %body
+    .parallax-wrapper
+      %section.wrapper
+        = render 'shared/header'
+        = render 'shared/error_messages'
+        = render "shared/heading" if current_page?(root_path)
+      %main.wrapper.wrapper--main
+        %section.content
+          = yield
+      .wrapper
+        = render partial: 'shared/footer'
+    = javascript_include_tag 'application'

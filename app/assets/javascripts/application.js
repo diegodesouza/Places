@@ -12,7 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
+//= require jquery-ui/datepicker
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function() {
+  $("#listings .pagination a").on("click",
+    function() {
+      $.getScript(this.href);
+      return false;
+    });
+
+// listing search on index home page.
+  $("#listing-search input").keyup(function() {
+    $.get($("#listing-search").attr("action"), $("#listing-search").serialize(), null, "script");
+    return false;
+  });
+});

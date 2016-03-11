@@ -1,0 +1,21 @@
+////////////////////
+// Layout Objects
+////////////////////
+
+.wrapper
+  display: block
+  max-width: $max-width
+  margin: 0 auto
+  position: relative
+  width: 100%
+  +clearfix
+
+  // .wrapper--wide
+  &--wide
+    max-width: 100%
+
+  &--main
+    background: $background-secondary
+    padding: 0em 0em 2em 0em
+    @media #{$medium-up}
+      padding: 2em 0em

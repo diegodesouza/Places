@@ -1,0 +1,33 @@
+=notifier-generator
+
+
+  .notifier
+    background:
+      color: $color-success
+      image: none
+    color: dynamic-text-lightness($color-accent)
+    display: block
+    vertical-align: middle
+    margin-top: 2em
+    text-align: center
+    @media #{$medium-up}
+      padding: $rhythm-vertical 0
+
+    // .notifier__content
+    &__content
+      @extend .wrapper
+      padding: $rhythm-horizontal
+      @media #{$medium-up}
+        padding: 2 $rhythm-horizontal
+
+    // .notifier__close
+    &__close
+      float: right
+      padding: 0 $rhythm-horizontal
+      &:hover
+        text-decoration: underline
+
+    @each $name, $color in $all-function-colors
+      &--#{$name}
+        background-color: $color
+        color: dynamic-text-lightness($color)

@@ -1,0 +1,37 @@
+////////////////////
+// Primary Content
+////////////////////
+
+.content
+  float: left
+  width: 100%
+  @media #{$medium-up}
+    padding-top: -2em
+
+  &--without-padding
+    padding: 0
+
+  &--padding-top-2
+    padding-top: 2em
+
+  &--with-border-left
+    @media #{$large-up}
+      border-left: 2px solid $color-accent
+
+  &--footer
+    padding: 2.8em $rhythm-horizontal
+    @media #{$medium-up}
+      padding: 4.8em $rhythm-horizontal
+    @media #{$large-up}
+      padding: 4.8em ($rhythm-horizontal * 3)
+    @media #{$xlarge-up}
+      padding: 4.8em ($rhythm-horizontal * 6)
+
+//////////////////////////
+// Profile Content
+//////////////////////////
+
+.content--profile
+  @extend .listings-content
+  & h4
+    padding-bottom: 3em

@@ -1,0 +1,15 @@
+.form-wrapper
+  - if current_user != @listing.user
+    = form_for [@listing, @review] do |f|
+      .element-wrapper
+        = f.text_field :title
+        %span.bar
+        %label Title
+      .element-wrapper
+        = f.text_area :description
+        %span.bar
+        %label Description
+      .form-wrapper--with-button
+        = f.button yield(:button_text), method: :post
+      .form-wrapper--with-button__right
+        = link_to "Cancel", :back

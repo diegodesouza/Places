@@ -1,0 +1,56 @@
+.form-wrapper
+  = form_for @listing do |f|
+    - if @listing.errors.any?
+      %ul
+        - @listing.errors.full_messages.each do |msg|
+          %li= msg
+    .element-wrapper
+      = f.text_field :title, required: true
+      %span.bar
+      %label Title
+    .element-wrapper
+      = f.text_area :description, required: true
+      %span.bar
+      %label Description
+    .form-row.form-row__left
+      .select-wrapper
+        = f.select :number_bedroom, 1..25
+        %span.bar
+        %label Number of Beds
+      .select-wrapper
+        = f.select :property_type, Listing::PROPERTY_TYPE
+        %span.bar
+        %label Property Type
+    .form-row.form-row__right
+      .select-wrapper
+        = f.select :number_accommodate, 1..25
+        %span.bar
+        %label Number of Guests
+      .file-wrapper
+        = f.file_field :photos, multiple: true, class: "file-input"
+        %label Photo
+    .element-wrapper
+      = f.text_field :street, required: true
+      %span.bar
+      %label Street
+    .element-wrapper
+      = f.text_field :city, required: true
+      %span.bar
+      %label City
+    .select-wrapper
+      = f.select :state, options_for_select(us_states)
+      %span.bar
+      %label State
+    .element-wrapper
+      = f.text_field :zipcode, required: true
+      %span.bar
+      %label Zipcode
+    .element-wrapper
+      = f.text_field :country, default: "United States"
+      %span.bar
+      %label Country
+
+    .form-wrapper--with-button
+      = f.button yield(:button_text), method: :post
+    .form-wrapper--with-button__right
+      = link_to "Cancel", :back

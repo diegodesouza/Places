@@ -1,0 +1,23 @@
+////////////////////
+// SVG Defaults
+////////////////////
+
+svg, .svg
+  display: inline-block
+  fill: currentColor
+  height: $svg-size 
+  width: auto
+
+  &--font-size
+    height: 1.1em 
+
+  &--white
+    path
+      fill: $color-inverted !important
+
+  &--primary
+    path
+      fill: $color-primary !important
+
+  &--vertical-align
+    vertical-align: middle

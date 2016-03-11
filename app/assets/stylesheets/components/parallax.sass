@@ -1,0 +1,98 @@
+//////////////////////////
+// Parallax
+//////////////////////////
+
+.parallax-wrapper
+  font-weight: 400
+  font-family: $font-family
+  text-transform: uppercase
+  max-width: 100%
+  h1
+    font-size: 300%
+    letter-spacing: 6px
+    @media #{$medium-up}
+      letter-spacing: 8px
+  h2
+    letter-spacing: 10px
+    opacity: .8
+  h3
+    font-size: $h3-size
+    line-height: 0
+    letter-spacing: 7px
+    font-weight: 350
+    text-transform: uppercase
+    padding-top: 3em
+    text-align: center
+  h5
+    letter-spacing: 7px
+  p
+    font-family: $font-family-secondary
+    font-size: 87.5%
+    line-height: 24px
+    display: block
+    margin: 0
+  hr
+    max-width: 90vw
+    margin-left: 0
+    margin-right: 0
+    @media #{$medium-up}
+      max-width: 96vw
+    @media #{$large-up}
+      max-width: 97vw
+
+.parallax-container
+  max-width: 100%
+  .parallax--content
+    @media #{$medium-up}
+      background-attachment: fixed
+      background-size: cover
+      background-position: top center
+      overflow: hidden
+      background-image: image-url("project.jpg")
+    @media #{$large-up}
+      margin-top: 2em
+
+.section-title
+  line-height: 4em
+  background: $white
+  padding: 2em 0em 1em 0em
+
+.center-block
+  @media #{$medium-up}
+    width: 60%
+    margin-left: 20%
+
+.block
+  background: $white
+  margin: 2em 1em 2em 1em
+  max-width: 100%
+  text-align: justify
+  &__primary
+    font-size: 1.1em
+  &__review
+    margin: 5em 0em 10em 0em
+  &__link-button
+    display: inline-block
+    &__left
+      margin-right: 2.5em
+  &__image
+    margin: -2em 0em 2em 0em
+  &__home
+    margin-top: 4em !important
+
+
+
+//////////////////////////
+// Listings Content
+//////////////////////////
+
+.listings-content
+  background: $white
+  padding: .1em 1em 0em 1em
+  font-weight: 300
+  letter-spacing: 2px
+  text-align: center
+  .listings-title
+    line-height: 6em
+    @media #{$medium-up}
+      line-height: 7em

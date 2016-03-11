@@ -1,0 +1,12 @@
+.form-wrapper
+  .form-position
+    %h2 Resend unlock instructions
+
+    = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+      = devise_error_messages!
+        = f.email_field :email, autofocus: true
+        %span.bar
+        %label Email
+      .form-wrapper--with-button
+        = f.button "Resend unlock instructions"
+    = render "devise/shared/links"
