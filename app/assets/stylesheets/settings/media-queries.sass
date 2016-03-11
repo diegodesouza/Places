@@ -2,6 +2,7 @@
 // Media Breakpoints
 ////////////////////
 
+$breakpoint-small: 37.5em !default
 $breakpoint-medium: 37.5em !default
 $breakpoint-large: 60em !default
 $breakpoint-xlarge: 90.25em !default
@@ -14,7 +15,7 @@ $breakpoint-max-width: $max-width !default
 
 $screen: "only screen"
 
-$small-only: "#{$screen} and (max-width: #{$breakpoint-medium})"
+$small-only: "#{$screen} and (max-width: #{$breakpoint-small})"
 $medium-up: "#{$screen} and (min-width: #{$breakpoint-medium})"
 $large-up: "#{$screen} and (min-width: #{$breakpoint-large})"
 $xlarge-up: "#{$screen} and (min-width: #{$breakpoint-xlarge})"
