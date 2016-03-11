@@ -43,11 +43,11 @@
 .parallax-container
   max-width: 100%
   .parallax--content
-    background-image: image-url("project1.jpg")
-    background-attachment: fixed
-    background-size: cover
-    background-position: top center
     @media #{$medium-up}
+      background-attachment: fixed
+      background-size: cover
+      background-position: top center
+      overflow: hidden
       background-image: image-url("project.jpg")
     @media #{$large-up}
       margin-top: 2em

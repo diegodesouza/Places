@@ -3,24 +3,20 @@
 ////////////////////
 
 .search
-  width: 100%
-  padding: 6em 0em 11em 0em
+  max-width: 100%
+  @media #{$small-only}
+    margin-top: 15em
   @media #{$medium-up}
+    padding: 6em 0em 11em 0em
     width: 75%
     margin-left: 11%
-  &__input
-    background: transparent
-    display: block
-    float: left
-    margin: 0
   input
     width: 80%
-    border-right: 0
-
-  // .search__icon
-  &__icon
-    display: block
-    height: 1.5em
+    border-radius: 0px
+    border-right: 0px !important
+    @media #{$small-only}
+      border: 1px solid $black
+    @media #{$medium-up}
 
   // .search__button
   .search__button
@@ -28,13 +24,22 @@
     color: $white
     float: right
     width: 20%
-    height: 3em
+    height: 3.02em
     border: 1px solid $white
     border-radius: 0 3px 3px 0
     outline-color: $white
     outline-width: thin
-    &:hover
+    display: inline-block
+    @media #{$small-only}
+      border: 1px solid $white
       background-color: $white
       color: $black
+      border: 1px solid $black
+      height: 3.05em
+      border-left: none
     @media #{$medium-up}
-      height: 3.1em
+    @media #{$large-up}
+      height: 3.5em
+    &:hover
+      background-color: $grey
+      color: $black
